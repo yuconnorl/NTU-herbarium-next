@@ -1,0 +1,137 @@
+@import './fonts.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+    background: black;
+  }
+}
+
+@layer base {
+  :root {
+    --news-width: 8rem;
+  }
+}
+
+html,
+body {
+  @apply bg-platinum font-RobotoSerif-R;
+}
+
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #20150f;
+}
+
+@media (min-width: 1680px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 2040px) {
+  html {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 2480px) {
+  :root {
+    --news-width: 9rem;
+  }
+
+  html {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 2880px) {
+  html {
+    font-size: 32px;
+  }
+}
+
+@layer utilities {
+  .full-height {
+    height: 100%;
+    height: stretch;
+  }
+
+  .slide-visible {
+    z-index: 2;
+    opacity: 100;
+    transition: all 500ms ease-in-out;
+  }
+
+  .burger-open {
+    opacity: 100;
+  }
+
+  .news-date {
+    width: var(--news-width);
+  }
+
+  .nav-active {
+    transform: translateX(0) !important;
+  }
+
+  .news-description {
+    width: calc(100% - var(--news-width));
+  }
+
+  .silde-progress {
+    animation: swipe-progress 4.5s linear forwards;
+  }
+
+  .link-arrow a {
+    @apply relative mr-1 text-light-brown underline decoration-light-brown underline-offset-4
+    after:relative after:inline-block after:h-3 after:w-3 after:bg-link-arrow after:bg-cover after:bg-center after:bg-no-repeat after:opacity-60 after:content-[''];
+  }
+
+  @keyframes swipe-progress {
+    0% {
+      opacity: 1;
+      transform: translateX(-100%);
+    }
+
+    90% {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translateX(0%);
+    }
+  }
+}

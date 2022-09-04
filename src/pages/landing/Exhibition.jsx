@@ -1,0 +1,59 @@
+import { Fragment } from 'react'
+import { useTranslation } from 'next-i18next';
+
+import { exhibitionPhoto } from '@/assets/fileLoader'
+import Button from '@/components/button/Button'
+import ImgWithFallBack from '@/components/ImgWithFallBack'
+import Content from '@/components/letters/content/Content'
+import SecondaryHeading from '@/components/letters/heading/secondaryHeading/SecondaryHeading'
+
+const Exhibition = () => {
+  const { t } = useTranslation()
+  return (
+    <section className='relative mt-4 flex w-full flex-col pb-16 sm:px-8 md:mt-16 md:px-12 mdp:flex-row'>
+      <div className='relative px-10 mdp:sticky mdp:top-6 mdp:mb-80 mdp:h-content mdp:w-4/12'>
+        <div className='pt-8 pb-6'>
+          <SecondaryHeading className='pt-8 pb-6'>
+            {t('landing_exhibition_miniTitle')}
+          </SecondaryHeading>
+        </div>
+        <div className='mb-6 md:mb-10'>
+          <h2 className='font-RobotoSerif-R text-3xl leading-normal md:text-4xl md:leading-normal'>
+            {t('landing_exhibition_title')}
+          </h2>
+        </div>
+        <div className='relative font-sans text-base font-light leading-relaxed tracking-wider lg:w-10/12'>
+          <div>{t('landing_exhibition_subtitle')}</div>
+        </div>
+      </div>
+      <div className='border-brown border-opacity-20 px-6 md:px-10 mdp:w-8/12 mdp:border-l mdp:pt-10'>
+        <div className='grid-row-4 grid gap-x-16 gap-y-3 text-sm'>
+          {exhibitionPhoto.map((item) => (
+            <Fragment key={item.key}>
+              <span className='my-8 h-px w-full bg-brown opacity-20' />
+              <div className='opacity-80'>
+                <ImgWithFallBack
+                  src={item.imgURL}
+                  fallback={item.fallback}
+                  alt={item.title}
+                />
+              </div>
+              <div className='mt-4 pl-1'>
+                <div className='font-RobotoSerif-L text-xl mdp:text-[1.25rem]'>
+                  {t(`landing_exhibition_title_${item.key}`)}
+                </div>
+                {/* <div className=' font-robot pt-2 pr-3 text-base font-light text-[#20231F] md:pr-28'></div> */}
+                <Content className='pt-2 pr-3 md:pr-28'>
+                  {t(`landing_exhibition_description_${item.key}`)}
+                </Content>
+              </div>
+            </Fragment>
+          ))}
+        </div>
+        <Button url='exhibition' text={t('landing_exhibition_button')} />
+      </div>
+    </section>
+  )
+}
+
+export default Exhibition
