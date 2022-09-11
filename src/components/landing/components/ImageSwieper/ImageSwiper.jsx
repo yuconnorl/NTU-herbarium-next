@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 
 import { slidePhoto } from '@/assets/fileLoader'
@@ -50,11 +51,9 @@ const ImageSwiper = () => {
             } absolute left-0 h-full w-full opacity-0 transition-all duration-500 ease-in-out`}
             key={item.key}
           >
-            <ImgWithFallBack
+            <Image
               className='h-full w-full object-cover opacity-80'
               src={item.src}
-              fallback={item.fallback}
-              alt={item.alt}
             />
             {slideNumber === item.key && (
               <motion.div
@@ -72,7 +71,8 @@ const ImageSwiper = () => {
                 <div className='group flex items-center'>
                   <span className='relative mt-0.5 inline-block'>
                     <a
-                      href={item.personalHref}
+                      // href={item.personalHref}
+                      href='www.google.com'
                       target='_blank'
                       rel='noreferrer noopener'
                     >

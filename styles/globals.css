@@ -3,12 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --news-width: 8rem;
-  }
-}
-
 html,
 body {
   @apply bg-platinum font-RobotoSerif-R;

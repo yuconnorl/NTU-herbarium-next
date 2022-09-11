@@ -1,4 +1,4 @@
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next'
 
 import Button from '@/components/button/Button'
 import PrimaryHeading from '@/components/letters/heading/primaryHeading/PrimaryHeading'

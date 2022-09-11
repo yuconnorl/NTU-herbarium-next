@@ -1,4 +1,5 @@
-import { useTranslation } from 'next-i18next';
+import Image from 'next/image'
+import { useTranslation } from 'next-i18next'
 
 import imgFrontDoorJpg from '@/assets/images/about/frontDoor.jpg'
 import imgFrontDoorWebp from '@/assets/images/about/frontDoor.webp'
@@ -22,11 +23,13 @@ const AboutPage = () => {
             <div>{t('about_intro')}</div>
           </div>
         </div>
-        <ImgWithFallBack
+        <Image src={imgFrontDoorWebp} />
+        {/* <ImgWithFallBack
           src={imgFrontDoorWebp}
           fallback={imgFrontDoorJpg}
           alt='front door of TAI'
-        />
+        /> */}
+        <img src={imgFrontDoorWebp} alt='' />
       </div>
       <Footer />
     </>

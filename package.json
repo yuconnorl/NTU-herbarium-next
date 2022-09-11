@@ -4,12 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@headlessui/react": "^1.4.1",
+    "@reduxjs/toolkit": "^1.8.5",
     "classnames": "^2.3.1",
     "dayjs": "^1.10.6",
     "framer-motion": "^6.2.9",
@@ -22,8 +23,7 @@
     "prop-types": "^15.8.1",
     "query-string": "^7.1.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-helmet": "^6.1.0"
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.8",
@@ -37,6 +37,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "postcss": "^8.4.16",
+    "postcss-import": "^15.0.0",
     "prettier": "^2.6.2",
     "prettier-plugin-tailwindcss": "^0.1.11",
     "stylelint": "^14.9.1",

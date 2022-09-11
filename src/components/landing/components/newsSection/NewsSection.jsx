@@ -1,19 +1,27 @@
-import { useAtom } from 'jotai'
-import { useTranslation } from 'next-i18next';
 import Link from 'next/link'
+import { useTranslation } from 'next-i18next'
 
 import NewsTable from '@/components/news/NewsTable'
-import { filterNewsAtom } from '@/jotai/news/newsAtom'
 
-const NewsSection = () => {
+export async function getStaticProps() {
+  const res = await fetch('http://localhost:4000/api/news')
+  const news = await res.json()
+
+  return {
+    props: {
+      news,
+    },
+  }
+}
+
+const NewsSection = ({ news }) => {
   const { t } = useTranslation()
-  const [news] = useAtom(filterNewsAtom)
 
   return (
     <>
       <NewsTable newsData={news} />
       <div className='relative float-right w-max py-12'>
-        <Link to='news' className='group relative'>
+        <Link href='news' className='group relative'>
           <div className='flex'>
             <div className='relative flex w-max flex-col justify-center overflow-hidden'>
               <div className='tracking-wider'>{t('landing_news_button')}</div>

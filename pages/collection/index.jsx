@@ -1,4 +1,5 @@
-import { useTranslation } from 'next-i18next';
+import Image from 'next/image'
+import { useTranslation } from 'next-i18next'
 
 import imgCollectionJpg from '@/assets/images/collection/collection.jpeg'
 import imgCollectionWebp from '@/assets/images/collection/collection.webp'
@@ -32,11 +33,7 @@ const Collection = () => {
               {t('collection_landing_content')}
             </Content>
           </div>
-          <ImgWithFallBack
-            src={imgCollectionWebp}
-            fallback={imgCollectionJpg}
-            alt='front door of TAI'
-          />
+          <Image src={imgCollectionWebp} />
         </section>
         <section className='mb-20 pr-8 md:flex md:pr-16'>
           <div className='mb-8 md:flex-1'>

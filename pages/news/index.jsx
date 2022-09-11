@@ -1,14 +1,20 @@
-import { useAtom } from 'jotai'
-
 import Footer from '@/components/footer/Footer'
 import PrimaryHeading from '@/components/letters/heading/primaryHeading/PrimaryHeading'
 import SecondaryHeading from '@/components/letters/heading/secondaryHeading/SecondaryHeading'
 import NewsTable from '@/components/news/NewsTable'
-import { newsAtom } from '@/jotai/news/newsAtom'
 
-const NewsPage = () => {
-  const [news] = useAtom(newsAtom)
+export async function getStaticProps() {
+  const res = await fetch('http://localhost:4000/api/news')
+  const news = await res.json()
 
+  return {
+    props: {
+      news,
+    },
+  }
+}
+
+const NewsPage = ({ news }) => {
   return (
     <>
       <div className='px-6 py-16 md:px-16'>

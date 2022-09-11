@@ -1,11 +1,19 @@
+import Image from 'next/image'
+import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { Fragment } from 'react'
-import { useTranslation } from 'next-i18next';
 
 import { exhibitionPhoto } from '@/assets/fileLoader'
 import Button from '@/components/button/Button'
 import ImgWithFallBack from '@/components/ImgWithFallBack'
 import Content from '@/components/letters/content/Content'
 import SecondaryHeading from '@/components/letters/heading/secondaryHeading/SecondaryHeading'
+
+// export const getStaticProps = async ({ locale }) => ({
+//   props: {
+//     ...(await serverSideTranslations(locale, ['common'])),
+//   },
+// })
 
 const Exhibition = () => {
   const { t } = useTranslation()
@@ -32,11 +40,7 @@ const Exhibition = () => {
             <Fragment key={item.key}>
               <span className='my-8 h-px w-full bg-brown opacity-20' />
               <div className='opacity-80'>
-                <ImgWithFallBack
-                  src={item.imgURL}
-                  fallback={item.fallback}
-                  alt={item.title}
-                />
+                <Image src={item.imgURL} />
               </div>
               <div className='mt-4 pl-1'>
                 <div className='font-RobotoSerif-L text-xl mdp:text-[1.25rem]'>

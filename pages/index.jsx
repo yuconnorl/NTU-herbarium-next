@@ -3,13 +3,12 @@ import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import Footer from '@/components/footer/Footer'
+import Collection from '@/components/landing/Collection'
+import Exhibition from '@/components/landing/Exhibition'
+import Hero from '@/components/landing/Hero'
+import News from '@/components/landing/News'
 
-import Collection from './landing/Collection'
-import Exhibition from './landing/Exhibition'
-import Hero from './landing/Hero'
-import News from './landing/News'
-
-export const getServerSideProps = async ({ locale }) => ({
+export const getStaticProps = async ({ locale }) => ({
   props: {
     ...(await serverSideTranslations(locale, ['common'])),
   },

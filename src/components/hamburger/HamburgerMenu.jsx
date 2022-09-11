@@ -1,8 +1,7 @@
 import { motion } from 'framer-motion'
-import PropTypes from 'prop-types'
 // import { Link, useLocation } from 'react-router-dom'
 import Link from 'next/link'
-
+import PropTypes from 'prop-types'
 
 import routes from '@/router/routes'
 
@@ -24,7 +23,7 @@ const HamburgerMenu = ({ hamburgerOpen, setHamburgerOpen }) => {
             {routes.map(({ path, description }) => (
               <Link
                 key={path}
-                to={path}
+                href={path}
                 onClick={() => setHamburgerOpen(false)}
                 className='group w-max'
               >

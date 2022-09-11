@@ -29,7 +29,7 @@ const NewsTable = ({ newsData, isExpandable = false }) => {
           className='divide-y divide-brown divide-opacity-20'
         >
           {/* FIXME: 理論上在外面就被suspense，所以這個判斷跑不到 */}
-          {newsData.length !== 0 ? (
+          {newsData?.length ? (
             newsData.map((news) => {
               const tags = NEWS_TYPES[news.tags]
               const tagsBackgroundColor = NEWS_TYPES_COLOR[news.tags]
