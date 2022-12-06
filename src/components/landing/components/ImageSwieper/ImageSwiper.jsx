@@ -72,6 +72,7 @@ const ImageSwiper = () => {
                   <span className='relative mt-0.5 inline-block'>
                     <a
                       // href={item.personalHref}
+                      // FIXME: shit
                       href='www.google.com'
                       target='_blank'
                       rel='noreferrer noopener'

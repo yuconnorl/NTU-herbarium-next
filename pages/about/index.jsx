@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import imgFrontDoorJpg from '@/assets/images/about/frontDoor.jpg'
 import imgFrontDoorWebp from '@/assets/images/about/frontDoor.webp'
@@ -8,8 +9,14 @@ import ImgWithFallBack from '@/components/ImgWithFallBack'
 import PrimaryHeading from '@/components/letters/heading/primaryHeading/PrimaryHeading'
 import SecondaryHeading from '@/components/letters/heading/secondaryHeading/SecondaryHeading'
 
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['common'], ['en', 'common'])),
+  },
+})
+
 const AboutPage = () => {
-  const { t } = useTranslation()
+  const { t } = useTranslation('common')
 
   return (
     <>

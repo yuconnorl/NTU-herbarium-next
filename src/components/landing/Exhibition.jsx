@@ -9,11 +9,11 @@ import ImgWithFallBack from '@/components/ImgWithFallBack'
 import Content from '@/components/letters/content/Content'
 import SecondaryHeading from '@/components/letters/heading/secondaryHeading/SecondaryHeading'
 
-// export const getStaticProps = async ({ locale }) => ({
-//   props: {
-//     ...(await serverSideTranslations(locale, ['common'])),
-//   },
-// })
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['common'])),
+  },
+})
 
 const Exhibition = () => {
   const { t } = useTranslation()

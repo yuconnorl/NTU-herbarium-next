@@ -1,9 +1,7 @@
-// import { useAtom } from 'jotai'
 // import Link from 'next/link'
 // import { useTranslation } from 'next-i18next'
 // import { useMemo, useState } from 'react'
 
-// import { languageAtom, transRouteAtom } from '@/jotai/language/languageAtom'
 // import routes from '@/router/routes'
 
 // import Hamuburger from '../hamburger/Hamburger'
@@ -12,24 +10,14 @@
 // const Navbar = () => {
 //   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false)
 //   const { i18n } = useTranslation()
-//   const [language, setLanguage] = useAtom(languageAtom)
-//   const [transRoute] = useAtom(transRouteAtom)
 
 //   console.log(location.pathname)
 
-//   const isLangEnglish = useMemo(() => language === 'en-US', [language])
-
-//   const handleLanguageChange = (lng) => () => {
-//     if (lng === language) return
-//     setLanguage(lng)
-//     i18n.changeLanguage(lng)
-//   }
-
-//   useEffect(() => {
-//     hamburgerOpen
-//       ? document.body.classList.add('overflow-y-hidden')
-//       : document.body.classList.remove('overflow-y-hidden')
-//   }, [hamburgerOpen])
+//   // useEffect(() => {
+//   //   hamburgerOpen
+//   //     ? document.body.classList.add('overflow-y-hidden')
+//   //     : document.body.classList.remove('overflow-y-hidden')
+//   // }, [hamburgerOpen])
 
 //   return (
 //     <>

@@ -4,10 +4,11 @@ const { i18n } = require('./next-i18next.config')
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  i18n: {
-    locales: ['en', 'zh-Tw'],
-    defaultLocale: 'zh-Tw',
-  },
+  i18n,
+  // i18n: {
+  //   locales: ['en', 'zh-TW'],
+  //   defaultLocale: 'zh-TW',
+  // },
   webpack5: true,
   webpack: (config) => {
     config.resolve.fallback = {

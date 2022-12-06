@@ -1,10 +1,10 @@
 module.exports = {
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'zh-Tw'],
+    defaultLocale: 'zh-TW',
+    locales: ['en', 'zh-TW'],
   },
   fallbackLng: {
-    default: ['zh-Tw'],
+    default: ['zh-TW'],
   },
   ns: ['common'],
 }
