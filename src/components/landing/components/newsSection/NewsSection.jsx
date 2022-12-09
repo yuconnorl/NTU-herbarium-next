@@ -5,7 +5,7 @@ import { useContext } from 'react'
 import { NewsContext } from '@/components/dataProvider/NewsProvider'
 import NewsTable from '@/components/news/NewsTable'
 
-const NewsSection = ({ news }) => {
+const NewsSection = () => {
   const { t } = useTranslation()
   const value = useContext(NewsContext)
 

@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-import Footer from '@/components/footer/Footer'
 import Collection from '@/components/landing/Collection'
 import Exhibition from '@/components/landing/Exhibition'
 import Hero from '@/components/landing/Hero'
@@ -35,7 +34,6 @@ const LandingPage = () => {
         <Collection />
         <News />
         <Exhibition />
-        <Footer />
       </main>
     </>
   )

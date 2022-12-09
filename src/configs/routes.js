@@ -1,8 +1,5 @@
 const routes = [
   {
-    path: '/',
-  },
-  {
     path: 'about',
     description: 'About',
   },

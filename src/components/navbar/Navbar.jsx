@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useState } from 'react'
 
 import routes from '@/configs/routes'
@@ -7,47 +8,41 @@ import routes from '@/configs/routes'
 // import Hamuburger from '../hamburger/Hamburger'
 // import HamburgerMenu from '../hamburger/HamburgerMenu'
 
-const Navbar = () => {
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  }
+}
+
+const Navbar = ({ locale }) => {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false)
   const { i18n } = useTranslation()
 
   return (
     <>
       <nav className='relative z-30 flex items-center justify-between px-8 pt-6 pb-4 opacity-70 md:px-10 md:py-8'>
-        {/* <div
+        <div
           className='slow-fade group font-oswald text-2xl font-medium tracking-widest mix-blend-difference transition-opacity duration-300 md:text-3xl'
           onClick={() => setIsHamburgerOpen(false)}
         >
-          <Link href='/' className='flex'>
-            <span className={`${isHamburgerOpen && 'text-platinum'}`}>
-              NTU.
-            </span>
-            <div className='absolute hidden translate-x-16 items-center text-sm leading-tight tracking-wide lg:flex'>
-              <div className='ml-3 h-6 w-[1.3px] bg-brown opacity-0' />
-              <div className='slow-fade ml-4 -translate-x-20 opacity-0 transition-all duration-300'>
-                National Taiwan University <br /> Herbarium
-              </div>
-            </div>
+          {locale}
+          <Link href='/' className={`${isHamburgerOpen && 'text-platinum'}`}>
+            NTU.
           </Link>
-        </div> */}
+        </div>
         <div className='relative hidden text-xs md:flex'>
-          {/* <ul className='relative flex justify-between tracking-widest'>
+          <ul className='relative flex justify-between tracking-widest'>
             {routes.map(({ path, description }) => (
               <li
                 key={path}
                 className='slow-fade group relative ml-10 overflow-hidden'
               >
-                <Link href={path}>
-                  <span>{description}</span>
-                  <div
-                  // className={`${
-                  //   location.pathname === `/${path}` && 'nav-active'
-                  // } absoulte slow-fade mt-1 h-px w-full -translate-x-full bg-brown`}
-                  />
-                </Link>
+                <Link href={path}>{description}</Link>
               </li>
             ))}
-          </ul> */}
+          </ul>
           <div className='ml-24 flex tracking-wider'>
             {/* {isLangEnglish ? (
               <Link

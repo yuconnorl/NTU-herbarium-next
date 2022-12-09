@@ -58,7 +58,6 @@ const Collection = () => {
           </div>
         </section>
       </div>
-      <Footer />
     </>
   )
 }

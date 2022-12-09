@@ -5,10 +5,6 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   i18n,
-  // i18n: {
-  //   locales: ['en', 'zh-TW'],
-  //   defaultLocale: 'zh-TW',
-  // },
   webpack5: true,
   webpack: (config) => {
     config.resolve.fallback = {

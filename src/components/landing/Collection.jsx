@@ -13,8 +13,9 @@ export const getStaticProps = async ({ locale }) => ({
   },
 })
 
-const Collection = () => {
-  const { t } = useTranslation()
+const Collection = ({ locale }) => {
+  const { t } = useTranslation('common')
+  console.log(locale)
 
   return (
     <section className='relative px-10 pt-6 pb-8 sm:px-16 lg:pb-24 lg:pt-20 mdp:px-28'>
@@ -34,5 +35,11 @@ const Collection = () => {
     </section>
   )
 }
+
+// export const getStaticProps = async ({ locale }) => ({
+//   props: {
+//     ...(await serverSideTranslations(locale ?? 'en', ['common'])),
+//   },
+// })
 
 export default Collection
