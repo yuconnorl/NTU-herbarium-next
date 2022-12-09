@@ -21,7 +21,7 @@ const LandingPage = () => {
   return (
     <>
       <Link href='/' locale='en'>
-        <a>enen</a>
+        <a>en</a>
       </Link>
       <Link href='/' locale='zh-TW'>
         <a>tw</a>

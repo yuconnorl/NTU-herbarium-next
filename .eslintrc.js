@@ -31,7 +31,7 @@ module.exports = {
     'simple-import-sort/exports': 'error', // sorting exports
     'react/react-in-jsx-scope': 'off', // suppress errors for missing 'import React' in files
     'react/jsx-filename-extension': ['warn', { extensions: ['.js', '.jsx'] }], // allow jsx syntax in js files
-    'react/prop-types': 'warn', // props validation
+    'react/prop-types': 'off', // props validation
     'prettier/prettier': 'error',
   },
 }

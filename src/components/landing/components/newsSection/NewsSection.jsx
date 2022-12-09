@@ -1,25 +1,17 @@
 import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
+import { useContext } from 'react'
 
+import { NewsContext } from '@/components/dataProvider/NewsProvider'
 import NewsTable from '@/components/news/NewsTable'
-
-export async function getStaticProps() {
-  const res = await fetch('http://localhost:4000/api/news')
-  const news = await res.json()
-
-  return {
-    props: {
-      news,
-    },
-  }
-}
 
 const NewsSection = ({ news }) => {
   const { t } = useTranslation()
+  const value = useContext(NewsContext)
 
   return (
     <>
-      <NewsTable newsData={news} />
+      <NewsTable newsData={value} />
       <div className='relative float-right w-max py-12'>
         <Link href='news' className='group relative'>
           <div className='flex'>

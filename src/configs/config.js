@@ -1,7 +1,9 @@
 export const IS_DEV = process.env.NODE_ENV === 'development'
 
+// 預設顯示語言
 export const DEFAULT_LANG = 'zh-TW'
 
+// news 的類型
 export const NEWS_TYPES = {
   Announcement: 'Announcement',
   Salon: 'Salon for botany',

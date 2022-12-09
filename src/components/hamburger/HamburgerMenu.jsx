@@ -3,10 +3,9 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import PropTypes from 'prop-types'
 
-import routes from '@/router/routes'
+import routes from '@/configs/routes'
 
 const HamburgerMenu = ({ hamburgerOpen, setHamburgerOpen }) => {
-  const location = useLocation()
   return (
     <motion.div
       initial={{ opacity: 0 }}
