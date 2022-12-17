@@ -3,7 +3,6 @@ import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 
 import { slidePhoto } from '@/assets/fileLoader'
-import ImgWithFallBack from '@/components/ImgWithFallBack'
 
 import BannerProgress from './bannerProgress/BannerProgress'
 
@@ -33,13 +32,13 @@ const ImageSwiper = () => {
     }, [delay])
   }
 
-  useInterval(() => {
-    if (slideNumber < slidePhoto.length) {
-      setSlideNumber(slideNumber + 1)
-    } else {
-      setSlideNumber(1)
-    }
-  }, slideInterval)
+  // useInterval(() => {
+  //   if (slideNumber < slidePhoto.length) {
+  //     setSlideNumber(slideNumber + 1)
+  //   } else {
+  //     setSlideNumber(1)
+  //   }
+  // }, slideInterval)
 
   return (
     <>

@@ -1,6 +1,5 @@
 import { Trans } from 'react-i18next'
 
-
 const ContactPage = () => (
   <>
     <div className='px-6 pt-16 pb-8'>

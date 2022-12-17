@@ -2,16 +2,9 @@ import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-// import imgFrontDoorJpg from '@/assets/images/about/frontDoor.jpg'
 import imgFrontDoorWebp from '@/assets/images/about/frontDoor.webp'
 import PrimaryHeading from '@/components/letters/heading/primaryHeading/PrimaryHeading'
 import SecondaryHeading from '@/components/letters/heading/secondaryHeading/SecondaryHeading'
-
-// export const getStaticProps = async ({ locale }) => ({
-//   props: {
-//     ...(await serverSideTranslations(locale, ['common'], ['en', 'common'])),
-//   },
-// })
 
 export const getStaticProps = async ({ locale }) => ({
   props: {
@@ -19,7 +12,7 @@ export const getStaticProps = async ({ locale }) => ({
   },
 })
 
-const AboutPage = (props) => {
+const AboutPage = () => {
   const { t } = useTranslation('common')
 
   return (
@@ -34,13 +27,7 @@ const AboutPage = (props) => {
             <div>{t('about_intro')}</div>
           </div>
         </div>
-        <Image src={imgFrontDoorWebp} />
-        {/* <ImgWithFallBack
-          src={imgFrontDoorWebp}
-          fallback={imgFrontDoorJpg}
-          alt='front door of TAI'
-        /> */}
-        <img src={imgFrontDoorWebp} alt='' />
+        <Image src={imgFrontDoorWebp} alt='front door of TAI' />
       </div>
     </>
   )

@@ -1,5 +1,3 @@
-import { Suspense } from 'react'
-
 import SecondaryHeading from '@/components/letters/heading/secondaryHeading/SecondaryHeading'
 
 import NewsSection from './components/newsSection/NewsSection'
@@ -11,9 +9,7 @@ const News = () => {
         <SecondaryHeading className='pt-8 pb-12 tracking-widest'>
           NEWS
         </SecondaryHeading>
-        <Suspense fallback={<div>loading</div>}>
-          <NewsSection />
-        </Suspense>
+        <NewsSection />
       </div>
     </section>
   )

@@ -8,17 +8,15 @@ import routes from '@/configs/routes'
 // import Hamuburger from '../hamburger/Hamburger'
 // import HamburgerMenu from '../hamburger/HamburgerMenu'
 
-export async function getStaticProps({ locale }) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ['common'])),
-    },
-  }
-}
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['common'])),
+  },
+})
 
-const Navbar = ({ locale }) => {
+const Navbar = () => {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false)
-  const { i18n } = useTranslation()
+  const { t } = useTranslation('common')
 
   return (
     <>
@@ -27,7 +25,6 @@ const Navbar = ({ locale }) => {
           className='slow-fade group font-oswald text-2xl font-medium tracking-widest mix-blend-difference transition-opacity duration-300 md:text-3xl'
           onClick={() => setIsHamburgerOpen(false)}
         >
-          {locale}
           <Link href='/' className={`${isHamburgerOpen && 'text-platinum'}`}>
             NTU.
           </Link>
@@ -44,21 +41,12 @@ const Navbar = ({ locale }) => {
             ))}
           </ul>
           <div className='ml-24 flex tracking-wider'>
-            {/* {isLangEnglish ? (
-              <Link
-                onClick={handleLanguageChange('zh-TW')}
-                href={`${location.pathname.slice(3)}`}
-              >
-                zh
-              </Link>
-            ) : (
-              <Link
-                onClick={handleLanguageChange('en-US')}
-                href={`/en${location.pathname}`}
-              >
-                En
-              </Link>
-            )} */}
+            <Link href='/' locale='en'>
+              <a>en</a>
+            </Link>
+            <Link href='/' locale='zh-TW'>
+              <a>tw</a>
+            </Link>
           </div>
         </div>
         {/* <div className='md:hidden'>

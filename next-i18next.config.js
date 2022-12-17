@@ -8,8 +8,8 @@ module.exports = {
     typeof window === 'undefined'
       ? require('path').resolve('./public/locales')
       : '/locales',
-  // fallbackLng: {
-  //   default: ['zh-TW'],
-  // },
+  fallbackLng: {
+    default: ['zh-TW'],
+  },
   ns: ['common'],
 }

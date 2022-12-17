@@ -7,14 +7,16 @@ import NewsTable from '@/components/news/NewsTable'
 
 const NewsSection = () => {
   const { t } = useTranslation()
-  const value = useContext(NewsContext)
+  const newsData = useContext(NewsContext)
+
+  const trimNewsData = newsData?.slice(0, 5)
 
   return (
     <>
-      <NewsTable newsData={value} />
+      <NewsTable newsData={trimNewsData} />
       <div className='relative float-right w-max py-12'>
-        <Link href='news' className='group relative'>
-          <div className='flex'>
+        <Link href='news'>
+          <div className='group flex cursor-pointer'>
             <div className='relative flex w-max flex-col justify-center overflow-hidden'>
               <div className='tracking-wider'>{t('landing_news_button')}</div>
               <div className='relative mt-2 w-full'>

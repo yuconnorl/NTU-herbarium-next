@@ -13,9 +13,8 @@ export const getStaticProps = async ({ locale }) => ({
   },
 })
 
-const Collection = ({ locale }) => {
+const Collection = () => {
   const { t } = useTranslation('common')
-  console.log(locale)
 
   return (
     <section className='relative px-10 pt-6 pb-8 sm:px-16 lg:pb-24 lg:pt-20 mdp:px-28'>
