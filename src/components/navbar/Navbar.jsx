@@ -16,7 +16,8 @@ export const getStaticProps = async ({ locale }) => ({
 
 const Navbar = () => {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false)
-  const { t } = useTranslation('common')
+  const { t, i18n } = useTranslation('common')
+  const currentLang = i18n.resolvedLanguage
 
   return (
     <>
@@ -41,12 +42,15 @@ const Navbar = () => {
             ))}
           </ul>
           <div className='ml-24 flex tracking-wider'>
-            <Link href='/' locale='en'>
-              <a>en</a>
-            </Link>
-            <Link href='/' locale='zh-TW'>
-              <a>tw</a>
-            </Link>
+            {currentLang === 'en' ? (
+              <Link href='/' locale='zh-TW'>
+                Zh
+              </Link>
+            ) : (
+              <Link href='/' locale='en'>
+                En
+              </Link>
+            )}
           </div>
         </div>
         {/* <div className='md:hidden'>
