@@ -1,9 +1,11 @@
+const { IS_DEV } = require('./src/configs/config')
+
 module.exports = {
   i18n: {
     defaultLocale: 'zh-TW',
     locales: ['en', 'zh-TW'],
   },
-  debug: process.env.NODE_ENV === 'development',
+  debug: IS_DEV,
   localePath:
     typeof window === 'undefined'
       ? require('path').resolve('./public/locales')

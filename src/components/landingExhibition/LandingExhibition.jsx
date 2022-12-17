@@ -5,7 +5,6 @@ import { Fragment } from 'react'
 
 import { exhibitionPhoto } from '@/assets/fileLoader'
 import Button from '@/components/button/Button'
-import ImgWithFallBack from '@/components/ImgWithFallBack'
 import Content from '@/components/letters/content/Content'
 import SecondaryHeading from '@/components/letters/heading/secondaryHeading/SecondaryHeading'
 
