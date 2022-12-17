@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TextSpinner = () => {
+const TextSpinner = ({ text = '' }) => {
   return (
     <div className='absolute right-20 top-0 animate-spin-slow font-Sansita'>
       <svg viewBox='0 0 100 100' width='250' height='250'>
@@ -16,7 +16,7 @@ const TextSpinner = () => {
         </defs>
         <text fontSize='12'>
           <textPath className='opacity-10' xlinkHref='#circle'>
-            National Taiwan University herbarium
+            {text}
           </textPath>
         </text>
       </svg>

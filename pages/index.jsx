@@ -2,10 +2,10 @@ import Head from 'next/head'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-import Collection from '@/components/landing/Collection'
-import Exhibition from '@/components/landing/Exhibition'
-import Hero from '@/components/landing/Hero'
-import News from '@/components/landing/News'
+import Collection from '@/components/landingCollection/LandingCollection'
+import Exhibition from '@/components/landingExhibition/LandingExhibition'
+import Hero from '@/components/landingHero/LandingHero'
+import News from '@/components/landingHero/News'
 
 export const getStaticProps = async ({ locale }) => ({
   props: {

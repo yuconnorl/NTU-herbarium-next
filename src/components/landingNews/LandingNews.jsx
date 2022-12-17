@@ -1,6 +1,6 @@
 import SecondaryHeading from '@/components/letters/heading/secondaryHeading/SecondaryHeading'
 
-import NewsSection from './components/newsSection/NewsSection'
+import NewsSection from '../newsSection/NewsSection'
 
 const News = () => {
   return (
