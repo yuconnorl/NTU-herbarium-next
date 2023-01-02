@@ -53,6 +53,7 @@ const ImageSwiper = () => {
             <Image
               className='h-full w-full object-cover opacity-80'
               src={item.src}
+              alt='swiper'
             />
             {slideNumber === item.key && (
               <motion.div

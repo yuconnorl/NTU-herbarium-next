@@ -1,18 +1,18 @@
 import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
 
-import imgCollectionJpg from '@/assets/images/collection/collection.jpeg'
 import imgCollectionWebp from '@/assets/images/collection/collection.webp'
 import Button from '@/components/button/Button'
 import Content from '@/components/letters/content/Content'
 import PrimaryHeading from '@/components/letters/heading/primaryHeading/PrimaryHeading'
 import SecondaryHeading from '@/components/letters/heading/secondaryHeading/SecondaryHeading'
+import PageTransitionProvider from '@/provider/PageTransitionProvider'
 
 const Collection = () => {
   const { t } = useTranslation()
 
   return (
-    <>
+    <PageTransitionProvider>
       <div className='pl-8 md:pl-16'>
         <section className='mb-20'>
           <div className='mb-4 pt-24 md:mb-10'>
@@ -31,7 +31,7 @@ const Collection = () => {
               {t('collection_landing_content')}
             </Content>
           </div>
-          <Image src={imgCollectionWebp} />
+          <Image src={imgCollectionWebp} alt='collection' />
         </section>
         <section className='mb-20 pr-8 md:flex md:pr-16'>
           <div className='mb-8 md:flex-1'>
@@ -56,7 +56,7 @@ const Collection = () => {
           </div>
         </section>
       </div>
-    </>
+    </PageTransitionProvider>
   )
 }
 

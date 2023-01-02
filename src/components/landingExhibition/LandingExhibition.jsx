@@ -39,7 +39,7 @@ const Exhibition = () => {
             <Fragment key={item.key}>
               <span className='my-8 h-px w-full bg-brown opacity-20' />
               <div className='opacity-80'>
-                <Image src={item.imgURL} />
+                <Image src={item.imgURL} alt='exx' />
               </div>
               <div className='mt-4 pl-1'>
                 <div className='font-RobotoSerif-L text-xl mdp:text-[1.25rem]'>

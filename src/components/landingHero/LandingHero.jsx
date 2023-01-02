@@ -9,7 +9,7 @@ const Hero = () => (
     <div className='relative flex flex-col'>
       <ImageSwiper />
       <div className='mt-4 ml-2 w-9/12 opacity-75 sm:w-7/12 sm:max-w-[425px] md:ml-5 md:mt-6 md:w-5/12 md:max-w-[490px] 2xl:max-w-[570px] '>
-        <Image src={TaiLogo} alt='' />
+        <Image src={TaiLogo} alt='1' />
       </div>
     </div>
   </section>
