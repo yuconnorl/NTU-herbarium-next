@@ -9,9 +9,7 @@ const Button = ({ url, text }) => (
         <div className='flex justify-end'>
           <div className='mr-4 tracking-wider'>{text}</div>
           <div className='relative h-6 w-4 overflow-hidden'>
-            <div className='flex'>
-              <ArrowSvg />
-            </div>
+            <ArrowSvg size={4} />
           </div>
         </div>
         <div className='absolute right-0 mt-6 w-10/12 justify-end overflow-hidden'>

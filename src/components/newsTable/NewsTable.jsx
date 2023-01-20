@@ -4,12 +4,11 @@ import { motion } from 'framer-motion'
 import { Interweave } from 'interweave'
 import { UrlMatcher } from 'interweave-autolink'
 import { nanoid } from 'nanoid'
-import PropTypes from 'prop-types'
 import { Fragment } from 'react'
 
 import { NEWS_TYPES, NEWS_TYPES_COLOR } from '@/configs/config'
 
-import NewsSkeleton from '../news/NewsSkeleton'
+import NewsSkeleton from '../newsSkeleton/NewsSkeleton'
 
 const NewsTable = ({
   newsData = [],
@@ -122,18 +121,6 @@ const NewsTable = ({
       <div className='h-px w-full bg-brown opacity-20' />
     </motion.div>
   )
-}
-
-NewsTable.propTypes = {
-  newsData: PropTypes.arrayOf(
-    PropTypes.shape({
-      date: PropTypes.string,
-      description: PropTypes.string,
-      id: PropTypes.string,
-      title: PropTypes.string,
-    }),
-  ),
-  isExpandable: PropTypes.bool,
 }
 
 export default NewsTable

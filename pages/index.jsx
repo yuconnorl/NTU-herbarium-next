@@ -2,10 +2,10 @@ import Head from 'next/head'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-import Collection from '@/components/landingCollection/LandingCollection'
-import Exhibition from '@/components/landingExhibition/LandingExhibition'
-import Hero from '@/components/landingHero/LandingHero'
-import News from '@/components/landingNews/LandingNews'
+import Collection from '@/components/pageSections/landingCollection/LandingCollection'
+import Exhibition from '@/components/pageSections/landingExhibition/LandingExhibition'
+import Hero from '@/components/pageSections/landingHero/LandingHero'
+import News from '@/components/pageSections/landingNews/LandingNews'
 
 export const getStaticProps = async ({ locale }) => ({
   props: {

@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 import TaiLogo from '@/assets/images/common//tailogo.webp'
 
-import ImageSwiper from '../imageSwiper/ImageSwiper'
+import ImageSwiper from '../../imageSwiper/ImageSwiper'
 
 const Hero = () => (
   <section className='full-height h-full w-full pl-6 pr-5 md:pl-10 md:pr-9'>

@@ -1,3 +1,5 @@
+import ArrowSvg from '../arrowSvg/ArrowSvg'
+
 const Footer = () => (
   <footer className='relative flex flex-col bg-[#EEEEEE] pr-5 pl-10 pt-16 pb-0 md:flex-row md:items-center md:px-16 md:py-16 lg:pl-24 lg:pr-20'>
     <div className='flex w-full flex-col justify-between md:flex-row md:items-center'>
@@ -24,58 +26,7 @@ const Footer = () => (
                     <span className='slow-fade absolute bottom-0 left-0 mt-6 h-px w-full bg-[#8A8A8A] transition-transform duration-500 group-hover:translate-x-full' />
                   </div>
                   <div className='relative mt-1 h-3 w-3 overflow-hidden'>
-                    <div className='flex'>
-                      <svg
-                        className='slow-fade h-2 w-2 transition-transform duration-500 group-hover:translate-x-150 group-hover:translate-y-m150'
-                        version='1.1'
-                        x='0'
-                        y='0'
-                        viewBox='0 0 20 21.1'
-                        style={{
-                          fill: 'none',
-                          stroke: '#8A8A8A',
-                          strokeWidth: 2.5,
-                          strokeMiterlimit: '10',
-                        }}
-                      >
-                        <polyline
-                          className='st0'
-                          points='6.3,0.9 19,0.9 19,15 '
-                        />
-                        <line
-                          className='st0'
-                          x1='0.8'
-                          y1='20.2'
-                          x2='19'
-                          y2='0.9'
-                        />
-                      </svg>
-                      <svg
-                        className='slow-fade absolute top-0 h-2 w-2 translate-x-m150 translate-y-150 transition-transform duration-500 group-hover:translate-x-0 group-hover:translate-y-0'
-                        version='1.1'
-                        x='0'
-                        y='0'
-                        viewBox='0 0 20 21.1'
-                        style={{
-                          fill: 'none',
-                          stroke: '#8A8A8A',
-                          strokeWidth: 2.5,
-                          strokeMiterlimit: '10',
-                        }}
-                      >
-                        <polyline
-                          className='st0'
-                          points='6.3,0.9 19,0.9 19,15 '
-                        />
-                        <line
-                          className='st0'
-                          x1='0.8'
-                          y1='20.2'
-                          x2='19'
-                          y2='0.9'
-                        />
-                      </svg>
-                    </div>
+                    <ArrowSvg size={2} />
                   </div>
                 </div>
               </a>
@@ -98,58 +49,7 @@ const Footer = () => (
                     <span className='slow-fade absolute bottom-0 left-0 h-px w-full bg-[#8A8A8A] transition-transform duration-500 group-hover:translate-x-full' />
                   </div>
                   <div className='relative h-2 w-2 overflow-hidden'>
-                    <div className='flex'>
-                      <svg
-                        className='slow-fade h-2 w-2 transition-transform duration-500 group-hover:translate-x-150 group-hover:translate-y-m150'
-                        version='1.1'
-                        x='0'
-                        y='0'
-                        viewBox='0 0 20 21.1'
-                        style={{
-                          fill: 'none',
-                          stroke: '#8A8A8A',
-                          strokeWidth: 2.5,
-                          strokeMiterlimit: '10',
-                        }}
-                      >
-                        <polyline
-                          className='st0'
-                          points='6.3,0.9 19,0.9 19,15 '
-                        />
-                        <line
-                          className='st0'
-                          x1='0.8'
-                          y1='20.2'
-                          x2='19'
-                          y2='0.9'
-                        />
-                      </svg>
-                      <svg
-                        className='slow-fade absolute top-0 h-2 w-2 translate-x-m150 translate-y-150 transition-transform duration-500 group-hover:translate-x-0 group-hover:translate-y-0'
-                        version='1.1'
-                        x='0'
-                        y='0'
-                        viewBox='0 0 20 21.1'
-                        style={{
-                          fill: 'none',
-                          stroke: '#8A8A8A',
-                          strokeWidth: 2.5,
-                          strokeMiterlimit: '10',
-                        }}
-                      >
-                        <polyline
-                          className='st0'
-                          points='6.3,0.9 19,0.9 19,15 '
-                        />
-                        <line
-                          className='st0'
-                          x1='0.8'
-                          y1='20.2'
-                          x2='19'
-                          y2='0.9'
-                        />
-                      </svg>
-                    </div>
+                    <ArrowSvg size={2} />
                   </div>
                 </div>
               </a>

@@ -5,7 +5,7 @@ import Button from '@/components/button/Button'
 import PrimaryHeading from '@/components/primaryHeading/PrimaryHeading'
 import SecondaryHeading from '@/components/secondaryHeading/SecondaryHeading'
 
-import TextSpinner from '../textSpinner/TextSpinner'
+import TextSpinner from '../../textSpinner/TextSpinner'
 
 export const getStaticProps = async ({ locale }) => ({
   props: {
