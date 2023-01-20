@@ -16,4 +16,6 @@ export const NEWS_TYPES_COLOR = {
   Event: 'bg-ecru',
 }
 
-export const LANDING_PAGE_NEWS_QUANTITY = 5
+export const NEWS_URL = IS_DEV
+  ? 'http://localhost:4000/api/news'
+  : 'http://localhost:4000/api/news'

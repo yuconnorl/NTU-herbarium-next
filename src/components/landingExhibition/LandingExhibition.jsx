@@ -5,8 +5,8 @@ import { Fragment } from 'react'
 
 import { exhibitionPhoto } from '@/assets/fileLoader'
 import Button from '@/components/button/Button'
-import Content from '@/components/letters/content/Content'
-import SecondaryHeading from '@/components/letters/heading/secondaryHeading/SecondaryHeading'
+import Content from '@/components/content/Content'
+import SecondaryHeading from '@/components/secondaryHeading/SecondaryHeading'
 
 export const getStaticProps = async ({ locale }) => ({
   props: {

@@ -1,0 +1,1 @@
+export const LANDING_PAGE_NEWS_QUANTITY = 5

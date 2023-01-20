@@ -9,10 +9,15 @@ import { Fragment } from 'react'
 
 import { NEWS_TYPES, NEWS_TYPES_COLOR } from '@/configs/config'
 
-import NewsSkeleton from './NewsSkeleton'
-const formateDate = (date) => dayjs(date).format('MMM DD, YYYY')
+import NewsSkeleton from '../news/NewsSkeleton'
 
-const NewsTable = ({ newsData, isExpandable = false }) => {
+const NewsTable = ({
+  newsData = [],
+  isExpandable = false,
+  isLoading = true,
+}) => {
+  const formateDate = (date) => dayjs(date).format('MMM DD, YYYY')
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -28,7 +33,7 @@ const NewsTable = ({ newsData, isExpandable = false }) => {
           transition={{ duration: 1 }}
           className='divide-y divide-brown divide-opacity-20'
         >
-          {newsData?.length ? (
+          {isLoading ? (
             newsData.map((news) => {
               const tags = NEWS_TYPES[news.tags]
               const tagsBackgroundColor = NEWS_TYPES_COLOR[news.tags]

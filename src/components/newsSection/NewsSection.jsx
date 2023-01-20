@@ -1,19 +1,21 @@
 import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
-import { useContext } from 'react'
+import useSWR from 'swr'
 
-import { NewsContext } from '@/components/dataProvider/NewsProvider'
-import NewsTable from '@/components/news/NewsTable'
+import NewsTable from '@/components/newsTable/NewsTable'
+import { NEWS_URL } from '@/configs/config'
+import { fetcher } from '@/utils/helper'
 
 const NewsSection = () => {
   const { t } = useTranslation()
-  const newsData = useContext(NewsContext)
 
-  const trimNewsData = newsData?.slice(0, 5)
+  const { data, error, isLoading } = useSWR(NEWS_URL, fetcher)
+
+  const trimNewsData = data?.slice(0, 5)
 
   return (
     <>
-      <NewsTable newsData={trimNewsData} />
+      <NewsTable newsData={trimNewsData} isLoading={isLoading} />
       <div className='relative float-right w-max py-12'>
         <Link href='news'>
           <div className='group flex cursor-pointer'>

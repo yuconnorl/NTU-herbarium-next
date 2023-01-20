@@ -2,8 +2,8 @@ import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import Button from '@/components/button/Button'
-import PrimaryHeading from '@/components/letters/heading/primaryHeading/PrimaryHeading'
-import SecondaryHeading from '@/components/letters/heading/secondaryHeading/SecondaryHeading'
+import PrimaryHeading from '@/components/primaryHeading/PrimaryHeading'
+import SecondaryHeading from '@/components/secondaryHeading/SecondaryHeading'
 
 import TextSpinner from '../textSpinner/TextSpinner'
 
