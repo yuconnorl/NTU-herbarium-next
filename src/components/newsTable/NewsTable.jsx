@@ -10,11 +10,7 @@ import { NEWS_TYPES, NEWS_TYPES_COLOR } from '@/configs/config'
 
 import NewsSkeleton from '../newsSkeleton/NewsSkeleton'
 
-const NewsTable = ({
-  newsData = [],
-  isExpandable = false,
-  isLoading = true,
-}) => {
+const NewsTable = ({ newsData = [], isExpandable = false }) => {
   const formateDate = (date) => dayjs(date).format('MMM DD, YYYY')
 
   return (
@@ -32,7 +28,7 @@ const NewsTable = ({
           transition={{ duration: 1 }}
           className='divide-y divide-brown divide-opacity-20'
         >
-          {isLoading ? (
+          {newsData.length > 0 ? (
             newsData.map((news) => {
               const tags = NEWS_TYPES[news.tags]
               const tagsBackgroundColor = NEWS_TYPES_COLOR[news.tags]

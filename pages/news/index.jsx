@@ -7,7 +7,7 @@ import { NEWS_URL } from '@/configs/config'
 import { fetcher } from '@/utils/helper'
 
 const NewsPage = () => {
-  const { data, error, isLoading } = useSWR(NEWS_URL, fetcher)
+  const { data, error } = useSWR(NEWS_URL, fetcher)
 
   return (
     <div className='px-6 py-16 md:px-16'>
@@ -16,7 +16,7 @@ const NewsPage = () => {
         <PrimaryHeading className='mb-8'>What&apos;s new</PrimaryHeading>
       </div>
       <div className='flex flex-col divide-y divide-brown divide-opacity-20'>
-        <NewsTable isExpandable isLoading={isLoading} newsData={data} />
+        <NewsTable isExpandable newsData={data} />
       </div>
     </div>
   )

@@ -17,5 +17,5 @@ export const NEWS_TYPES_COLOR = {
 }
 
 export const NEWS_URL = IS_DEV
-  ? 'http://localhost:4000/api/news'
-  : 'http://localhost:4000/api/news'
+  ? 'http://localhost:5000/api/news'
+  : 'http://localhost:5000/api/news'

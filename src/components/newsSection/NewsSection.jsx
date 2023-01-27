@@ -1,19 +1,19 @@
 import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
-import useSWR from 'swr'
 
 import NewsTable from '@/components/newsTable/NewsTable'
-import { NEWS_URL } from '@/configs/config'
-import { fetcher } from '@/utils/helper'
+import useNews from '@/hooks/useNews'
 
 import ArrowSvg from '../arrowSvg/ArrowSvg'
 
 const NewsSection = () => {
   const { t } = useTranslation()
 
-  const { data, isLoading } = useSWR(NEWS_URL, fetcher)
+  const { news, isLoading } = useNews()
 
-  const trimNewsData = data?.slice(0, 5)
+  const trimNewsData = news?.slice(0, 5)
+
+  console.log(news)
 
   return (
     <>
