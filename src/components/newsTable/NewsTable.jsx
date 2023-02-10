@@ -42,20 +42,23 @@ const NewsTable = ({ newsData = [], isExpandable = false }) => {
                             type='button'
                             className={`${
                               open && 'bg-[#EEEEEE] before:bg-light-brown'
-                            } relative flex w-full items-center justify-between px-4 py-2 pr-6 text-left text-sm font-medium text-brown transition-all before:absolute before:left-0 before:h-4/6 before:w-[2px] before:bg-transparent before:content-[''] hover:bg-gray-200 focus:outline-none focus-visible:bg-gray-200 focus-visible:ring focus-visible:ring-opacity-75`}
+                            } focus-visible:ring/75 relative flex w-full items-center
+                            justify-between py-2 pl-4 pr-6 text-left text-sm font-medium text-brown
+                            transition-all before:absolute before:left-0 before:h-4/6 before:w-[2px] before:bg-transparent
+                            before:content-[''] hover:bg-gray-200 focus:outline-none focus-visible:bg-gray-200`}
                             disabled={!isExpandable}
                           >
-                            <div className='slow-fade relative flex w-full flex-col py-3 pl-4 transition duration-500 sm:flex-row sm:py-4 sm:pl-4'>
-                              <div className='relative w-28 translate-y-[1px] text-sm text-light-brown md:w-32'>
+                            <div className='slow-fade relative flex w-full flex-col py-3 pl-4 transition duration-500 md:flex-row md:py-4 md:pl-4'>
+                              <div className='relative translate-y-[1px] whitespace-nowrap text-sm text-light-brown md:mr-4'>
                                 {formateDate(news.date)}
                               </div>
-                              <div className='sm:news-description relative mt-3 mb-3 justify-center pr-4 font-sans text-base tracking-wide sm:m-0'>
+                              <div className='md:news-description relative my-3 justify-center pr-4 font-sans text-base tracking-wide md:m-0'>
                                 {news.title}
                               </div>
                               <div
                                 className={`${
                                   !isExpandable ? 'mr-0' : 'sm:mr-4 lg:mr-10'
-                                } ${tagsBackgroundColor} relative flex h-fit w-fit items-center justify-center whitespace-nowrap rounded-3xl py-1 px-2 text-xs text-slate-200 sm:self-center`}
+                                } ${tagsBackgroundColor} relative flex h-fit w-fit items-center justify-center whitespace-nowrap rounded-3xl py-1 px-2 text-xs text-slate-200 md:self-center`}
                               >
                                 {tags}
                               </div>
@@ -74,14 +77,15 @@ const NewsTable = ({ newsData = [], isExpandable = false }) => {
                         </Disclosure.Button>
                         <Transition
                           show={open}
-                          enter='transition-all duration-300 ease-out'
-                          enterFrom='-translate-y-5 opacity-0'
-                          enterTo='translate-y-0 opacity-100'
-                          leave='transition-all duration-300 slow-fade'
-                          leaveFrom='translate-y-0 opacity-100'
-                          leaveTo='-translate-y-5 opacity-0'
+                          enter='transition duration-300 ease-out'
+                          enterFrom='opacity-0'
+                          enterTo='opacity-100'
+                          leave='transition duration-300 slow-fade'
+                          leaveFrom='opacity-100'
+                          leaveTo='opacity-0'
                         >
                           <Disclosure.Panel
+                            static
                             className={`${
                               open ? 'max-h-screen bg-[#EEEEEE]' : 'max-h-0'
                             } slow-fade text-base leading-normal text-brown transition-all duration-300 md:leading-loose`}

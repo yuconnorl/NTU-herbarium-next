@@ -4,8 +4,8 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { Fragment } from 'react'
 
 import { exhibitionPhoto } from '@/assets/fileLoader'
-import Button from '@/components/button/Button'
 import Content from '@/components/content/Content'
+import LinkButton from '@/components/linkButton/LinkButton'
 import SecondaryHeading from '@/components/secondaryHeading/SecondaryHeading'
 
 export const getStaticProps = async ({ locale }) => ({
@@ -30,7 +30,7 @@ const Exhibition = () => {
           </h2>
         </div>
         <div className='relative font-sans text-base font-light leading-relaxed tracking-wider lg:w-10/12'>
-          <div>{t('landing_exhibition_subtitle')}</div>
+          <Content>{t('landing_exhibition_subtitle')}</Content>
         </div>
       </div>
       <div className='border-brown border-opacity-20 px-6 md:px-10 mdp:w-8/12 mdp:border-l mdp:pt-10'>
@@ -53,7 +53,7 @@ const Exhibition = () => {
             </Fragment>
           ))}
         </div>
-        <Button url='exhibition' text={t('landing_exhibition_button')} />
+        <LinkButton url='exhibition' text={t('landing_exhibition_button')} />
       </div>
     </section>
   )

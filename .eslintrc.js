@@ -10,6 +10,7 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'plugin:react/recommended',
     'plugin:prettier/recommended',
+    'plugin:tailwindcss/recommended',
   ],
   plugins: ['simple-import-sort', 'prettier'],
   parserOptions: {
@@ -33,5 +34,6 @@ module.exports = {
     'react/jsx-filename-extension': ['warn', { extensions: ['.js', '.jsx'] }], // allow jsx syntax in js files
     'react/prop-types': 'off', // props validation
     'prettier/prettier': 'error',
+    'tailwindcss/no-custom-classname': 'off',
   },
 }

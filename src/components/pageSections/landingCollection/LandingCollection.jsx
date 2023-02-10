@@ -1,7 +1,8 @@
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-import Button from '@/components/button/Button'
+import Content from '@/components/content/Content'
+import LinkButton from '@/components/linkButton/LinkButton'
 import PrimaryHeading from '@/components/primaryHeading/PrimaryHeading'
 import SecondaryHeading from '@/components/secondaryHeading/SecondaryHeading'
 
@@ -17,7 +18,7 @@ const Collection = () => {
   const { t } = useTranslation('common')
 
   return (
-    <section className='relative px-10 pt-6 pb-8 sm:px-16 lg:pb-24 lg:pt-20 mdp:px-28'>
+    <section className='relative px-10 pt-6 pb-8 sm:px-16 mdp:px-28 lg:pb-24 lg:pt-20'>
       <div className='mb-20 mdp:mb-12'>
         <SecondaryHeading className='pt-8 pb-6'>
           {t('landing_collection_miniTitle')}
@@ -25,20 +26,15 @@ const Collection = () => {
         <PrimaryHeading className='mb-6 max-w-1/2 md:leading-normal mdp:mb-16'>
           {t('landing_collection_title')}
         </PrimaryHeading>
-        <div className='w-4/5 font-sans text-base font-light leading-relaxed tracking-wider md:w-3/6 md:text-lg mdp:w-2/6'>
+        <Content className='mdp: w-2/5 md:w-3/6 md:text-lg'>
           {t('landing_collection_subtitle')}
-        </div>
+        </Content>
+        <div className='w-4/5 font-sans text-base font-light leading-relaxed tracking-wider md:w-3/6 md:text-lg mdp:w-2/6'></div>
       </div>
-      <Button url='collection' text={t('landing_collection_button')} />
+      <LinkButton url='collection' text={t('landing_collection_button')} />
       <TextSpinner />
     </section>
   )
 }
-
-// export const getStaticProps = async ({ locale }) => ({
-//   props: {
-//     ...(await serverSideTranslations(locale ?? 'en', ['common'])),
-//   },
-// })
 
 export default Collection

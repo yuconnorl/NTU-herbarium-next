@@ -8,12 +8,8 @@ import ArrowSvg from '../arrowSvg/ArrowSvg'
 
 const NewsSection = () => {
   const { t } = useTranslation()
-
   const { news, isLoading } = useNews()
-
   const trimNewsData = news?.slice(0, 5)
-
-  console.log(news)
 
   return (
     <>

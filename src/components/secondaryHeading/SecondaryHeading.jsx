@@ -1,9 +1,7 @@
 import PropTypes from 'prop-types'
 
 const SecondaryHeading = ({ children, className = '' }) => (
-  <h4
-    className={`text-xs tracking-wider text-atrovirens md:text-sm ${className}`}
-  >
+  <h4 className={`text-xs tracking-wider text-atrovirens md:text-sm ${className}`}>
     {children}
   </h4>
 )

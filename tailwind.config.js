@@ -8,6 +8,9 @@ module.exports = {
       notos: ['Noto Serif TC', 'serif'],
     },
     extend: {
+      flex: {
+        1: '1 1',
+      },
       height: { content: 'max-content' },
       backgroundImage: {
         'landing-news': "url('../src/assets/images/main/news-bg.png')",
@@ -23,15 +26,11 @@ module.exports = {
         ecru: '#C1B082',
         feldgrau: '#495C57',
         onyx: '#464646',
+        'text-color': '#1a1a1a',
       },
       fontFamily: {
         'RobotoSerif-L': ['RobotoSerif-Light', 'Arial', 'sans-serif'],
-        'RobotoSerif-R': [
-          'RobotoSerif-Regular',
-          'Noto Sans TC',
-          'Arial',
-          'sans-serif',
-        ],
+        'RobotoSerif-R': ['RobotoSerif-Regular', 'Noto Sans TC', 'Arial', 'sans-serif'],
         'RobotoSerif-M': ['RobotoSerif-Medium', 'Arial', 'sans-serif'],
         'RobotoSerif-ita': ['RobotoSerif-Italic', 'Arial', 'sans-serif'],
         'Oswald-el': ['Oswald-ExtraLight', 'Arial', 'sans-serif'],
@@ -39,6 +38,14 @@ module.exports = {
         Lato: ['Lato', 'Arial', 'sans-serif'],
         noto: ['Noto Sans TC', 'Arial', 'sans-serif'],
         Sansita: ['Sansita Swashed', 'cursive'],
+        ASD: [
+          'Faktum',
+          'PingFang TC',
+          'Noto Sans TC',
+          'Open Sans',
+          '微軟正黑體',
+          'sans-serif',
+        ],
       },
       letterSpacing: { morewide: '.20rem' },
       screens: {
@@ -62,5 +69,5 @@ module.exports = {
       '3/4': '75%',
     },
   },
-  plugins: [],
+  plugins: [require('@headlessui/tailwindcss')],
 }

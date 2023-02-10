@@ -6,7 +6,6 @@ import { NEWS_URL } from '@/configs/config'
 function useNews() {
   const { i18n } = useTranslation('common')
   const lang = i18n.resolvedLanguage
-
   const fetcher = (url) =>
     fetch(url, {
       method: 'POST',
@@ -15,9 +14,6 @@ function useNews() {
     }).then((res) => res.json())
 
   const { data, error, isLoading } = useSWR(NEWS_URL, fetcher)
-
-  // console.log(data)
-  console.log(lang)
 
   return {
     news: data,

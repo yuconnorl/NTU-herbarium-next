@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 import ArrowSvg from '../arrowSvg/ArrowSvg'
 
-const Button = ({ url, text }) => (
+const LinkButton = ({ url, text }) => (
   <div className='relative py-12'>
     <Link href={url}>
       <div className='group cursor-pointer'>
@@ -20,4 +20,4 @@ const Button = ({ url, text }) => (
   </div>
 )
 
-export default Button
+export default LinkButton

@@ -3,9 +3,10 @@ import PropTypes from 'prop-types'
 const Content = ({ children, className = '' }) => (
   <p
     className={`
-    text-sm font-light leading-relaxed
-    tracking-wider text-onyx
-    md:text-base md:leading-loose md:tracking-widest ${className}`}
+    font-ASD text-sm font-normal
+    leading-normal
+    tracking-wider text-text-color
+    md:text-base md:leading-relaxed md:tracking-wider ${className}`}
   >
     {children}
   </p>
