@@ -22,11 +22,14 @@ module.exports = {
         'light-brown': '#795548',
         platinum: '#E9E6E2',
         atrovirens: '#0F3828',
+
+        onyx: '#464646',
+        'text-color': '#1a1a1a',
+        'text-loght': '#383838',
+
         tiffany: '#5DCDB2',
         ecru: '#C1B082',
         feldgrau: '#495C57',
-        onyx: '#464646',
-        'text-color': '#1a1a1a',
       },
       fontFamily: {
         'RobotoSerif-L': ['RobotoSerif-Light', 'Arial', 'sans-serif'],

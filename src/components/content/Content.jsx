@@ -5,8 +5,8 @@ const Content = ({ children, className = '' }) => (
     className={`
     font-ASD text-sm font-normal
     leading-normal
-    tracking-wider text-text-color
-    md:text-base md:leading-relaxed md:tracking-wider ${className}`}
+    tracking-wider text-text-loght
+    md:text-base md:leading-7 md:tracking-wider ${className}`}
   >
     {children}
   </p>

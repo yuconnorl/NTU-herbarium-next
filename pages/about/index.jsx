@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
@@ -17,9 +18,13 @@ const AboutPage = () => {
 
   return (
     <>
+      <Head>
+        <title>{t('helmet_about_title')}</title>
+        <meta name='description' content={t('helmet_about_description')} />
+      </Head>
       <div className='pl-8 md:pl-16'>
         <div className='mb-10 pt-24'>
-          <SecondaryHeading className='pt-8 pb-6'>ABOUT</SecondaryHeading>
+          <SecondaryHeading>{t('about_miniTitle')}</SecondaryHeading>
           <PrimaryHeading className='mb-6 md:mb-10'>{t('about_title')}</PrimaryHeading>
           <div className='w-4/5 font-sans text-base font-light leading-relaxed tracking-wider text-onyx md:w-4/6 md:text-lg md:leading-loose md:tracking-widest'>
             <div>{t('about_intro')}</div>

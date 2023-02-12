@@ -19,8 +19,8 @@ const LandingPage = () => {
   return (
     <>
       <Head>
-        <title>{t('landing_collection_title')}</title>
-        <meta name='description' content='NTU Herbarium' />
+        <title>{t('helmet_landing_title')}</title>
+        <meta name='description' content={t('helmet_landing_description')} />
       </Head>
       <main className='bg-platinum text-brown'>
         <Hero />

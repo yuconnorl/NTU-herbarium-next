@@ -19,11 +19,7 @@ const Exhibition = () => {
   return (
     <section className='relative mt-4 flex w-full flex-col pb-16 sm:px-8 md:mt-16 md:px-12 mdp:flex-row'>
       <div className='relative px-10 mdp:sticky mdp:top-6 mdp:mb-80 mdp:h-content mdp:w-4/12'>
-        <div className='pt-8 pb-6'>
-          <SecondaryHeading className='pt-8 pb-6'>
-            {t('landing_exhibition_miniTitle')}
-          </SecondaryHeading>
-        </div>
+        <SecondaryHeading>{t('landing_exhibition_miniTitle')}</SecondaryHeading>
         <div className='mb-6 md:mb-10'>
           <h2 className='font-RobotoSerif-R text-3xl leading-normal md:text-4xl md:leading-normal'>
             {t('landing_exhibition_title')}

@@ -24,6 +24,7 @@
     "i18next": "^22.4.6",
     "interweave": "^13.0.0",
     "interweave-autolink": "^5.1.0",
+    "jotai": "^2.0.1",
     "nanoid": "^3.3.4",
     "next": "^13.1.2",
     "next-i18next": "^13.0.3",

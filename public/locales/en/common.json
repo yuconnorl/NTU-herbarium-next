@@ -6,7 +6,7 @@
   "landing_collection_button": "Collection Catalog",
   "landing_exhibition_title": "Not only specimens, but lots of exhibitions",
   "landing_exhibition_subtitle": "Specimens are the most direct provement of a species existence. NTU herbarium houses not only collections from Taiwan, but also from Southeast Asia and the Pacific islands.",
-  "landing_exhibition_miniTitle": "Exhibition & features",
+  "landing_exhibition_miniTitle": "Exhibition & Features",
   "landing_exhibition_title_ethnobotany": "Ethnobotany",
   "landing_exhibition_title_gardens": "Gardens",
   "landing_exhibition_title_illustration": "Botanical illustration",
@@ -21,6 +21,8 @@
   "---About_page---": "about page",
   "about_title": "National Taiwan \nUniversity Herbarium",
   "about_intro": "Founded in 1929, National Taiwan University Herbarium(TAI) has been a frontier for continuously investigating and collecting materials from Taiwan and adjacent region.",
+  "about_miniTitle": "About NTU Herbarium",
+
 
   "---Collection_page---": "collection page",
   "collection_header_title": "Collection︱NTU Herbarium",
@@ -30,8 +32,11 @@
   "collection_inspect_title": "Out collection",
   "collection_inspect_online": "Online catalogues",
   "collection_inspect_online_content": "At BrandVillage, customer satisfaction is at the forefront of our business model. We’re not happy unless you’re happy. We will continue to work with you on your design until you are 100% satisfied with the results. Capturing your brand identity correctly is our number one priority, and we will ensure that your design vision is brought to life accurately.",
+  "collection_inspect_online_link": "Online herbarium",
   "collection_inspect_inPerson": "Arrange a visit",
   "collection_inspect_inPerson_content": "At BrandVillage, customer satisfaction is at the forefront of our business model. We’re not happy unless you’re happy. We will continue to work with you on your design until you are 100% satisfied with the results. Capturing your brand identity correctly is our number one priority, and we will ensure that your design vision is brought to life accurately.",
+  "collection_inspect_inPerson_link": "Make a arrangement",
+
 
   "---Contact_page---": "contact page",
   "contact_title": "Get in touch <br /> with us",

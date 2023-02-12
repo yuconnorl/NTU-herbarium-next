@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useState } from 'react'
@@ -18,10 +19,13 @@ const Navbar = () => {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false)
   const { t, i18n } = useTranslation('common')
   const currentLang = i18n.resolvedLanguage
+  const router = useRouter()
+
+  console.log()
 
   return (
     <>
-      <nav className='relative z-30 flex items-center justify-between px-8 pt-6 pb-4 opacity-70 md:px-10 md:py-8'>
+      <nav className='relative z-30 flex items-center justify-between px-8 pt-6 pb-4 opacity-70 md:px-16 md:py-8'>
         <div
           className='slow-fade group font-oswald text-2xl font-medium tracking-widest mix-blend-difference transition-opacity duration-300 md:text-3xl'
           onClick={() => setIsHamburgerOpen(false)}
@@ -33,21 +37,18 @@ const Navbar = () => {
         <div className='relative hidden text-xs md:flex'>
           <ul className='relative flex justify-between tracking-widest'>
             {routes.map(({ path, description }) => (
-              <li
-                key={path}
-                className='slow-fade group relative ml-10 overflow-hidden'
-              >
+              <li key={path} className='slow-fade group relative ml-10 overflow-hidden'>
                 <Link href={path}>{description}</Link>
               </li>
             ))}
           </ul>
           <div className='ml-24 flex tracking-wider'>
             {currentLang === 'en' ? (
-              <Link href='/' locale='zh-TW'>
+              <Link href={router.asPath} locale='zh-TW'>
                 Zh
               </Link>
             ) : (
-              <Link href='/' locale='en'>
+              <Link href={router.asPath} locale='en'>
                 En
               </Link>
             )}
