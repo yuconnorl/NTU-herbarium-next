@@ -72,5 +72,8 @@ module.exports = {
       '3/4': '75%',
     },
   },
-  plugins: [require('@headlessui/tailwindcss')],
+  rippleui: {
+    defaultStyle: false,
+  },
+  plugins: [require('@headlessui/tailwindcss'), require('rippleui')],
 }
