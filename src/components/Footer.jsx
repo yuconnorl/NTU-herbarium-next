@@ -1,4 +1,4 @@
-import ArrowSvg from '../arrowSvg/ArrowSvg'
+import ArrowSvg from './arrowSvg/ArrowSvg'
 
 const Footer = () => (
   <footer className='relative flex flex-col bg-[#EEEEEE] pr-5 pl-10 pt-16 pb-0 md:flex-row md:items-center md:p-16 lg:pl-24 lg:pr-20'>

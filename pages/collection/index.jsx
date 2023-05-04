@@ -6,8 +6,8 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import imgCollectionWebp from '@/assets/images/collection/collection.webp'
 import Content from '@/components/content/Content'
 import LinkButton from '@/components/linkButton/LinkButton'
-import PrimaryHeading from '@/components/primaryHeading/PrimaryHeading'
-import SecondaryHeading from '@/components/secondaryHeading/SecondaryHeading'
+import PrimaryHeading from '@/components/PrimaryHeading'
+import SecondaryHeading from '@/components/SecondaryHeading'
 
 export const getStaticProps = async ({ locale }) => ({
   props: {

@@ -1,4 +1,4 @@
-import SecondaryHeading from '@/components/secondaryHeading/SecondaryHeading'
+import SecondaryHeading from '@/components/SecondaryHeading'
 
 import NewsSection from '../../newsSection/NewsSection'
 

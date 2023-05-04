@@ -4,8 +4,8 @@ import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import imgFrontDoorWebp from '@/assets/images/about/frontDoor.webp'
-import PrimaryHeading from '@/components/primaryHeading/PrimaryHeading'
-import SecondaryHeading from '@/components/secondaryHeading/SecondaryHeading'
+import PrimaryHeading from '@/components/PrimaryHeading'
+import SecondaryHeading from '@/components/SecondaryHeading'
 
 export const getStaticProps = async ({ locale }) => ({
   props: {
