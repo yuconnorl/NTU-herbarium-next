@@ -1,6 +1,6 @@
-import SecondaryHeading from '@/components/secondaryHeading/SecondaryHeading'
+import { SecondaryHeading } from '@/components/Heading'
 
-import NewsSection from '../../newsSection/NewsSection'
+import NewsSection from '../../NewsSection'
 
 const News = () => (
   <section className='flex justify-center bg-white bg-landing-news bg-cover bg-center bg-no-repeat px-8 pt-10 pb-12 sm:px-16 md:px-24 mdp:pt-20'>

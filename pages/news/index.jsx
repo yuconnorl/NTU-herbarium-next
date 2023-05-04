@@ -1,9 +1,8 @@
 import Head from 'next/head'
 import { useTranslation } from 'next-i18next'
 
-import NewsTable from '@/components/newsTable/NewsTable'
-import PrimaryHeading from '@/components/primaryHeading/PrimaryHeading'
-import SecondaryHeading from '@/components/secondaryHeading/SecondaryHeading'
+import { PrimaryHeading, SecondaryHeading } from '@/components/Heading'
+import NewsTable from '@/components/NewsTable'
 import useNews from '@/hooks/useNews'
 
 const NewsPage = () => {

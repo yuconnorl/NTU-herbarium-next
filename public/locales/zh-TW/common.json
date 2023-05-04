@@ -17,12 +17,10 @@
   "landing_exhibition_description_permanent": "常設展示區，顧名思義是你什麼時候來都有。從植物的頭介紹到尾，讓看官充分瞭解植物的各個構造",
   "landing_exhibition_button": "More information",
   "landing_news_button": "View all news",
-
   "---About_page---": "about page",
   "about_title": "國立臺灣大學\n植物標本館",
   "about_intro": "國立臺灣大學植物系標本館，創立於一九二九年，至今已有七十餘年之歷史，自成立以來，即積極展開臺灣及其鄰近地區諸如東南亞、太平洋島嶼等之植物標本的採集，至今本館除自行赴各地採集外並藉著與外國交換標本的方式以達擴展蒐藏領域之目的。自1960年以來與本館互有交流的國家包括美國等二八個國家一四五個機構，因此館藏標本非常豐富，蒐藏範圍非常廣大，經統計館藏標本數量已達二十七萬餘份，其中以臺灣地區原生種類之植物標本最多，足可代表臺灣維管束植物種類的百分之九十五以上，並收藏有植物學上最珍貴的模式標本約千份，及五十年前所採集的臺灣原生、深具研究價值之年代久遠的古老標本六萬餘份，因此本館所蒐藏之標本資料成為研究臺灣或東南亞植物之專家學者必須參考之重點。",
   "about_miniTitle": "About NTU Herbarium",
-
   "---Collection_page---": "collection page",
   "collection_landing_title": "Access the Herbarium",
   "collection_landing_miniTitle": "Collection",
@@ -34,22 +32,19 @@
   "collection_inspect_inPerson": "親自蒞臨",
   "collection_inspect_inPerson_content": "國立臺灣大學植物系標本館，創立於一九二九年，至今已有七十餘年之歷史，自成立以來，即積極展開臺灣及其鄰近地區諸如東南亞、太平洋島嶼等之植物標本的採集，至今本館除自行赴各地採集外並藉著",
   "collection_inspect_inPerson_link": "聯繫我們",
-
-
   "---Contact_page---": "contact page",
   "contact_title": "Get in touch <br /> with us",
-
   "---Helmet---": "Helmet",
-  "helmet_landing_title": "國立臺灣大學植物標本館︱TAI",
+  "helmet_landing_title": "國立臺灣大學植物標本館 - TAI",
   "helmet_landing_description": "some disc",
-  "helmet_about_title": "本館簡介︱國立臺灣大學植物標本館",
+  "helmet_about_title": "本館簡介 - 國立臺灣大學植物標本館",
   "helmet_about_description": "some disc",
-  "helmet_collection_title": "館藏標本︱國立臺灣大學植物標本館",
+  "helmet_collection_title": "館藏標本 - 國立臺灣大學植物標本館",
   "helmet_collection_description": "some disc",
-  "helmet_exhibition_title": "展示︱國立臺灣大學植物標本館",
+  "helmet_exhibition_title": "展示 - 國立臺灣大學植物標本館",
   "helmet_exhibition_description": "some disc",
-  "helmet_news_title": "最新消息︱國立臺灣大學植物標本館",
+  "helmet_news_title": "最新消息 - 國立臺灣大學植物標本館",
   "helmet_news_description": "some disc",
-  "helmet_contact_title": "聯絡我們︱國立臺灣大學植物標本館",
+  "helmet_contact_title": "聯絡我們 - 國立臺灣大學植物標本館",
   "helmet_contact_description": "some disc"
 }

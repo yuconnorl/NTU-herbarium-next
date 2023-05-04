@@ -1,11 +1,10 @@
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-import Content from '@/components/content/Content'
-import LinkButton from '@/components/linkButton/LinkButton'
-import PrimaryHeading from '@/components/primaryHeading/PrimaryHeading'
-import SecondaryHeading from '@/components/secondaryHeading/SecondaryHeading'
-import TextSpinner from '@/components/textSpinner/TextSpinner'
+import Content from '@/components/Content'
+import { PrimaryHeading, SecondaryHeading } from '@/components/Heading'
+import LinkButton from '@/components/LinkButton'
+import TextSpinner from '@/components/TextSpinner'
 
 export const getStaticProps = async ({ locale }) => ({
   props: {

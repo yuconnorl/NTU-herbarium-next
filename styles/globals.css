@@ -5,7 +5,12 @@
 
 html,
 body {
-  @apply bg-platinum font-roboto-serif-l;
+  @apply bg-platinum font-roboto-serif-l h-full antialiased;
+}
+
+/* stylelint-disable-next-line selector-id-pattern */
+#__next {
+  @apply h-full;
 }
 
 body::-webkit-scrollbar {

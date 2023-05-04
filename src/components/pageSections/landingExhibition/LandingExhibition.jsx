@@ -4,9 +4,9 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { Fragment } from 'react'
 
 import { exhibitionPhoto } from '@/assets/fileLoader'
-import Content from '@/components/content/Content'
-import LinkButton from '@/components/linkButton/LinkButton'
-import SecondaryHeading from '@/components/secondaryHeading/SecondaryHeading'
+import Content from '@/components/Content'
+import { SecondaryHeading } from '@/components/Heading'
+import LinkButton from '@/components/LinkButton'
 
 export const getStaticProps = async ({ locale }) => ({
   props: {
@@ -42,7 +42,7 @@ const Exhibition = () => {
                   {t(`landing_exhibition_title_${item.key}`)}
                 </div>
                 {/* <div className=' font-robot pt-2 pr-3 text-base font-light text-[#20231F] md:pr-28'></div> */}
-                <Content className='pt-2 pr-3 md:pr-28'>
+                <Content className='pt-2 pr-3 font-noto-tc-r md:pr-28'>
                   {t(`landing_exhibition_description_${item.key}`)}
                 </Content>
               </div>

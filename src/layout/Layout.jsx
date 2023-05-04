@@ -1,9 +1,9 @@
-import Footer from '@/components/footer/Footer'
-import Navbar from '@/components/navbar/Navbar'
+import Footer from '@/components/Footer'
+import Navbar from '@/components/Navbar'
 
 const Layout = ({ children, key }) => {
   return (
-    <div key={key}>
+    <div className='flex flex-col justify-between' key={key}>
       <Navbar />
       {children}
       <Footer />
