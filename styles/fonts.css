@@ -1,43 +1,43 @@
 @layer base {
   @font-face {
-    font-family: RobotoSerif-Light;
+    font-family: roboto-serif-light;
     font-weight: 300;
-    src: url('../src/fonts/RobotoSerif-Light.ttf') format('truetype');
+    src: url('../public/fonts/roboto-serif-light.ttf') format('truetype');
   }
 
   @font-face {
-    font-family: RobotoSerif-Regular;
+    font-family: roboto-serif-regular;
     font-weight: 400;
-    src: url('../src/fonts/RobotoSerif-Regular.ttf') format('truetype');
+    src: url('../public/fonts/roboto-serif-regular.ttf') format('truetype');
   }
 
   @font-face {
-    font-family: RobotoSerif-Medium;
+    font-family: roboto-serif-medium;
     font-weight: 500;
-    src: url('../src/fonts/RobotoSerif-Medium.ttf') format('truetype');
+    src: url('../public/fonts/roboto-serif-medium.ttf') format('truetype');
   }
 
   @font-face {
-    font-family: RobotoSerif-Italic;
+    font-family: roboto-serif-italic;
     font-style: 'italic';
-    src: url('../src/fonts/RobotoSerif-Italic.ttf') format('truetype');
+    src: url('../public/fonts/roboto-serif-italic.ttf') format('truetype');
   }
 
   @font-face {
-    font-family: Oswald-ExtraLight;
+    font-family: oswald-extra-light;
     font-weight: 200;
-    src: url('../src/fonts/Oswald-ExtraLight.ttf') format('truetype');
+    src: url('../public/fonts/oswald-extra-light.ttf') format('truetype');
   }
 
   @font-face {
-    font-family: Oswald-Medium;
+    font-family: oswald-medium;
     font-weight: 500;
-    src: url('../src/fonts/Oswald-Medium.ttf') format('truetype');
+    src: url('../public/fonts/oswald-medium.ttf') format('truetype');
   }
 
   @font-face {
-    font-family: Lato-Light;
+    font-family: lato-light;
     font-weight: 300;
-    src: url('../src/fonts/Lato-Light.ttf') format('truetype');
+    src: url('../public/fonts/lato-light.ttf') format('truetype');
   }
 }

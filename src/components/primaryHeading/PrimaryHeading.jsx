@@ -1,8 +1,12 @@
+import clsx from 'clsx'
 import PropTypes from 'prop-types'
 
 const PrimaryHeading = ({ children, className = '' }) => (
   <h2
-    className={`whitespace-pre-line font-RobotoSerif-R text-4xl font-normal leading-normal opacity-80 md:text-5xl md:leading-normal ${className}`}
+    className={clsx(
+      'whitespace-pre-line font-roboto-serif-r text-4xl font-normal leading-normal opacity-80 md:text-5xl md:leading-normal',
+      className,
+    )}
   >
     {children}
   </h2>

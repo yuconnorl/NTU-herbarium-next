@@ -36,11 +36,15 @@ const ContactPage = () => {
                 <div className='align-bottom'>
                   <div>Monday - Friday</div>
                   <div>10:00 - 12:00, 13:00 - 16:30</div>
-                  <div className='text-xs'>(Closed on national holiday, with appointment)</div>
+                  <div className='text-xs'>
+                    (Closed on national holiday, with appointment)
+                  </div>
                 </div>
               </div>
               <div className='flex flex-col justify-between py-3'>
-                <div className='mb-6 text-base tracking-wider opacity-50'>Exhibition hall</div>
+                <div className='mb-6 text-base tracking-wider opacity-50'>
+                  Exhibition hall
+                </div>
                 <div>
                   <div>Monday - Sunday</div>
                   <div>10:00 - 12:00, 13:00 - 16:00</div>
@@ -48,7 +52,9 @@ const ContactPage = () => {
                 </div>
               </div>
               <div className='flex flex-col justify-between py-3'>
-                <div className='mb-6 text-base tracking-wider opacity-50'>Outdoor garden</div>
+                <div className='mb-6 text-base tracking-wider opacity-50'>
+                  Outdoor garden
+                </div>
                 <div>All day available</div>
               </div>
             </div>
@@ -59,9 +65,6 @@ const ContactPage = () => {
             </div>
           </div>
         </div>
-        <footer className='flex items-end'>
-          <div className='relative pt-8 text-right text-xs opacity-70'>© NTU Herbarium</div>
-        </footer>
       </div>
     </>
   )

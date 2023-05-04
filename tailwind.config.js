@@ -1,4 +1,5 @@
 module.exports = {
+  darkMode: 'class',
   content: ['./pages/**/*.{js,ts,jsx,tsx}', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
@@ -24,15 +25,14 @@ module.exports = {
         'text-loght': '#383838',
       },
       fontFamily: {
-        'RobotoSerif-L': ['RobotoSerif-Light', 'Arial', 'sans-serif'],
-        'RobotoSerif-R': ['RobotoSerif-Regular', 'Noto Sans TC', 'Arial', 'sans-serif'],
-        'RobotoSerif-M': ['RobotoSerif-Medium', 'Arial', 'sans-serif'],
-        'RobotoSerif-ita': ['RobotoSerif-Italic', 'Arial', 'sans-serif'],
-        'Oswald-el': ['Oswald-ExtraLight', 'Arial', 'sans-serif'],
-        'Oswald-M': ['Oswald-Medium', 'Arial', 'sans-serif'],
-        Lato: ['Lato', 'Arial', 'sans-serif'],
-        noto: ['Noto Sans TC', 'Arial', 'sans-serif'],
-        Sansita: ['Sansita Swashed', 'cursive'],
+        'roboto-serif-l': ['roboto-serif-light', 'Arial', 'sans-serif'],
+        'roboto-serif-r': ['roboto-serif-regular', 'Noto Sans TC', 'Arial', 'sans-serif'],
+        'roboto-serif-m': ['roboto-serif-medium', 'Arial', 'sans-serif'],
+        'roboto-serif-ita': ['roboto-serif-italic', 'Arial', 'sans-serif'],
+        'oswald-el': ['oswald-extra-light', 'Arial', 'sans-serif'],
+        'oswald-m': ['oswald-medium', 'Arial', 'sans-serif'],
+        lato: ['lato-light', 'Arial', 'sans-serif'],
+        // Sansita: ['Sansita Swashed', 'cursive'],
         ASD: [
           'Faktum',
           'PingFang TC',
@@ -41,10 +41,6 @@ module.exports = {
           '微軟正黑體',
           'sans-serif',
         ],
-        roboto: ['Roboto', 'sans-serif'],
-        oswald: ['Oswald'],
-        sans: ['Roboto', 'ui-sans-serif', 'system-ui'],
-        notos: ['Noto Serif TC', 'serif'],
       },
       letterSpacing: { morewide: '.20rem' },
       screens: {
@@ -68,8 +64,5 @@ module.exports = {
       '3/4': '75%',
     },
   },
-  rippleui: {
-    defaultStyle: false,
-  },
-  plugins: [require('@headlessui/tailwindcss'), require('rippleui')],
+  plugins: [require('@headlessui/tailwindcss'), require('@tailwindcss/typography')],
 }

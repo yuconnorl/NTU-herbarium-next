@@ -3,7 +3,7 @@ import ArrowSvg from '../arrowSvg/ArrowSvg'
 const Footer = () => (
   <footer className='relative flex flex-col bg-[#EEEEEE] pr-5 pl-10 pt-16 pb-0 md:flex-row md:items-center md:p-16 lg:pl-24 lg:pr-20'>
     <div className='flex w-full flex-col justify-between md:flex-row md:items-center'>
-      <div className='relative mb-16 w-8/12 max-w-[350px] font-RobotoSerif-ita text-xl text-brown md:mb-0 md:w-5/12'>
+      <div className='relative mb-16 w-8/12 max-w-[350px] font-roboto-serif-ita text-xl text-brown md:mb-0 md:w-5/12'>
         National Taiwan University Herbarium
       </div>
       <div className='relative flex flex-col justify-around text-xs md:w-6/12 md:flex-row md:items-center md:text-sm '>

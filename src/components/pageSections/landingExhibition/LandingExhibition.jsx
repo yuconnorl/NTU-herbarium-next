@@ -21,7 +21,7 @@ const Exhibition = () => {
       <div className='relative px-10 mdp:sticky mdp:top-6 mdp:mb-80 mdp:h-content mdp:w-4/12'>
         <SecondaryHeading>{t('landing_exhibition_miniTitle')}</SecondaryHeading>
         <div className='mb-6 md:mb-10'>
-          <h2 className='font-RobotoSerif-R text-3xl leading-normal md:text-4xl md:leading-normal'>
+          <h2 className='font-roboto-serif-r text-3xl leading-normal md:text-4xl md:leading-normal'>
             {t('landing_exhibition_title')}
           </h2>
         </div>
@@ -38,7 +38,7 @@ const Exhibition = () => {
                 <Image src={item.imgURL} alt='exx' />
               </div>
               <div className='mt-4 pl-1'>
-                <div className='font-RobotoSerif-L text-xl mdp:text-[1.25rem]'>
+                <div className='font-roboto-serif-l text-xl mdp:text-[1.25rem]'>
                   {t(`landing_exhibition_title_${item.key}`)}
                 </div>
                 {/* <div className=' font-robot pt-2 pr-3 text-base font-light text-[#20231F] md:pr-28'></div> */}
