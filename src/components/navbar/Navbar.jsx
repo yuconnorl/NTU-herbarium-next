@@ -21,18 +21,11 @@ const Navbar = () => {
   const currentLang = i18n.resolvedLanguage
   const router = useRouter()
 
-  console.log()
-
   return (
     <>
-      <nav className='relative z-30 flex items-center justify-between px-8 pt-6 pb-4 opacity-70 md:px-16 md:py-8'>
-        <div
-          className='slow-fade group font-oswald text-2xl font-medium tracking-widest mix-blend-difference transition-opacity duration-300 md:text-3xl'
-          onClick={() => setIsHamburgerOpen(false)}
-        >
-          <Link href='/' className={`${isHamburgerOpen && 'text-platinum'}`}>
-            NTU.
-          </Link>
+      <nav className='relative z-30 flex items-center justify-between px-8 pt-6 pb-4 text-brown opacity-70 md:px-16 md:py-8'>
+        <div className='slow-fade group font-oswald text-2xl font-medium tracking-widest transition-opacity duration-300 md:text-3xl'>
+          <Link href='/'>NTU.</Link>
         </div>
         <div className='relative hidden text-xs md:flex'>
           <ul className='relative flex justify-between tracking-widest'>

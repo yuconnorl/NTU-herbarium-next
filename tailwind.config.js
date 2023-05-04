@@ -1,12 +1,6 @@
 module.exports = {
   content: ['./pages/**/*.{js,ts,jsx,tsx}', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    fontFamily: {
-      roboto: ['Roboto', 'sans-serif'],
-      oswald: ['Oswald'],
-      sans: ['Roboto', 'ui-sans-serif', 'system-ui'],
-      notos: ['Noto Serif TC', 'serif'],
-    },
     extend: {
       flex: {
         1: '1 1',
@@ -18,18 +12,16 @@ module.exports = {
       },
       colors: {
         white: '#F2F2F2',
-        brown: '#20150F',
-        'light-brown': '#795548',
         platinum: '#E9E6E2',
+        brown: '#20150F',
         atrovirens: '#0F3828',
-
         onyx: '#464646',
-        'text-color': '#1a1a1a',
-        'text-loght': '#383838',
-
         tiffany: '#5DCDB2',
         ecru: '#C1B082',
         feldgrau: '#495C57',
+        'light-brown': '#795548',
+        'text-color': '#1a1a1a',
+        'text-loght': '#383838',
       },
       fontFamily: {
         'RobotoSerif-L': ['RobotoSerif-Light', 'Arial', 'sans-serif'],
@@ -49,6 +41,10 @@ module.exports = {
           '微軟正黑體',
           'sans-serif',
         ],
+        roboto: ['Roboto', 'sans-serif'],
+        oswald: ['Oswald'],
+        sans: ['Roboto', 'ui-sans-serif', 'system-ui'],
+        notos: ['Noto Serif TC', 'serif'],
       },
       letterSpacing: { morewide: '.20rem' },
       screens: {

@@ -13,7 +13,7 @@ import NewsSkeleton from '../newsSkeleton/NewsSkeleton'
 
 const NewsTable = ({ newsData = [], isExpandable = false }) => {
   const formateDate = (date) => dayjs(date).format('MMM DD, YYYY')
-  console.log('test')
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
