@@ -15,10 +15,8 @@ const slidePhoto = [
     fallback: '@/assets/images/mistra.jpg',
     alt: 'Mitrastemon yamamotoi',
     nomenclature: 'Mitrastemon yamamotoi',
-    publisher: 'Makino',
     credit: 'Jer-Ming Hu',
-    personalHref:
-      'https://ecology.lifescience.ntu.edu.tw/doku.php/zh-tw/jmhu/start',
+    personalHref: 'https://ecology.lifescience.ntu.edu.tw/doku.php/zh-tw/jmhu/start',
   },
   {
     key: 2,
@@ -26,10 +24,8 @@ const slidePhoto = [
     fallback: 'images/fagus.jpg',
     alt: 'Fagus hayatae',
     nomenclature: 'Fagus hayatae',
-    publisher: 'Palib.',
     credit: 'Jer-Ming Hu',
-    personalHref:
-      'https://ecology.lifescience.ntu.edu.tw/doku.php/zh-tw/jmhu/start',
+    personalHref: 'https://ecology.lifescience.ntu.edu.tw/doku.php/zh-tw/jmhu/start',
   },
   {
     key: 3,
@@ -37,10 +33,8 @@ const slidePhoto = [
     fallback: 'images/lili.jpg',
     alt: 'Lilium',
     nomenclature: 'Lilium sp.',
-    publisher: '',
     credit: 'Jer-Ming Hu',
-    personalHref:
-      'https://ecology.lifescience.ntu.edu.tw/doku.php/zh-tw/jmhu/start',
+    personalHref: 'https://ecology.lifescience.ntu.edu.tw/doku.php/zh-tw/jmhu/start',
   },
 ]
 

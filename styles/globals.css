@@ -47,12 +47,6 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
-@media (min-width: 2880px) {
-  html {
-    font-size: 32px;
-  }
-}
-
 @layer utilities {
   .full-height {
     height: 100%;

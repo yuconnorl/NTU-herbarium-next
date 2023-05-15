@@ -10,7 +10,7 @@ const TextSpinner = ({ text = '' }) => (
               a 37,37 0 1,1 -74,0'
         />
       </defs>
-      <text fontSize='12'>
+      <text fontSize='12.7'>
         <textPath className='opacity-10' xlinkHref='#circle'>
           {text}
         </textPath>

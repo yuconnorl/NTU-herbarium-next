@@ -1,10 +1,26 @@
+import clsx from 'clsx'
 import { motion } from 'framer-motion'
+import { nanoid } from 'nanoid'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 
 import { slidePhoto } from '@/assets/fileLoader'
 
-import BannerProgress from './bannerProgress/BannerProgress'
+// progress bar
+const BannerProgress = ({ slideNumber, totalSlidesNumber }) => (
+  <div className='absolute bottom-4 right-4 z-10 flex text-xs md:rotate-0'>
+    <div className='flex items-center justify-around font-oswald-el'>
+      <span className='hidden w-[18px] justify-center md:flex'>{`0${slideNumber}`}</span>
+      <div className='relative mx-2 h-[1.5px] min-h-[1.2px] w-10 overflow-hidden bg-[#d8d2d2] md:w-[60px] xl:h-[1.85px]'>
+        <div key={nanoid()} className='silde-progress absolute h-full w-full bg-brown' />
+      </div>
+      <span className='hidden w-[18px] justify-center md:flex'>
+        {`0${totalSlidesNumber}`}
+      </span>
+    </div>
+  </div>
+)
 
 const ImageSwiper = () => {
   const [slideNumber, setSlideNumber] = useState(1)
@@ -32,22 +48,23 @@ const ImageSwiper = () => {
     }, [delay])
   }
 
-  // useInterval(() => {
-  //   if (slideNumber < slidePhoto.length) {
-  //     setSlideNumber(slideNumber + 1)
-  //   } else {
-  //     setSlideNumber(1)
-  //   }
-  // }, slideInterval)
+  useInterval(() => {
+    if (slideNumber < slidePhoto.length) {
+      setSlideNumber(slideNumber + 1)
+    } else {
+      setSlideNumber(1)
+    }
+  }, slideInterval)
 
   return (
     <>
       <div className='relative flex h-[80vh] min-h-[600px] md:h-[70vh]'>
         {slidePhoto.map((item) => (
           <div
-            className={`${
-              slideNumber === item.key && 'slide-visible'
-            } absolute left-0 h-full w-full opacity-0 transition-all duration-500 ease-in-out`}
+            className={clsx(
+              slideNumber === item.key && 'slide-visible',
+              'absolute left-0 h-full w-full opacity-0 transition-all duration-500 ease-in-out',
+            )}
             key={item.key}
           >
             <Image
@@ -61,26 +78,18 @@ const ImageSwiper = () => {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
-                className='absolute bottom-5 ml-5 pt-2 text-[0.7rem] text-brown opacity-70'
+                className='absolute bottom-5 ml-5 pt-2 text-[0.9rem] text-brown opacity-70'
               >
                 <span className='italic'>{`${item.nomenclature}`}</span>
-                <span>
-                  {item.publisher}
-                  <br />
-                </span>
                 <div className='group flex items-center'>
                   <span className='relative mt-0.5 inline-block'>
-                    <a
-                      // href={item.personalHref}
-                      // FIXME: shit
-                      href='www.google.com'
+                    <Link
+                      className='slow-fade transition-opacity duration-500 group-hover:opacity-50'
+                      href={item.personalHref}
                       target='_blank'
-                      rel='noreferrer noopener'
                     >
-                      <span className='slow-fade transition-opacity duration-500 group-hover:opacity-50'>
-                        {item.credit}
-                      </span>
-                    </a>
+                      {item.credit}
+                    </Link>
                     <div className='absolute bottom-0 left-0 h-[1px] w-full bg-brown' />
                   </span>
                 </div>
@@ -88,10 +97,7 @@ const ImageSwiper = () => {
             )}
           </div>
         ))}
-        <BannerProgress
-          slideNumber={slideNumber}
-          totalSlidesNumber={totalSlidesNumber}
-        />
+        <BannerProgress slideNumber={slideNumber} totalSlidesNumber={totalSlidesNumber} />
       </div>
     </>
   )
