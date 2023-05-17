@@ -23,11 +23,11 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className='relative z-30 flex items-center justify-between px-8 pt-6 pb-4 text-brown opacity-70 md:px-16 md:py-8'>
-        <div className='slow-fade group font-oswald-m text-2xl font-medium tracking-widest transition-opacity duration-300 md:text-3xl'>
-          <Link href='/'>NTU.</Link>
-        </div>
-        <div className='relative hidden text-sm md:flex'>
+      <nav className='relative z-30 flex items-center justify-between px-6 md:px-10 pt-6 pb-4 text-brown opacity-70 md:py-8'>
+        <Link className='font-roboto-serif-r text-base' href='/'>
+          NTU Herbarium
+        </Link>
+        <div className='relative hidden text-[0.8rem] md:flex'>
           <ul className='flex tracking-widest md:gap-8'>
             {routes.map(({ path, description }) => (
               <li key={path} className='slow-fade group relative overflow-hidden'>

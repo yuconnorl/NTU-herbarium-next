@@ -78,7 +78,7 @@ const ImageSwiper = () => {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
-                className='absolute bottom-5 ml-5 pt-2 text-[0.9rem] text-brown opacity-70'
+                className='absolute bottom-5 ml-5 pt-2 text-[0.7rem] md:text-sm text-brown/80'
               >
                 <span className='italic'>{`${item.nomenclature}`}</span>
                 <div className='group flex items-center'>
@@ -90,7 +90,7 @@ const ImageSwiper = () => {
                     >
                       {item.credit}
                     </Link>
-                    <div className='absolute bottom-0 left-0 h-[1px] w-full bg-brown' />
+                    <div className='absolute bottom-0 left-0 h-[1px] w-full bg-brown/60' />
                   </span>
                 </div>
               </motion.div>

@@ -28,7 +28,6 @@ const Collection = () => {
         <div className='w-4/5 font-sans text-base font-light leading-relaxed tracking-wider md:w-3/6 md:text-lg mdp:w-2/6'></div>
       </div>
       <LinkButton url='collection' text={t('landing_collection_button')} />
-      {/* <TextSpinner text='National Taiwan University Herbarium*' /> */}
       <TextSpinner text='NTU Herbarium * NTU Herbarium *' />
     </section>
   )

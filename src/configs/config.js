@@ -19,3 +19,5 @@ export const NEWS_TYPES_COLOR = {
 export const NEWS_URL = IS_DEV
   ? 'http://localhost:5000/api/news'
   : 'http://localhost:5000/api/news'
+
+export const w = [[2, 3], [2, 3], [0, 1, 3], [0, 1, 2, 4], [3]]
