@@ -1,6 +1,6 @@
 const TextSpinner = ({ text = '' }) => (
-  <div className='font-Sansita absolute right-20 top-0 animate-spin-slow'>
-    <svg viewBox='0 0 100 100' width='250' height='250'>
+  <div className='hidden md:block md:absolute right-20 top-0 animate-spin-slow'>
+    <svg viewBox='0 0 100 100' className='w-40 h-40 md:w-52 md:h-52'>
       <defs>
         <path
           id='circle'

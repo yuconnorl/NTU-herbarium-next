@@ -9,7 +9,7 @@ const Content = ({ children, className = '' }) => {
       className={clsx(
         isHan ? 'md:leading-8' : 'md:leading-7',
         className,
-        'font-ASD text-base font-normal leading-normal tracking-wider text-text-loght md:leading-7 md:tracking-wider',
+        'text-base text-text-loght font-sans',
       )}
     >
       {children}

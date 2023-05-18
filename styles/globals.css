@@ -76,7 +76,7 @@ body::-webkit-scrollbar-thumb {
   }
 
   .silde-progress {
-    animation: swipe-progress 4.5s linear forwards;
+    animation: swipe-progress 6s linear forwards;
   }
 
   .logo-width {

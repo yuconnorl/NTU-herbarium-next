@@ -18,16 +18,14 @@ const Exhibition = () => {
   const { t } = useTranslation()
   return (
     <section className='relative mt-4 flex w-full flex-col pb-16 sm:px-8 md:mt-16 md:px-12 mdp:flex-row'>
-      <div className='relative px-10 mdp:sticky mdp:top-6 mdp:mb-80 mdp:h-content mdp:w-4/12'>
+      <div className='px-10 mdp:sticky mdp:top-6 mdp:mb-80 mdp:h-content mdp:w-4/12'>
         <SecondaryHeading>{t('landing_exhibition_miniTitle')}</SecondaryHeading>
-        <div className='mb-6 md:mb-10'>
-          <h2 className='font-crimson text-3xl leading-tight md:text-5xl md:leading-tight'>
-            {t('landing_exhibition_title')}
-          </h2>
-        </div>
-        <div className='relative font-sans text-base font-light leading-relaxed tracking-wider lg:w-10/12'>
-          <Content>{t('landing_exhibition_subtitle')}</Content>
-        </div>
+        <h2 className='font-roboto-flex mb-6 md:mb-10 text-3xl leading-tight md:text-4xl md:leading-tight'>
+          {t('landing_exhibition_title')}
+        </h2>
+        <Content className='lg:w-10/12 font-sans'>
+          {t('landing_exhibition_subtitle')}
+        </Content>
       </div>
       <div className='border-brown border-opacity-20 px-6 md:px-10 mdp:w-8/12 mdp:border-l mdp:pt-10'>
         <div className='grid-row-4 grid gap-x-16 gap-y-3 text-sm'>
@@ -39,7 +37,7 @@ const Exhibition = () => {
                 <div className='font-roboto-flex font-light text-xl mb-3'>
                   {t(`landing_exhibition_title_${item.key}`)}
                 </div>
-                <Content className='pr-3 font-noto-tc-r md:pr-28'>
+                <Content className='pr-3 font-sans md:pr-28'>
                   {t(`landing_exhibition_description_${item.key}`)}
                 </Content>
               </div>

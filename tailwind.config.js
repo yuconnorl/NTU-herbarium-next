@@ -36,7 +36,6 @@ module.exports = {
         crimson: ['crimson', 'Arial', 'sans-serif'],
         'crimson-ita': ['crimson-italic', 'Arial', 'sans-serif'],
         lato: ['lato-light', 'Arial', 'sans-serif'],
-        // Sansita: ['Sansita Swashed', 'cursive'],
         ASD: [
           'Faktum',
           'PingFang TC',

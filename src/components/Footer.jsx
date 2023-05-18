@@ -16,12 +16,12 @@ const SocialLink = ({ href, children }) => (
 const Footer = () => (
   <footer className='relative flex flex-col bg-[#EEEEEE] pr-5 pl-10 pt-16 pb-0 md:flex-row md:items-center md:p-16 lg:pl-24 lg:pr-20'>
     <div className='flex w-full flex-col justify-between md:flex-row md:items-center'>
-      <div className='mb-16 w-8/12 max-w-[350px] font-roboto-flex text-xl text-brown md:mb-0 md:w-5/12'>
+      <div className='mb-16 w-8/12 max-w-[350px] font-roboto-serif-ita text-xl text-brown md:mb-0 md:w-5/12'>
         National Taiwan University Herbarium
       </div>
-      {/* <div className='mb-16 w-8/12 max-w-[350px] font-crimson-ita text-[1.7rem] leading-none font-light text-brown md:mb-0 md:w-5/12'>
+      <div className='mb-16 w-8/12 max-w-[350px] font-crimson-ita text-[1.7rem] leading-none font-light text-brown md:mb-0 md:w-5/12'>
         National Taiwan University Herbarium
-      </div> */}
+      </div>
       <div className='flex flex-col justify-around text-xs md:w-6/12 md:flex-row md:items-center md:text-sm '>
         <div className='font-sans tracking-wide text-[#8A8A8A]'>
           <div className='mt-1'>

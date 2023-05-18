@@ -25,7 +25,7 @@ const BannerProgress = ({ slideNumber, totalSlidesNumber }) => (
 const ImageSwiper = () => {
   const [slideNumber, setSlideNumber] = useState(1)
   const totalSlidesNumber = slidePhoto.length
-  const slideInterval = 4500
+  const slideInterval = 6000
 
   function useInterval(callback, delay) {
     const savedCallback = useRef()
@@ -74,17 +74,17 @@ const ImageSwiper = () => {
             />
             {slideNumber === item.key && (
               <motion.div
-                initial={{ y: 10, opacity: 0 }}
+                initial={{ y: 5, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
-                className='absolute bottom-5 ml-5 pt-2 text-[0.7rem] md:text-sm text-brown/80'
+                className='absolute flex items-center justify-between w-full pt-1 md:pt-1.5 pl-3 pr-2 text-[0.7rem] md:text-sm text-brown/80'
               >
-                <span className='italic'>{`${item.nomenclature}`}</span>
+                <span className='italic mt-0.5'>{`${item.nomenclature}`}</span>
                 <div className='group flex items-center'>
-                  <span className='relative mt-0.5 inline-block'>
+                  <span className='relative inline-block'>
                     <Link
-                      className='slow-fade transition-opacity duration-500 group-hover:opacity-50'
+                      className='slow-fade transition-opacity text-[0.7rem] md:text-xs duration-500 group-hover:opacity-50'
                       href={item.personalHref}
                       target='_blank'
                     >
@@ -99,6 +99,7 @@ const ImageSwiper = () => {
         ))}
         <BannerProgress slideNumber={slideNumber} totalSlidesNumber={totalSlidesNumber} />
       </div>
+      <div className='w-full bg-platinum h-7 md:h-9 border-t border-t-brown/10'></div>
     </>
   )
 }
