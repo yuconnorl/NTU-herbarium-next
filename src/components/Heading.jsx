@@ -3,7 +3,7 @@ import clsx from 'clsx'
 export const PrimaryHeading = ({ children, className = '' }) => (
   <h2
     className={clsx(
-      'whitespace-pre-line font-roboto-serif-r text-4xl font-normal leading-normal opacity-80 md:text-5xl md:leading-normal',
+      'whitespace-pre-line font-crimson text-[4rem] font-normal opacity-80',
       className,
     )}
   >

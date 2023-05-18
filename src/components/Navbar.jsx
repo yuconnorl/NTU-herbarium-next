@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
@@ -24,7 +25,7 @@ const Navbar = () => {
   return (
     <>
       <nav className='relative z-30 flex items-center justify-between px-6 md:px-10 pt-6 pb-4 text-brown opacity-70 md:py-8'>
-        <Link className='font-roboto-serif-r text-base' href='/'>
+        <Link className='logo-width font-roboto-flex text-xl' href='/'>
           NTU Herbarium
         </Link>
         <div className='relative hidden text-[0.8rem] md:flex'>

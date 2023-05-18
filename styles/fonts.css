@@ -46,4 +46,25 @@
     font-weight: 400;
     src: url('../public/fonts/noto-sans-tc-regular.otf') format('opentype');
   }
+
+  @font-face {
+    font-family: crimson;
+    font-weight: 100 1000;
+    font-stretch: 25% 151%;
+    src: url('../public/fonts/crimson.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: crimson-italic;
+    font-weight: 100 1000;
+    font-stretch: 25% 151%;
+    src: url('../public/fonts/crimson-italic.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: Roboto-flex;
+    font-weight: 100 1000;
+    font-stretch: 25% 151%;
+    src: url('../public/fonts/roboto-serif-variable.woff2') format('woff2');
+  }
 }

@@ -21,7 +21,7 @@ const Exhibition = () => {
       <div className='relative px-10 mdp:sticky mdp:top-6 mdp:mb-80 mdp:h-content mdp:w-4/12'>
         <SecondaryHeading>{t('landing_exhibition_miniTitle')}</SecondaryHeading>
         <div className='mb-6 md:mb-10'>
-          <h2 className='font-roboto-serif-r text-3xl leading-normal md:text-4xl md:leading-normal'>
+          <h2 className='font-crimson text-3xl leading-tight md:text-5xl md:leading-tight'>
             {t('landing_exhibition_title')}
           </h2>
         </div>
@@ -34,15 +34,12 @@ const Exhibition = () => {
           {exhibitionPhoto.map((item) => (
             <Fragment key={item.key}>
               <span className='my-8 h-px w-full bg-brown opacity-20' />
-              <div className='opacity-80'>
-                <Image src={item.imgURL} alt='exx' />
-              </div>
+              <Image className='opacity-80' src={item.imgURL} alt='exx' />
               <div className='mt-4 pl-1'>
-                <div className='font-roboto-serif-l text-xl mdp:text-[1.25rem]'>
+                <div className='font-roboto-flex font-light text-xl mb-3'>
                   {t(`landing_exhibition_title_${item.key}`)}
                 </div>
-                {/* <div className=' font-robot pt-2 pr-3 text-base font-light text-[#20231F] md:pr-28'></div> */}
-                <Content className='pt-2 pr-3 font-noto-tc-r md:pr-28'>
+                <Content className='pr-3 font-noto-tc-r md:pr-28'>
                   {t(`landing_exhibition_description_${item.key}`)}
                 </Content>
               </div>
