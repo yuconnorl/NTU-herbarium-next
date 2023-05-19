@@ -67,4 +67,14 @@
     font-stretch: 25% 151%;
     src: url('../public/fonts/roboto-serif-variable.woff2') format('woff2');
   }
+
+  @font-face {
+    font-family: han-serif;
+    src: url('../public/fonts/han-serif.woff2') format('woff2');
+  }
+
+  @font-face {
+    font-family: nt;
+    src: url('../public/fonts/nt.otf') format('opentype');
+  }
 }

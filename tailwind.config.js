@@ -33,17 +33,6 @@ module.exports = {
         'oswald-m': ['oswald-medium', 'Arial', 'sans-serif'],
         'noto-tc-r': ['noto-sans-tc-regular', 'Arial', 'sans-serif'],
         'roboto-flex': ['Roboto-flex', 'Arial', 'sans-serif'],
-        crimson: ['crimson', 'Arial', 'sans-serif'],
-        'crimson-ita': ['crimson-italic', 'Arial', 'sans-serif'],
-        lato: ['lato-light', 'Arial', 'sans-serif'],
-        ASD: [
-          'Faktum',
-          'PingFang TC',
-          'Noto Sans TC',
-          'Open Sans',
-          '微軟正黑體',
-          'sans-serif',
-        ],
       },
       letterSpacing: { morewide: '.20rem' },
       screens: {

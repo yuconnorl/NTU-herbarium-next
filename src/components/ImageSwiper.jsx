@@ -58,7 +58,7 @@ const ImageSwiper = () => {
 
   return (
     <>
-      <div className='relative flex h-[80vh] min-h-[600px] md:h-[70vh]'>
+      <div className='relative flex h-[80vh] min-h-[600px] md:h-[65vh]'>
         {slidePhoto.map((item) => (
           <div
             className={clsx(
@@ -99,7 +99,7 @@ const ImageSwiper = () => {
         ))}
         <BannerProgress slideNumber={slideNumber} totalSlidesNumber={totalSlidesNumber} />
       </div>
-      <div className='w-full bg-platinum h-7 md:h-9 border-t border-t-brown/10'></div>
+      <div className='w-full bg-[#f9f8f7]/90 h-7 md:h-9 border-t border-t-brown/10'></div>
     </>
   )
 }
