@@ -8,9 +8,8 @@ import { nanoid } from 'nanoid'
 
 import { NEWS_TYPES, NEWS_TYPES_COLOR } from '@/configs/config'
 
-import NewsSkeleton from './newsSkeleton/NewsSkeleton'
+import NewsSkeleton from './NewsSkeleton'
 
-// cross icon at the end of button
 const CrossIcon = ({ open = false }) => (
   <div className='relative flex h-5 w-5 items-center'>
     <span className='h-[1px] w-5 border-t-[1px] border-black' />
@@ -23,6 +22,20 @@ const CrossIcon = ({ open = false }) => (
   </div>
 )
 
+const HorizontalLine = () => <div className='h-px w-full bg-brown opacity-20' />
+
+const NewsPlaceHolder = () => {
+  return (
+    <>
+      <HorizontalLine />
+      {[...Array(5)].map(() => (
+        <NewsSkeleton key={nanoid()} />
+      ))}
+      <HorizontalLine />
+    </>
+  )
+}
+
 const NewsTable = ({ newsData = [], isExpandable = false }) => {
   const formateDate = (date) => dayjs(date).format('MMM DD, YYYY')
 
@@ -33,7 +46,7 @@ const NewsTable = ({ newsData = [], isExpandable = false }) => {
       transition={{ duration: 1 }}
       className='w-full'
     >
-      <div className='h-px w-full bg-brown opacity-20' />
+      <HorizontalLine />
       <div className='mx-auto w-full'>
         <motion.div
           initial={{ opacity: 0 }}
@@ -61,17 +74,17 @@ const NewsTable = ({ newsData = [], isExpandable = false }) => {
                         disabled={!isExpandable}
                       >
                         <div className='slow-fade relative flex w-full flex-col py-3 pl-4 transition duration-500 md:flex-row md:py-4 md:pl-4'>
-                          <div className=' relative translate-y-[1px] whitespace-nowrap font-roboto-serif-r text-sm text-light-brown md:mr-4'>
+                          <div className=' relative translate-y-[1px] whitespace-nowrap font-roboto-serif text-sm text-light-brown md:mr-4'>
                             {formateDate(news.date)}
                           </div>
-                          <div className='md:news-description relative my-3 justify-center pr-4 font-noto-tc-r text-base tracking-wide md:m-0'>
+                          <div className='md:news-description relative my-3 justify-center pr-4 font-noto-sans text-base tracking-wide md:m-0'>
                             {news.title}
                           </div>
                           <div
                             className={clsx(
                               !isExpandable ? 'mr-0' : 'sm:mr-4 lg:mr-10',
                               tagsBackgroundColor,
-                              'relative flex h-fit w-fit items-center justify-center whitespace-nowrap rounded-3xl py-1 px-2 font-roboto-serif-r text-xs text-slate-200 md:self-center',
+                              'relative flex h-fit w-fit items-center justify-center whitespace-nowrap rounded-3xl py-1 px-2 font-roboto-serif text-xs text-slate-200 md:self-center',
                             )}
                           >
                             {tags}
@@ -102,17 +115,11 @@ const NewsTable = ({ newsData = [], isExpandable = false }) => {
               )
             })
           ) : (
-            <>
-              <div className='h-px w-full bg-brown opacity-20' />
-              {[...Array(5)].map(() => (
-                <NewsSkeleton key={nanoid()} />
-              ))}
-              <div className='h-px w-full bg-brown opacity-20' />
-            </>
+            <NewsPlaceHolder />
           )}
         </motion.div>
       </div>
-      <div className='h-px w-full bg-brown opacity-20' />
+      <HorizontalLine />
     </motion.div>
   )
 }

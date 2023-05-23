@@ -10,7 +10,7 @@ import { slidePhoto } from '@/assets/fileLoader'
 // progress bar
 const BannerProgress = ({ slideNumber, totalSlidesNumber }) => (
   <div className='absolute bottom-4 right-4 z-10 flex text-xs md:rotate-0'>
-    <div className='flex items-center justify-around font-oswald-el'>
+    <div className='flex items-center justify-around font-roboto-flex font-extralight'>
       <span className='hidden w-[18px] justify-center md:flex'>{`0${slideNumber}`}</span>
       <div className='relative mx-2 h-[1.5px] min-h-[1.2px] w-10 overflow-hidden bg-[#d8d2d2] md:w-[60px] xl:h-[1.85px]'>
         <div key={nanoid()} className='silde-progress absolute h-full w-full bg-brown' />
