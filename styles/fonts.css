@@ -36,29 +36,9 @@
   }
 
   @font-face {
-    font-family: lato-light;
-    font-weight: 300;
-    src: url('../public/fonts/lato-light.ttf') format('truetype');
-  }
-
-  @font-face {
     font-family: noto-sans-tc-regular;
     font-weight: 400;
     src: url('../public/fonts/noto-sans-tc-regular.otf') format('opentype');
-  }
-
-  @font-face {
-    font-family: crimson;
-    font-weight: 100 1000;
-    font-stretch: 25% 151%;
-    src: url('../public/fonts/crimson.ttf') format('truetype');
-  }
-
-  @font-face {
-    font-family: crimson-italic;
-    font-weight: 100 1000;
-    font-stretch: 25% 151%;
-    src: url('../public/fonts/crimson-italic.ttf') format('truetype');
   }
 
   @font-face {
@@ -69,12 +49,12 @@
   }
 
   @font-face {
-    font-family: han-serif;
-    src: url('../public/fonts/han-serif.woff2') format('woff2');
+    font-family: noto-serif-tc-regular;
+    src: url('../public/fonts/noto-serif-tc-regular.otf') format('opentype');
   }
 
   @font-face {
-    font-family: nt;
-    src: url('../public/fonts/nt.otf') format('opentype');
+    font-family: noto-serif-tc-medium;
+    src: url('../public/fonts/noto-serif-tc-medium.otf') format('opentype');
   }
 }

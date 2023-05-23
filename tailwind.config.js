@@ -31,6 +31,8 @@ module.exports = {
         'roboto-serif-ita': ['roboto-serif-italic', 'Arial', 'sans-serif'],
         'oswald-el': ['oswald-extra-light', 'Arial', 'sans-serif'],
         'oswald-m': ['oswald-medium', 'Arial', 'sans-serif'],
+        'noto-serif-r': ['noto-serif-tc-regular'],
+        'noto-serif-m': ['noto-serif-tc-medium'],
         'noto-tc-r': ['noto-sans-tc-regular', 'Arial', 'sans-serif'],
         'roboto-flex': ['Roboto-flex', 'Arial', 'sans-serif'],
       },

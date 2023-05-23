@@ -87,9 +87,6 @@ const HeaderComponent = () => {
   return (
     <>
       <header className='relative z-30 flex items-center justify-between px-6 md:px-10 pt-6 pb-4 text-brown opacity-70 md:py-8'>
-        {/* <Link className='logo-width font-roboto-flex text-lg md:text-xl' href='/'>
-          NTU Herbarium
-        </Link> */}
         <Link className='logo-width font-roboto-flex text-lg md:text-xl' href='/'>
           <Image src={NtuHerbarium} width={110} height={55} />
         </Link>

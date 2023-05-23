@@ -5,6 +5,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import imgFrontDoorWebp from '@/assets/images/about/frontDoor.webp'
 import { PrimaryHeading, SecondaryHeading } from '@/components/Heading'
+import { Heading, Paragraph } from '@/components/Letters'
 
 export const getStaticProps = async ({ locale }) => ({
   props: {
@@ -24,12 +25,12 @@ const AboutPage = () => {
       <div className='pl-8 md:pl-16'>
         <div className='mb-10 pt-24'>
           <SecondaryHeading>{t('about_miniTitle')}</SecondaryHeading>
-          <PrimaryHeading className='mb-6 md:mb-10'>{t('about_title')}</PrimaryHeading>
-          <div className='w-4/5 font-sans text-base font-light leading-relaxed tracking-wider text-onyx md:w-4/6 md:text-lg md:leading-loose md:tracking-widest'>
+          <Heading className='mb-6 md:mb-10'>{t('about_title')}</Heading>
+          <Paragraph className='w-4/5 leading-relaxed tracking-wider text-onyx md:w-4/6 md:text-lg md:leading-loose md:tracking-widest'>
             {t('about_intro')}
-          </div>
+          </Paragraph>
         </div>
-        <Image src={imgFrontDoorWebp} alt='front door of TAI' />
+        <Image src={imgFrontDoorWebp} alt='front door of NTU herbarium' />
       </div>
     </>
   )

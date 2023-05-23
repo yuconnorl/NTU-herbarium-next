@@ -2,9 +2,9 @@ import Link from 'next/link'
 
 import ArrowSvg from './ArrowSvg'
 
-const LinkButton = ({ url, text }) => (
+const LinkButton = ({ url, text, isOutLink = false }) => (
   <div className='relative py-12'>
-    <Link href={url}>
+    <Link target={isOutLink ? '_blank' : '_self'} href={url}>
       <div className='group cursor-pointer'>
         <div className='flex justify-end'>
           <div className='mr-4 tracking-wider'>{text}</div>

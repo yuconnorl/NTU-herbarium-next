@@ -23,12 +23,14 @@ const Collection = () => {
     {
       title: 'collection_inspect_online',
       content: 'collection_inspect_online_content',
+      outLink: true,
       link: 'https://tai2.ntu.edu.tw/',
       linkDescription: 'collection_inspect_online_link',
     },
     {
       title: 'collection_inspect_inPerson',
       content: 'collection_inspect_inPerson_content',
+      outLink: false,
       link: 'contact',
       linkDescription: 'collection_inspect_inPerson_link',
     },
@@ -62,13 +64,13 @@ const Collection = () => {
           </PrimaryHeading> */}
           </div>
           <div className='md:flex-1'>
-            {inspectionData.map(({ title, content, link, linkDescription }) => (
+            {inspectionData.map(({ title, content, link, linkDescription, outLink }) => (
               <article className='mb-8 md:pr-10' key={title}>
-                <h3 className='mb-10 text-xl font-medium tracking-widest opacity-80 md:text-2xl'>
+                <h3 className='mb-10 text-xl font-medium font-noto-serif-r tracking-widest opacity-80 md:text-2xl'>
                   {t(title)}
                 </h3>
                 <Content>{t(content)}</Content>
-                <LinkButton url={link} text={t(linkDescription)} />
+                <LinkButton isOutLink={outLink} url={link} text={t(linkDescription)} />
               </article>
             ))}
           </div>

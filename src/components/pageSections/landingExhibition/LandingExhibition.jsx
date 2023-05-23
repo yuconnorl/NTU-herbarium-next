@@ -32,7 +32,7 @@ const Exhibition = () => {
           {exhibitionPhoto.map((item) => (
             <Fragment key={item.key}>
               <span className='my-8 h-px w-full bg-brown opacity-20' />
-              <Image className='opacity-80' src={item.imgURL} alt='exx' />
+              <Image className='opacity-80' src={item.imgURL} alt={item.alt} />
               <div className='mt-4 pl-1'>
                 <div className='font-roboto-flex font-light text-xl mb-3'>
                   {t(`landing_exhibition_title_${item.key}`)}
