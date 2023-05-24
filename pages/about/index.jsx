@@ -4,8 +4,7 @@ import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import imgFrontDoorWebp from '@/assets/images/about/frontDoor.webp'
-import { PrimaryHeading, SecondaryHeading } from '@/components/Heading'
-import { Heading, Paragraph } from '@/components/Letters'
+import { DecoHeading, Heading, Paragraph } from '@/components/Letters'
 
 export const getStaticProps = async ({ locale }) => ({
   props: {
@@ -24,7 +23,7 @@ const AboutPage = () => {
       </Head>
       <div className='pl-8 md:pl-16'>
         <div className='mb-10 pt-24'>
-          <SecondaryHeading>{t('about_miniTitle')}</SecondaryHeading>
+          <DecoHeading>{t('about_miniTitle')}</DecoHeading>
           <Heading className='mb-6 md:mb-10'>{t('about_title')}</Heading>
           <Paragraph className='w-4/5 leading-relaxed tracking-wider text-onyx md:w-4/6 md:text-lg md:leading-loose md:tracking-widest'>
             {t('about_intro')}

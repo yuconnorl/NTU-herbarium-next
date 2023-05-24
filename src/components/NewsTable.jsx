@@ -7,6 +7,7 @@ import { UrlMatcher } from 'interweave-autolink'
 import { nanoid } from 'nanoid'
 
 import { NEWS_TYPES, NEWS_TYPES_COLOR } from '@/configs/config'
+import useLanguage from '@/hooks/useLanguage'
 
 import NewsSkeleton from './NewsSkeleton'
 
@@ -38,6 +39,7 @@ const NewsPlaceHolder = () => {
 
 const NewsTable = ({ newsData = [], isExpandable = false }) => {
   const formateDate = (date) => dayjs(date).format('MMM DD, YYYY')
+  const isHan = useLanguage()
 
   return (
     <motion.div
@@ -74,10 +76,15 @@ const NewsTable = ({ newsData = [], isExpandable = false }) => {
                         disabled={!isExpandable}
                       >
                         <div className='slow-fade relative flex w-full flex-col py-3 pl-4 transition duration-500 md:flex-row md:py-4 md:pl-4'>
-                          <div className=' relative translate-y-[1px] whitespace-nowrap font-roboto-serif text-sm text-light-brown md:mr-4'>
+                          <div className='font-roboto-serif relative translate-y-[1px] whitespace-nowrap text-sm text-light-brown md:mr-4'>
                             {formateDate(news.date)}
                           </div>
-                          <div className='md:news-description relative my-3 justify-center pr-4 font-noto-sans text-base tracking-wide md:m-0'>
+                          <div
+                            className={clsx(
+                              isHan ? 'font-noto-sans' : 'font-roboto-sans',
+                              'md:news-description relative my-3 justify-center pr-4 text-base tracking-wide md:m-0',
+                            )}
+                          >
                             {news.title}
                           </div>
                           <div
@@ -100,7 +107,12 @@ const NewsTable = ({ newsData = [], isExpandable = false }) => {
                         )}
                       >
                         <div className='overflow-hidden pl-4 pr-12 md:pl-20'>
-                          <div className='link-arrow break-all border-l border-transparent pt-1 pb-6 pl-4 leading-loose tracking-wide text-[#6a6a6a] sm:border-[#8a8a8a70] md:pl-14 md:tracking-wider'>
+                          <div
+                            className={clsx(
+                              isHan ? 'font-noto-sans' : 'font-roboto-sans',
+                              'link-arrow break-all border-l border-transparent pt-1 pb-6 pl-4 leading-loose tracking-wide text-[#6a6a6a] sm:border-[#8a8a8a70] md:pl-14 md:tracking-wider',
+                            )}
+                          >
                             <Interweave
                               matchers={[new UrlMatcher('url')]}
                               content={news.content}

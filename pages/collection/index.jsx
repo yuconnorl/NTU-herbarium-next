@@ -4,8 +4,7 @@ import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import imgCollectionWebp from '@/assets/images/collection/collection.webp'
-import Content from '@/components/Content'
-import { PrimaryHeading, SecondaryHeading } from '@/components/Heading'
+import { DecoHeading, Heading, Paragraph } from '@/components/Letters'
 import LinkButton from '@/components/LinkButton'
 
 export const getStaticProps = async ({ locale }) => ({
@@ -16,8 +15,6 @@ export const getStaticProps = async ({ locale }) => ({
 
 const Collection = () => {
   const { t, i18n } = useTranslation()
-
-  const currentLang = i18n.resolvedLanguage
 
   const inspectionData = [
     {
@@ -45,15 +42,13 @@ const Collection = () => {
       <div className='pl-8 md:pl-16'>
         <section className='mb-32'>
           <div className='mb-4 pt-24 md:mb-10'>
-            <SecondaryHeading>{t('collection_landing_miniTitle')}</SecondaryHeading>
-            <div className='mb-6 md:mb-10'>
-              <PrimaryHeading className='max-w-3/4'>
-                {t('collection_landing_title')}
-              </PrimaryHeading>
-            </div>
-            <Content className='w-4/5 md:w-4/6'>
+            <DecoHeading>{t('collection_landing_miniTitle')}</DecoHeading>
+            <Heading className='leading-tight text-3xl md:text-5xl md:leading-tight max-w-3/4 mb-6 md:mb-10'>
+              {t('collection_landing_title')}
+            </Heading>
+            <Paragraph className='w-4/5 md:w-4/6'>
               {t('collection_landing_content')}
-            </Content>
+            </Paragraph>
           </div>
           <Image src={imgCollectionWebp} alt='collection' />
         </section>
@@ -66,10 +61,8 @@ const Collection = () => {
           <div className='md:flex-1'>
             {inspectionData.map(({ title, content, link, linkDescription, outLink }) => (
               <article className='mb-8 md:pr-10' key={title}>
-                <h3 className='mb-10 text-xl font-medium font-noto-serif-r tracking-widest opacity-80 md:text-2xl'>
-                  {t(title)}
-                </h3>
-                <Content>{t(content)}</Content>
+                <Heading className='mb-10 text-xl md:text-2xl'>{t(title)}</Heading>
+                <Paragraph>{t(content)}</Paragraph>
                 <LinkButton isOutLink={outLink} url={link} text={t(linkDescription)} />
               </article>
             ))}

@@ -25,7 +25,7 @@ module.exports = {
         'text-loght': '#383838',
       },
       fontFamily: {
-        'roboto-flex': ['Roboto-flex', 'Arial', 'sans-serif'],
+        'roboto-sans': ['Roboto-flex', 'Arial', 'sans-serif'],
         'roboto-serif': ['roboto-serif', 'Arial', 'sans-serif'],
         'roboto-serif-ita': ['roboto-serif-italic', 'Arial', 'sans-serif'],
         'noto-serif': ['noto-serif-tc'],

@@ -2,26 +2,47 @@ import clsx from 'clsx'
 
 import useLanguage from '@/hooks/useLanguage'
 
-export const Paragraph = ({ className, children }) => (
-  <>
-    <p className={clsx('font-noto-sans text-base text-loght', className)}>{children}</p>
-  </>
-)
+export const Paragraph = ({ className, children }) => {
+  const isHan = useLanguage()
+
+  return (
+    <p
+      className={clsx(
+        isHan ? 'font-noto-sans leading-relaxed' : 'font-roboto-sans md:leading-7',
+        'text-base text-text-loght',
+        className,
+      )}
+    >
+      {children}
+    </p>
+  )
+}
 
 export const Heading = ({ className, children }) => {
   const isHan = useLanguage()
 
-  console.log(isHan)
-
   return (
     <h2
       className={clsx(
-        isHan ? 'font-noto-serif font-medium' : 'font-roboto-flex',
-        'whitespace-pre-line text-5xl font-normal opacity-80 leading-tight',
+        isHan ? 'font-noto-serif font-medium' : 'font-roboto-serif',
+        'whitespace-pre-line opacity-80 text-text-color',
         className,
       )}
     >
       {children}
     </h2>
+  )
+}
+export const DecoHeading = ({ className, children }) => {
+  return (
+    <h4
+      className={clsx(
+        'font-roboto-serif relative flex items-center pt-8 pb-6 text-xs tracking-wider text-atrovirens md:text-sm',
+        'before:relative before:mr-2 before:h-px before:w-3 before:bg-atrovirens before:content-[""]',
+        className,
+      )}
+    >
+      {children}
+    </h4>
   )
 }

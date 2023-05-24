@@ -84,8 +84,7 @@ body::-webkit-scrollbar-thumb {
   }
 
   .link-arrow a {
-    @apply relative mr-1 text-light-brown underline decoration-light-brown underline-offset-4
-    after:relative after:inline-block after:h-3 after:w-3 after:bg-link-arrow after:bg-cover after:bg-center after:bg-no-repeat after:opacity-60 after:content-[''];
+    @apply relative mr-1 text-light-brown underline decoration-light-brown underline-offset-4 hover:opacity-50 transition-opacity;
   }
 
   @keyframes swipe-progress {
