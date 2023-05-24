@@ -1,5 +1,41 @@
 {
   "Landing": {
-    "title": "Hello world!"
+    "collection_title": "Specimens, the evidence of their presence",
+    "collection_subtitle": "Specimens are the most direct provement of a species existence. NTU herbarium houses not only collections from Taiwan, but also from Southeast Asia and the Pacific islands.",
+    "collection_miniTitle": "Collection",
+    "collection_button": "Collection Catalog",
+    "exhibition_title": "Not only specimens, but lots of exhibitions",
+    "exhibition_subtitle": "Specimens are the most direct provement of a species existence. NTU herbarium houses not only collections from Taiwan, but also from Southeast Asia and the Pacific islands.",
+    "exhibition_miniTitle": "Exhibition & Features",
+    "exhibition_title_ethnobotany": "Ethnobotany",
+    "exhibition_title_gardens": "Gardens",
+    "exhibition_title_illustration": "Botanical illustration",
+    "exhibition_title_permanent": "Permanent exhibitions",
+    "exhibition_description_ethnobotany": "Specimens are the most direct provement of a species existence. NTU herbarium houses not only collections from Taiwan, but also from Southeast Asia and the Pacific islands.",
+    "exhibition_description_gardens": "Specimens are the most direct provement of a species existence. NTU herbarium houses not only collections from Taiwan, but also from Southeast Asia and the Pacific islands.",
+    "exhibition_description_illustration": "Specimens are the most direct provement of a species existence. NTU herbarium houses not only collections from Taiwan, but also from Southeast Asia and the Pacific islands.",
+    "exhibition_description_permanent": "Specimens are the most direct provement of a species existence. NTU herbarium houses not only collections from Taiwan, but also from Southeast Asia and the Pacific islands.",
+    "exhibition_button": "More information",
+    "news_button": "View all news"
+  },
+  "About": {
+    "title": "National Taiwan \nUniversity Herbarium",
+    "intro": "Founded in 1929, National Taiwan University Herbarium(TAI) has been a frontier for continuously investigating and collecting materials from Taiwan and adjacent region.",
+    "miniTitle": "About NTU Herbarium"
+  },
+  "Collection": {
+    "landing_title": "Access the Herbarium",
+    "landing_miniTitle": "Collection",
+    "landing_content": "國立臺灣大學植物系標本館，創立於一九二九年，至今已有七十餘年之歷史，自成立以來，即積極展開臺灣及其鄰近地區諸如東南亞、太平洋島嶼等之植物標本的採集，至今本館除自行赴各地採集外並藉著與外國交換標本的方式以達擴展蒐藏領域之目的。自1960年以來與本館互有交流的國家包括美國等二八個國家一四五個機構，因此館藏標本非常豐富，蒐藏範圍非常廣大，經統計館藏標本數量已達二十七萬餘份，其中以臺灣地區原生種類之植物標本最多，足可代表臺灣維管束植物種類的百分之九十五以上，並收藏有植物學上最珍貴的模式標本約千份，及五十年前所採集的臺灣原生、深",
+    "inspect_title": "Out collection",
+    "inspect_online": "Online catalogues",
+    "inspect_online_content": "At BrandVillage, customer satisfaction is at the forefront of our business model. We’re not happy unless you’re happy. We will continue to work with you on your design until you are 100% satisfied with the results. Capturing your brand identity correctly is our number one priority, and we will ensure that your design vision is brought to life accurately.",
+    "inspect_online_link": "Online herbarium",
+    "inspect_inPerson": "Arrange a visit",
+    "inspect_inPerson_content": "At BrandVillage, customer satisfaction is at the forefront of our business model. We’re not happy unless you’re happy. We will continue to work with you on your design until you are 100% satisfied with the results. Capturing your brand identity correctly is our number one priority, and we will ensure that your design vision is brought to life accurately.",
+    "inspect_inPerson_link": "Make an arrangement"
+  },
+  "Contact": {
+    "title": "Get in touch <br /> with us"
   }
 }
