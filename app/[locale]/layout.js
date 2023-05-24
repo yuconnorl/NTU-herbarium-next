@@ -1,16 +1,49 @@
-// import {Inter} from '@next/font/google';
 import clsx from 'clsx'
+import localFont from 'next/font/local'
 import { notFound } from 'next/navigation'
 import { createTranslator, NextIntlClientProvider } from 'next-intl'
 
-// const inter = Inter({subsets: ['latin']});
+import Footer from '@/components/Footer'
+
+const roboto = localFont({
+  src: [
+    {
+      path: '../../public/fonts/roboto-serif-light.ttf',
+      weight: '300',
+    },
+    {
+      path: '../../public/fonts/roboto-serif-regular.ttf',
+      weight: '400',
+    },
+    {
+      path: '../../public/fonts/roboto-serif-medium.ttf',
+      weight: '500',
+    },
+  ],
+  variable: '--font-roboto',
+})
+
+const notoSerif = localFont({
+  src: [
+    {
+      path: '../../public/fonts/noto-serif-tc-regular.otf',
+      weight: '400',
+    },
+    {
+      path: '../../public/fonts/noto-serif-tc-medium.otf',
+      weight: '500',
+    },
+  ],
+  variable: '--font-noto-serif',
+})
+
+const notoSans = localFont({
+  src: '../../public/fonts/noto-sans-tc-regular.otf',
+  variable: '--font-noto-sans',
+})
 
 export async function generateMetadata({ params: { locale } }) {
   const messages = (await import(`../../messages/${locale}.json`)).default
-
-  // You can use the core (non-React) APIs when you have to use next-intl
-  // outside of components. Potentially this will be simplified in the future
-  // (see https://next-intl-docs.vercel.app/docs/next-13/server-components).
   const t = createTranslator({ locale, messages })
 
   return {
@@ -27,11 +60,19 @@ export default async function LocaleLayout({ children, params: { locale } }) {
   }
 
   return (
-    <html className='bg-platinum font-roboto-serif h-full antialiased' lang={locale}>
-      <body className='h-full'>
+    <html
+      className={clsx(
+        'bg-platinum h-full antialiased',
+        roboto.variable,
+        notoSans.variable,
+        notoSerif.variable,
+      )}
+      lang={locale}
+    >
+      <body className='h-full font-roboto-serif'>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          {/* <Navigation /> */}
           {children}
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>

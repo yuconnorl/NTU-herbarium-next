@@ -26,10 +26,10 @@ module.exports = {
       },
       fontFamily: {
         'roboto-sans': ['Roboto-flex', 'Arial', 'sans-serif'],
-        'roboto-serif': ['roboto-serif', 'Arial', 'sans-serif'],
+        'roboto-serif': ['var(--font-roboto)', 'Arial', 'sans-serif'],
         'roboto-serif-ita': ['roboto-serif-italic', 'Arial', 'sans-serif'],
-        'noto-serif': ['noto-serif-tc'],
-        'noto-sans': ['noto-sans-tc', 'Arial', 'sans-serif'],
+        'noto-serif': ['var(--font-noto-serif)'],
+        'noto-sans': ['var(--font-noto-sans)', 'Arial', 'sans-serif'],
       },
       letterSpacing: { morewide: '.20rem' },
       screens: {

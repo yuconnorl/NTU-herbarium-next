@@ -5,9 +5,8 @@
     "allowSyntheticDefaultImports": false,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
-      "pages/*": ["pages/*"]
-    },
+      "@/*": ["src/*"]
+    }
   },
   "exclude": ["node_modules", "dist"]
 }
