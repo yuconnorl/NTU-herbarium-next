@@ -1,20 +1,13 @@
+'use client'
 import clsx from 'clsx'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useTranslation } from 'next-i18next'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useState } from 'react'
 
 import NtuHerbarium from '@/assets/images/common/ntu-herbarium-new.png'
 import routes from '@/configs/routes'
-
-export const getStaticProps = async ({ locale }) => ({
-  props: {
-    ...(await serverSideTranslations(locale, ['common'])),
-  },
-})
 
 // hambueger
 const Hamburger = ({ isBurgerOpen, setHamburgerOpen }) => (
@@ -80,9 +73,7 @@ const HamburgerMenu = ({ isBurgerOpen, setHamburgerOpen }) => {
 
 const HeaderComponent = () => {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false)
-  const { t, i18n } = useTranslation('common')
-  const currentLang = i18n.resolvedLanguage
-  const router = useRouter()
+  // const currentLang = i18n.resolvedLanguage
 
   return (
     <>
@@ -99,7 +90,7 @@ const HeaderComponent = () => {
             ))}
           </ul>
           <div className='ml-24 flex tracking-wider'>
-            {currentLang === 'en' ? (
+            {/* {currentLang === 'en' ? (
               <Link href={router.asPath} locale='zh-TW'>
                 Zh
               </Link>
@@ -107,7 +98,7 @@ const HeaderComponent = () => {
               <Link href={router.asPath} locale='en'>
                 En
               </Link>
-            )}
+            )} */}
           </div>
         </nav>
         <Hamburger isBurgerOpen={isHamburgerOpen} setHamburgerOpen={setIsHamburgerOpen} />
