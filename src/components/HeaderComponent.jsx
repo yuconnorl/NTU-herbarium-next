@@ -3,7 +3,6 @@ import clsx from 'clsx'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 import { useState } from 'react'
 
 import NtuHerbarium from '@/assets/images/common/ntu-herbarium-new.png'
@@ -79,7 +78,12 @@ const HeaderComponent = () => {
     <>
       <header className='relative z-30 flex items-center justify-between px-6 md:px-10 pt-6 pb-4 text-brown opacity-70 md:py-8'>
         <Link className='logo-width text-lg md:text-xl' href='/'>
-          <Image src={NtuHerbarium} width={110} height={55} />
+          <Image
+            src={NtuHerbarium}
+            width={110}
+            height={55}
+            alt='National Taiwan University Herbarium'
+          />
         </Link>
         <nav className='relative hidden text-[0.8rem] md:flex font-roboto-serif font-normal'>
           <ul className='flex tracking-widest md:gap-8'>

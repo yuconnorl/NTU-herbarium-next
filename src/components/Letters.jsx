@@ -1,9 +1,8 @@
+'use client'
 import clsx from 'clsx'
 
-import useLanguage from '@/hooks/useLanguage'
-
 export const Paragraph = ({ className, children }) => {
-  const isHan = useLanguage()
+  const isHan = true
 
   return (
     <p
@@ -19,7 +18,7 @@ export const Paragraph = ({ className, children }) => {
 }
 
 export const Heading = ({ className, children }) => {
-  const isHan = useLanguage()
+  const isHan = true
 
   return (
     <h2

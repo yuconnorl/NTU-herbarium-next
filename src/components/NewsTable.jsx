@@ -1,3 +1,5 @@
+'use client'
+
 import { Disclosure } from '@headlessui/react'
 import clsx from 'clsx'
 import dayjs from 'dayjs'
@@ -5,9 +7,9 @@ import { motion } from 'framer-motion'
 import { Interweave } from 'interweave'
 import { UrlMatcher } from 'interweave-autolink'
 import { nanoid } from 'nanoid'
+import { useEffect, useState } from 'react'
 
 import { NEWS_TYPES, NEWS_TYPES_COLOR } from '@/configs/config'
-import useLanguage from '@/hooks/useLanguage'
 
 import NewsSkeleton from './NewsSkeleton'
 
@@ -39,7 +41,12 @@ const NewsPlaceHolder = () => {
 
 const NewsTable = ({ newsData = [], isExpandable = false }) => {
   const formateDate = (date) => dayjs(date).format('MMM DD, YYYY')
-  const isHan = useLanguage()
+  const [newsD, setNewsD] = useState([])
+  const isHan = true
+
+  useEffect(() => {
+    if (newsData.length > 0) setNewsD(newsData)
+  }, [newsData])
 
   return (
     <motion.div
@@ -56,8 +63,8 @@ const NewsTable = ({ newsData = [], isExpandable = false }) => {
           transition={{ duration: 1 }}
           className='divide-y divide-brown divide-opacity-20'
         >
-          {newsData.length > 0 ? (
-            newsData.map((news) => {
+          {newsD.length > 0 ? (
+            newsD.map((news) => {
               const tags = NEWS_TYPES[news.tags]
               const tagsBackgroundColor = NEWS_TYPES_COLOR[news.tags]
               return (
