@@ -1,26 +1,17 @@
-'use client'
-import Image from 'next/image'
-import { useTranslations } from 'next-intl'
+import { createTranslator } from 'next-intl'
 
-import imgFrontDoorWebp from '@/assets/images/about/frontDoor.webp'
-import { DecoHeading, Heading, Paragraph } from '@/components/Letters'
+import AboutComponent from './About'
 
-const AboutPage = () => {
-  const t = useTranslations('About')
+export async function generateMetadata({ params: { locale } }) {
+  const messages = (await import(`../../../messages/${locale}.json`)).default
+  const t = createTranslator({ locale, messages })
 
-  return (
-    <>
-      <div className='pl-8 md:pl-16'>
-        <div className='mb-10 pt-24'>
-          <DecoHeading>{t('miniTitle')}</DecoHeading>
-          <Heading className='mb-6 md:mb-10'>{t('title')}</Heading>
-          <Paragraph className='w-4/5 leading-relaxed tracking-wider text-onyx md:w-4/6 md:text-lg md:leading-loose md:tracking-widest'>
-            {t('intro')}
-          </Paragraph>
-        </div>
-        <Image src={imgFrontDoorWebp} alt='front door of NTU herbarium' />
-      </div>
-    </>
-  )
+  return {
+    title: t('About.metadata_title'),
+    description: t('About.metadata_description'),
+  }
 }
+
+const AboutPage = () => <AboutComponent />
+
 export default AboutPage

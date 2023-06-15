@@ -11,7 +11,11 @@ export async function generateMetadata({ params: { locale } }) {
   const t = createTranslator({ locale, messages })
 
   return {
-    title: t('LocaleLayout.title'),
+    title: {
+      default: t('Metadata.title'),
+      template: `%s - ${t('Metadata.template')}`,
+    },
+    description: t('Metadata.description'),
   }
 }
 

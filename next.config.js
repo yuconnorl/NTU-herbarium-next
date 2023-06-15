@@ -1,5 +1,6 @@
 const config = {
   reactStrictMode: false,
+  // output: 'export',
   images: {
     formats: ['image/avif', 'image/webp'],
   },
