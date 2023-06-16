@@ -4,9 +4,6 @@ const config = {
   images: {
     formats: ['image/avif', 'image/webp'],
   },
-  experimental: {
-    appDir: true,
-  },
   async headers() {
     return [
       {
