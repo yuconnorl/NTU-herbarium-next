@@ -1,8 +1,5 @@
 export const IS_DEV = process.env.NODE_ENV === 'development'
 
-// 預設顯示語言
-export const DEFAULT_LANG = 'zh-TW'
-
 // news 的類型
 export const NEWS_TYPES = {
   Announcement: 'Announcement',
@@ -18,6 +15,4 @@ export const NEWS_TYPES_COLOR = {
 
 export const NEWS_URL = IS_DEV
   ? 'http://localhost:5000/api/news'
-  : 'http://localhost:5000/api/news'
-
-export const w = [[2, 3], [2, 3], [0, 1, 3], [0, 1, 2, 4], [3]]
+  : 'https://ntu-news-ovl2njeii-molajack.vercel.app/api/news'
