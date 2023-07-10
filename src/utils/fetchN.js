@@ -1,18 +1,19 @@
 import * as contentful from 'contentful'
 
 const client = contentful.createClient({
-  space: 'ef0ikbvdw8su',
-  environment: 'master', // defaults to 'master' if not set
-  accessToken: 'bnFJF58wEotJ5OhkP_YdjnoQUVEUk84JSqesWqPsd8A',
+  space: process.env.CONTENTFUL_SPACE_ID,
+  environment: 'master',
+  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 })
 
+console.log(process.env.CONTENTFUL_ACCESS_TOKEN)
+
 export async function getN() {
-  // const data = await client.getEntry('3XBNkxBYODfr8xMrSfnazS').then((data) => data.fields)
-  const data2 = await client
+  const data = await client
     .getEntries({ content_type: 'newsTw' })
     .then((data) => data.items)
 
-  return data2
+  return data
 }
 
 export async function getBanner() {
