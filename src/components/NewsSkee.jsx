@@ -1,12 +1,15 @@
-import NewsTable from '@/components/NewsTable'
-import getNews from '@/utils/fetchNews'
+import { getN } from '@/utils/fetchN'
+import { newsExtractor } from '@/utils/helper'
+
+import NewsTableNew from './NewsTableNew'
 
 const NewsSkee = async () => {
-  const news = await getNews()
+  const data = await getN()
+  const newsData = newsExtractor(data)
 
   return (
     <div className='flex flex-col divide-y divide-brown divide-opacity-20'>
-      <NewsTable isExpandable newsData={news} />
+      <NewsTableNew newsData={newsData} />
     </div>
   )
 }

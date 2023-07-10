@@ -6,6 +6,9 @@ module.exports = {
       flex: {
         1: '1 1',
       },
+      fontSize: {
+        m: ['0.95rem', '1.4rem'],
+      },
       height: { content: 'max-content' },
       backgroundImage: {
         'landing-news': "url('../src/assets/images/main/news-bg.png')",
@@ -46,11 +49,11 @@ module.exports = {
       animation: {
         'spin-slow': 'spin 10s linear infinite',
       },
-    },
-    maxWidth: {
-      '1/4': '25%',
-      '1/2': '50%',
-      '3/4': '75%',
+      maxWidth: {
+        '1/4': '25%',
+        '1/2': '50%',
+        '3/4': '75%',
+      },
     },
   },
   plugins: [require('@headlessui/tailwindcss'), require('@tailwindcss/typography')],

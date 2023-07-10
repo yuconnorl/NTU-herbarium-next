@@ -56,5 +56,9 @@
     "metadata_title": "聯繫我們",
     "metadata_description": "與我們聯繫",
     "title": "Get in touch <br /> with us"
+  },
+  "Components": {
+    "next_news": "下一則",
+    "prev_news": "上一則"
   }
 }

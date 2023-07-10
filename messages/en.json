@@ -56,5 +56,9 @@
     "metadata_title": "Contact",
     "metadata_description": "Contact us",
     "title": "Get in touch <br /> with us"
+  },
+  "Components": {
+    "next_news": "Next",
+    "prev_news": "Previous"
   }
 }

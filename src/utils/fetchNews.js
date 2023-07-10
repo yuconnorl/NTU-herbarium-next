@@ -7,13 +7,11 @@ async function getNews() {
     body: JSON.stringify({ language: 'zh-TW' }),
   })
 
-  // Recommendation: handle errors
   if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
     throw new Error('Failed to fetch data')
   }
 
-  return res.json()
+  return res
 }
 
 export default getNews

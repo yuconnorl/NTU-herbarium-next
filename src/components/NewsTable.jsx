@@ -12,6 +12,7 @@ import { useEffect, useState } from 'react'
 import { NEWS_TYPES, NEWS_TYPES_COLOR } from '@/configs/config'
 
 import NewsSkeleton from './NewsSkeleton'
+import RichText from './RichText'
 
 const CrossIcon = ({ open = false }) => (
   <div className='relative flex h-5 w-5 items-center'>
@@ -65,8 +66,8 @@ const NewsTable = ({ newsData = [], isExpandable = false }) => {
         >
           {newsD.length > 0 ? (
             newsD.map((news) => {
-              const tags = NEWS_TYPES[news.tags]
-              const tagsBackgroundColor = NEWS_TYPES_COLOR[news.tags]
+              const tags = NEWS_TYPES[news.category]
+              const tagsBackgroundColor = NEWS_TYPES_COLOR[news.category]
               return (
                 <Disclosure
                   as='div'
@@ -120,11 +121,12 @@ const NewsTable = ({ newsData = [], isExpandable = false }) => {
                               'link-arrow break-all border-l border-transparent pt-1 pb-6 pl-4 leading-loose tracking-wide text-[#6a6a6a] sm:border-[#8a8a8a70] md:pl-14 md:tracking-wider',
                             )}
                           >
-                            <Interweave
+                            <RichText content={news.content} />
+                            {/* <Interweave
                               matchers={[new UrlMatcher('url')]}
                               content={news.content}
                               newWindow
-                            />
+                            /> */}
                           </div>
                         </div>
                       </Disclosure.Panel>
