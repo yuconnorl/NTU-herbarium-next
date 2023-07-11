@@ -38,7 +38,7 @@ export default async function LocaleLayout({ children, params: { locale } }) {
       )}
       lang={locale}
     >
-      <body className='h-full font-roboto-serif'>
+      <body className='h-full font-roboto-serif flex flex-col justify-between'>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header />
           {children}
