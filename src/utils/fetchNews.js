@@ -1,17 +1,42 @@
-import { NEWS_URL } from '@/configs/config'
+import * as contentful from 'contentful'
 
-async function getNews() {
-  const res = await fetch(NEWS_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ language: 'zh-TW' }),
-  })
+const client = contentful.createClient({
+  space: process.env.CONTENTFUL_SPACE_ID,
+  environment: 'master',
+  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+})
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch data')
-  }
+function newsExtractor(newsCollection) {
+  if (!newsCollection) return
 
-  return res
+  const result = newsCollection
+    .map(({ sys, fields }) => {
+      return {
+        id: sys.id,
+        title: fields.title,
+        category: fields.category,
+        date: fields.date,
+        banner: `https:${fields.banner.fields.file.url}`,
+        content: fields.contentBody,
+      }
+    })
+    .sort((a, b) => new Date(b.date) - new Date(a.date))
+
+  console.log(result)
+
+  return result
 }
 
-export default getNews
+export async function getNewsFromCMS(language) {
+  const data = await client
+    .getEntries({ content_type: 'newsTw' })
+    .then((data) => data.items)
+
+  return newsExtractor(data)
+}
+
+export async function getBanner() {
+  const data = await client.getEntries({ content_type: 'banner' })
+
+  return data
+}

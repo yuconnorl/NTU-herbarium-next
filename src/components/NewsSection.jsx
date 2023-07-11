@@ -1,17 +1,13 @@
 import Link from 'next/link'
 
 import NewsTable from '@/components/NewsTable'
-import getNews from '@/utils/fetchNews'
 
 import ArrowSvg from './ArrowSvg'
 
 const NewsSection = async () => {
-  const news = await getNews()
-  const trimNewsData = news?.slice(0, 5)
-
   return (
     <>
-      <NewsTable newsData={trimNewsData} />
+      {/* <NewsTable newsData={trimNewsData} /> */}
       <div className='relative float-right w-max py-12'>
         <Link href='news'>
           <div className='group flex cursor-pointer'>

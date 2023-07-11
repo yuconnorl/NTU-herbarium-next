@@ -1,5 +1,3 @@
-import { Suspense } from 'react'
-
 import { DecoHeading, Heading } from '@/components/Letters'
 import NewsSkee from '@/components/NewsSkee'
 
@@ -10,9 +8,8 @@ const NewsComponent = () => {
         <DecoHeading>NEWS</DecoHeading>
         <Heading className='mb-8 text-3xl md:text-4xl'>What&apos;s new</Heading>
       </div>
-      <Suspense fallback={<div>Loading...</div>}>
-        <NewsSkee />
-      </Suspense>
+
+      <NewsSkee />
     </div>
   )
 }

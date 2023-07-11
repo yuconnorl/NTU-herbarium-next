@@ -10,18 +10,6 @@ import { NEWS_TYPES, NEWS_TYPES_COLOR } from '@/configs/config'
 
 import NewsSkeleton from './NewsSkeleton'
 
-const CrossIcon = ({ open = false }) => (
-  <div className='relative flex h-5 w-5 items-center'>
-    <span className='h-[1px] w-5 border-t-[1px] border-black' />
-    <span
-      className={clsx(
-        open ? 'rotate-0' : 'rotate-90',
-        'absolute h-[1px] w-[1.16rem] border-t-[1px] border-black duration-200',
-      )}
-    />
-  </div>
-)
-
 const HorizontalLine = () => <div className='h-px w-full bg-brown opacity-20' />
 
 const NewsPlaceHolder = () => {
@@ -73,13 +61,23 @@ const NewsTableNew = ({ newsData = [] }) => {
                     )}
                   >
                     <div className='slow-fade relative flex w-full flex-col py-3 pl-4 transition duration-500 md:flex-row md:py-4 md:pl-4'>
-                      <div className='font-roboto-serif relative translate-y-[1px] whitespace-nowrap text-sm text-light-brown md:mr-4'>
-                        {formateDate(news.date)}
+                      <div className='flex gap-2'>
+                        <div className='font-roboto-serif relative translate-y-[1px] whitespace-nowrap text-sm text-light-brown md:mr-4'>
+                          {formateDate(news.date)}
+                        </div>
+                        <div
+                          className={clsx(
+                            tagsBackgroundColor,
+                            'md:hidden relative flex h-fit w-fit items-center justify-center whitespace-nowrap rounded-3xl py-1 px-2 font-roboto-serif text-xs text-slate-200 md:self-center',
+                          )}
+                        >
+                          {tags}
+                        </div>
                       </div>
                       <div
                         className={clsx(
                           isHan ? 'font-noto-sans' : 'font-roboto-sans',
-                          'md:news-description relative my-3 justify-center pr-4 text-base tracking-wide md:m-0',
+                          'md:news-description relative mt-3 mb-1 justify-center pr-4 text-base tracking-wide md:m-0',
                         )}
                       >
                         {news.title}
@@ -87,13 +85,12 @@ const NewsTableNew = ({ newsData = [] }) => {
                       <div
                         className={clsx(
                           tagsBackgroundColor,
-                          'relative flex h-fit w-fit items-center justify-center whitespace-nowrap rounded-3xl py-1 px-2 font-roboto-serif text-xs text-slate-200 md:self-center',
+                          'hidden relative md:flex h-fit w-fit items-center justify-center whitespace-nowrap rounded-3xl py-1 px-2 font-roboto-serif text-xs text-slate-200 md:self-center',
                         )}
                       >
                         {tags}
                       </div>
                     </div>
-                    <CrossIcon open={false} />
                   </Link>
                 </div>
               )

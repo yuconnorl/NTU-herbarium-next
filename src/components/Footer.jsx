@@ -19,7 +19,7 @@ const Footer = () => (
       <div className='mb-16 w-8/12 max-w-[350px] font-roboto-serif-ita text-xl text-brown md:mb-0 md:w-5/12'>
         National Taiwan University Herbarium
       </div>
-      <div className='flex flex-col font-noto-sans justify-around text-xs md:w-6/12 md:flex-row md:items-center md:text-sm '>
+      <div className='flex flex-col font-noto-sans justify-around text-sm md:w-6/12 md:flex-row md:items-center md:text-m '>
         <div className='flex flex-col gap-1 tracking-wide text-[#8A8A8A]'>
           <div>臺北市羅斯福路四段一號</div>
           <div className='mt-1'>
