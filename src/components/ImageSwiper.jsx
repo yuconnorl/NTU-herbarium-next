@@ -11,7 +11,9 @@ import { useEffect, useRef, useState } from 'react'
 const BannerProgress = ({ slideNumber, totalSlidesNumber }) => (
   <div className='absolute bottom-4 right-4 z-10 flex text-xs md:rotate-0'>
     <div className='flex items-center justify-around font-roboto-serif font-extralight'>
-      <span className='hidden w-[18px] justify-center md:flex'>{`0${slideNumber}`}</span>
+      <span className='hidden w-[18px] justify-center md:flex'>{`0${
+        slideNumber + 1
+      }`}</span>
       <div className='relative mx-2 h-[1.5px] min-h-[1.2px] w-10 overflow-hidden bg-[#d8d2d2] md:w-[60px] xl:h-[1.85px]'>
         <div key={nanoid()} className='silde-progress absolute h-full w-full bg-brown' />
       </div>
@@ -55,7 +57,7 @@ const ImageSwiper = ({ banners = [] }) => {
   }
 
   useInterval(() => {
-    if (slideNumber < slidePhoto.length) {
+    if (slideNumber < slidePhoto.length - 1) {
       setSlideNumber(slideNumber + 1)
     } else {
       setSlideNumber(0)
@@ -90,16 +92,20 @@ const ImageSwiper = ({ banners = [] }) => {
               >
                 <span className='italic mt-0.5'>{`${item.title}`}</span>
                 <div className='group flex items-center'>
-                  <span className='relative inline-block'>
-                    <Link
-                      className='slow-fade transition-opacity text-[0.7rem] md:text-xs duration-500 group-hover:opacity-50'
-                      href={item.authorUrl}
-                      target='_blank'
-                    >
-                      {item.author}
-                    </Link>
-                    <div className='absolute bottom-0 left-0 h-[1px] w-full bg-brown/60' />
-                  </span>
+                  {item.authorUrl ? (
+                    <div className='relative'>
+                      <Link
+                        className='slow-fade transition-opacity text-[0.7rem] md:text-xs duration-500 group-hover:opacity-50'
+                        href={item.authorUrl}
+                        target='_blank'
+                      >
+                        {item.author}
+                      </Link>
+                      <div className='absolute bottom-0 left-0 h-[1px] w-full bg-brown/60' />
+                    </div>
+                  ) : (
+                    <div className='text-[0.7rem] md:text-xs'>{item.author}</div>
+                  )}
                 </div>
               </motion.div>
             )}
