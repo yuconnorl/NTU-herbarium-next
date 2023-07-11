@@ -7,8 +7,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 
-import { slidePhoto } from '@/assets/fileLoader'
-
 // progress bar
 const BannerProgress = ({ slideNumber, totalSlidesNumber }) => (
   <div className='absolute bottom-4 right-4 z-10 flex text-xs md:rotate-0'>
@@ -24,10 +22,16 @@ const BannerProgress = ({ slideNumber, totalSlidesNumber }) => (
   </div>
 )
 
-const ImageSwiper = () => {
-  const [slideNumber, setSlideNumber] = useState(1)
+const ImageSwiper = ({ banners = [] }) => {
+  const [slideNumber, setSlideNumber] = useState(0)
+  const [slidePhoto, setSlidePhoto] = useState([])
   const totalSlidesNumber = slidePhoto.length
   const slideInterval = 6000
+
+  useEffect(() => {
+    if (banners.length > 0) setSlidePhoto(banners)
+    console.log(banners)
+  }, [banners])
 
   function useInterval(callback, delay) {
     const savedCallback = useRef()
@@ -54,27 +58,29 @@ const ImageSwiper = () => {
     if (slideNumber < slidePhoto.length) {
       setSlideNumber(slideNumber + 1)
     } else {
-      setSlideNumber(1)
+      setSlideNumber(0)
     }
   }, slideInterval)
 
   return (
     <>
       <div className='relative flex h-[80vh] min-h-[600px] md:h-[65vh]'>
-        {slidePhoto.map((item) => (
+        {slidePhoto.map((item, key) => (
           <div
             className={clsx(
-              slideNumber === item.key && 'slide-visible',
+              slideNumber === key && 'slide-visible',
               'absolute left-0 h-full w-full opacity-0 transition-all duration-500 ease-in-out',
             )}
-            key={item.key}
+            key={item.id}
           >
             <Image
               className='h-full w-full object-cover opacity-80'
-              src={item.src}
-              alt='swiper'
+              src={item.image}
+              alt={item.title}
+              width={1000}
+              height={500}
             />
-            {slideNumber === item.key && (
+            {slideNumber === key && (
               <motion.div
                 initial={{ y: 5, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -82,15 +88,15 @@ const ImageSwiper = () => {
                 transition={{ duration: 0.5 }}
                 className='absolute flex items-center justify-between w-full pt-1 md:pt-1.5 px-3 text-[0.7rem] md:text-sm text-brown/80'
               >
-                <span className='italic mt-0.5'>{`${item.nomenclature}`}</span>
+                <span className='italic mt-0.5'>{`${item.title}`}</span>
                 <div className='group flex items-center'>
                   <span className='relative inline-block'>
                     <Link
                       className='slow-fade transition-opacity text-[0.7rem] md:text-xs duration-500 group-hover:opacity-50'
-                      href={item.personalHref}
+                      href={item.authorUrl}
                       target='_blank'
                     >
-                      {item.credit}
+                      {item.author}
                     </Link>
                     <div className='absolute bottom-0 left-0 h-[1px] w-full bg-brown/60' />
                   </span>
@@ -101,7 +107,7 @@ const ImageSwiper = () => {
         ))}
         <BannerProgress slideNumber={slideNumber} totalSlidesNumber={totalSlidesNumber} />
       </div>
-      <div className='w-full bg-[#f9f8f7]/90 h-7 md:h-9 border-t border-t-brown/10'></div>
+      <div className='w-full bg-[#f9f8f7]/90 h-7 md:h-9 border-t border-t-brown/10' />
     </>
   )
 }

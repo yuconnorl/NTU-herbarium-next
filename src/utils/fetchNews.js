@@ -6,10 +6,10 @@ const client = contentful.createClient({
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 })
 
-function newsExtractor(newsCollection) {
-  if (!newsCollection) return
+function newsExtractor(news) {
+  if (!news) return
 
-  const result = newsCollection
+  const result = news
     .map(({ sys, fields }) => {
       return {
         id: sys.id,
@@ -22,8 +22,6 @@ function newsExtractor(newsCollection) {
     })
     .sort((a, b) => new Date(b.date) - new Date(a.date))
 
-  console.log(result)
-
   return result
 }
 
@@ -35,8 +33,26 @@ export async function getNewsFromCMS(language) {
   return newsExtractor(data)
 }
 
-export async function getBanner() {
-  const data = await client.getEntries({ content_type: 'banner' })
+function bannersExtractor(banners) {
+  if (!banners) return
 
-  return data
+  const result = banners.map(({ sys, fields }) => {
+    return {
+      id: sys.id,
+      title: fields.title,
+      author: fields.author,
+      authorUrl: fields.authorUrl,
+      image: `https:${fields.image.fields.file.url}`,
+    }
+  })
+
+  return result
+}
+
+export async function getBannerFromCMS() {
+  const data = await client
+    .getEntries({ content_type: 'banner' })
+    .then((data) => data.items)
+
+  return bannersExtractor(data)
 }
