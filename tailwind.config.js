@@ -29,8 +29,8 @@ module.exports = {
       },
       fontFamily: {
         'roboto-sans': ['Roboto-flex', 'Arial', 'sans-serif'],
-        'roboto-serif': ['var(--font-roboto)', 'Arial', 'sans-serif'],
-        'roboto-serif-ita': ['roboto-serif-italic', 'Arial', 'sans-serif'],
+        'roboto-serif': ['var(--font-roboto-serif)', 'Arial', 'sans-serif'],
+        'roboto-serif-ita': ['var(--font-roboto-serif-ita)', 'Arial', 'sans-serif'],
         'noto-serif': ['var(--font-noto-serif)'],
         'noto-sans': ['var(--font-noto-sans)', 'Arial', 'sans-serif'],
       },
@@ -41,6 +41,9 @@ module.exports = {
       },
       transitionTimingFunction: {
         'slow-fade': 'cubic-bezier(0.36, 0.14, 0, 1)',
+      },
+      gridTemplateColumns: {
+        footer: 'minmax(350px, 1.5fr) 1fr 1fr',
       },
       translate: {
         150: '150%',

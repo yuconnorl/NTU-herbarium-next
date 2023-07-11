@@ -4,7 +4,7 @@ import { createTranslator, NextIntlClientProvider } from 'next-intl'
 
 import Footer from '@/components/Footer'
 import Header from '@/components/HeaderComponent'
-import { notoSans, notoSerif, roboto } from '@/styles/fonts'
+import { notoSans, notoSerif, robotoSerif, robotoSerifIta } from '@/styles/fonts'
 
 export async function generateMetadata({ params: { locale } }) {
   const messages = (await import(`../../messages/${locale}.json`)).default
@@ -31,7 +31,8 @@ export default async function LocaleLayout({ children, params: { locale } }) {
     <html
       className={clsx(
         'bg-platinum h-full antialiased',
-        roboto.variable,
+        robotoSerifIta.variable,
+        robotoSerif.variable,
         notoSans.variable,
         notoSerif.variable,
       )}
