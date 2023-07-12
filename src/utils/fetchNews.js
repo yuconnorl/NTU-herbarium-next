@@ -25,7 +25,7 @@ function newsExtractor(news) {
   return result
 }
 
-export async function getNewsFromCMS(language) {
+export async function getNewsFromCMS() {
   const data = await client
     .getEntries({ content_type: 'newsTw' })
     .then((data) => data.items)
