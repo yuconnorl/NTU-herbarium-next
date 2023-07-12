@@ -8,7 +8,6 @@ const NewsComponent = () => {
         <DecoHeading>NEWS</DecoHeading>
         <Heading className='mb-8 text-3xl md:text-4xl'>What&apos;s new</Heading>
       </div>
-
       <NewsSkee />
     </div>
   )

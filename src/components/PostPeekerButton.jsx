@@ -14,7 +14,7 @@ const PostPeekerButton = ({ title, postId, isNext }) => {
   return (
     <Link
       className='relative group py-2.5 border-b-light-brown/50 border-b sm:border-b-0'
-      href={`news/${postId}`}
+      href={`/news/${postId}`}
     >
       <div
         className={clsx(

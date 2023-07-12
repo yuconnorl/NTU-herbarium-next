@@ -2,27 +2,12 @@
 import clsx from 'clsx'
 import dayjs from 'dayjs'
 import { motion } from 'framer-motion'
-import { nanoid } from 'nanoid'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 import { NEWS_TYPES, NEWS_TYPES_COLOR } from '@/configs/config'
 
-import NewsSkeleton from './NewsSkeleton'
-
 const HorizontalLine = () => <div className='h-px w-full bg-brown opacity-20' />
-
-const NewsPlaceHolder = () => {
-  return (
-    <>
-      <HorizontalLine />
-      {[...Array(5)].map(() => (
-        <NewsSkeleton key={nanoid()} />
-      ))}
-      <HorizontalLine />
-    </>
-  )
-}
 
 const NewsTableNew = ({ newsData = [] }) => {
   const formateDate = (date) => dayjs(date).format('MMM DD, YYYY')
@@ -48,7 +33,7 @@ const NewsTableNew = ({ newsData = [] }) => {
           transition={{ duration: 1 }}
           className='divide-y divide-brown divide-opacity-20'
         >
-          {newsD.length > 0 ? (
+          {newsD.length > 0 &&
             newsD.map((news) => {
               const tags = NEWS_TYPES[news.category]
               const tagsBackgroundColor = NEWS_TYPES_COLOR[news.category]
@@ -94,10 +79,7 @@ const NewsTableNew = ({ newsData = [] }) => {
                   </Link>
                 </div>
               )
-            })
-          ) : (
-            <NewsPlaceHolder />
-          )}
+            })}
         </motion.div>
       </div>
       <HorizontalLine />
