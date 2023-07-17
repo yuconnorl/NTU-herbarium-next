@@ -88,9 +88,9 @@ const ImageSwiper = ({ banners = [] }) => {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
-                className='absolute flex items-center justify-between w-full pt-1 md:pt-1.5 px-3 text-[0.7rem] md:text-sm text-brown/80'
+                className='absolute flex items-center justify-between w-full pt-1 md:pt-1.5 px-1.5 md:px-3 text-[0.7rem] md:text-sm text-brown/80'
               >
-                <span className='italic mt-0.5'>{`${item.title}`}</span>
+                <span className='mt-0.5'>{`${item.title}`}</span>
                 <div className='group flex items-center'>
                   {item.authorUrl ? (
                     <div className='relative'>

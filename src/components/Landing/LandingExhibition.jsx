@@ -24,7 +24,12 @@ const LandingExhibition = () => {
           {exhibitionPhoto.map((item) => (
             <Fragment key={item.key}>
               <span className='my-8 h-px w-full bg-brown opacity-20' />
-              <Image className='opacity-80' src={item.imgURL} alt={item.alt} />
+              <Image
+                className='opacity-80'
+                src={item.imgURL}
+                alt={item.alt}
+                placeholder='blur'
+              />
               <div className='mt-4 pl-1'>
                 <Heading className='text-xl mb-3'>
                   {t(`exhibition_title_${item.key}`)}

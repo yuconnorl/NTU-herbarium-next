@@ -1,4 +1,9 @@
+'server only'
+
 import * as contentful from 'contentful'
+import { getPlaiceholder } from 'plaiceholder'
+
+const { Buffer } = require('buffer')
 
 const client = contentful.createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -25,12 +30,30 @@ function newsExtractor(news) {
   return result
 }
 
+async function fetchImage(url) {
+  const buffer = fetch(url).then(async (res) => Buffer.from(await res.arrayBuffer()))
+  const { base64 } = await getPlaiceholder(buffer)
+
+  return base64
+}
+
 export async function getNewsFromCMS() {
   const data = await client
     .getEntries({ content_type: 'newsTw' })
-    .then((data) => data.items)
+    .then((data) => newsExtractor(data.items))
 
-  return newsExtractor(data)
+  // const imageUrls = data.map((news) => news.banner)
+
+  // const texts = await Promise.allSettled(
+  //   imageUrls.map(async (url) => {
+  //     const resp = await fetchImage(url)
+  //     return resp
+  //   }),
+  // )
+
+  // console.log(texts)
+
+  return data
 }
 
 function bannersExtractor(banners) {

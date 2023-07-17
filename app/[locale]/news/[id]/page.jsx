@@ -1,3 +1,4 @@
+'server only'
 import clsx from 'clsx'
 import dayjs from 'dayjs'
 import Image from 'next/image'
@@ -57,7 +58,7 @@ export default async function NewsPost({ params }) {
   }
 
   return (
-    <div className='relative w-full pt-28 pb-12 px-6 md:px-12'>
+    <div className='relative w-full pt-16 md:pt-28 pb-12 px-6 md:px-12'>
       <section className='w-full max-w-7xl mx-auto relative'>
         <div className='mb-8 sm:mb-12'>
           <div className='flex gap-2 sm:gap-3 items-center'>
@@ -68,7 +69,7 @@ export default async function NewsPost({ params }) {
             <div
               className={clsx(
                 tagsBackgroundColor,
-                'relative flex h-fit w-fit items-center justify-center whitespace-nowrap rounded-3xl py-0.5 sm:py-1 px-2 sm:px-2.5 font-roboto-serif text-sm text-slate-200',
+                'relative flex h-fit w-fit items-center justify-center whitespace-nowrap rounded-3xl py-0.5 sm:py-1 px-2 sm:px-2.5 font-roboto-serif text-xs md:text-sm text-slate-200',
               )}
             >
               {category}

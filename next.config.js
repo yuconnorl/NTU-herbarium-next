@@ -1,6 +1,5 @@
 const config = {
   reactStrictMode: false,
-  // output: 'export',
   images: {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [
@@ -21,9 +20,6 @@ const config = {
   },
 }
 
-// https://nextjs.org/docs/advanced-features/security-headers
-// removed 'default-src 'self' vercel.live' for giscus
-// removed 'script-src 'self' 'unsafe-eval' 'unsafe-inline' cdn.vercel-insights.com vercel.live' for GA
 const ContentSecurityPolicy = `
     style-src 'self' 'unsafe-inline';
     img-src * blob: data:;
