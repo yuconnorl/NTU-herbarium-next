@@ -103,8 +103,8 @@ body::-webkit-scrollbar-thumb {
 
   .hamburger-inner {
     @apply top-1/2 block absolute transition-transform ease-slow-fade
-    before:bg-slate-700 before:content-[''] before:absolute before:block before:w-5 before:h-[2px] before:top-[2.5px] before:rounded-3xl before:transition-all before:ease-slow-fade before:duration-300
-    after:bg-slate-700 after:content-[''] after:absolute after:block after:w-5 after:h-[2px] after:bottom-[2.5px] after:rounded-3xl after:transition-all after:ease-slow-fade after:duration-300;
+    before:bg-brown before:content-[''] before:absolute before:block before:w-5 before:h-[2px] before:top-[2.5px] before:rounded-3xl before:transition-all before:ease-slow-fade before:duration-300
+    after:bg-brown after:content-[''] after:absolute after:block after:w-5 after:h-[2px] after:bottom-[2.5px] after:rounded-3xl after:transition-all after:ease-slow-fade after:duration-300;
   }
 
   .hamburger-active {
