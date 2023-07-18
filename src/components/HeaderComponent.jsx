@@ -11,14 +11,14 @@ import routes from '@/configs/routes'
 // hambueger
 const HamburgerButton = ({ isBurgerOpen, setHamburgerOpen }) => (
   <div
-    className='z-30 flex md:hidden cursor-pointer'
+    className='z-30 md:hidden cursor-pointer w-7 h-7 flex justify-center items-center'
     onClick={() => setHamburgerOpen((state) => !state)}
   >
-    <div className='hamburger'>
+    <button type='button' className='hamburger'>
       <div className='hamburger-box'>
         <div className={clsx(isBurgerOpen && 'hamburger-active', 'hamburger-inner')} />
       </div>
-    </div>
+    </button>
   </div>
 )
 
