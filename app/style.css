@@ -92,4 +92,23 @@ body::-webkit-scrollbar-thumb {
       transform: translateX(0%);
     }
   }
+
+  .hamburger {
+    @apply flex items-center justify-center duration-150 w-5 h-4;
+  }
+
+  .hamburger-box {
+    @apply relative inline-block w-5 h-4;
+  }
+
+  .hamburger-inner {
+    @apply top-1/2 block absolute transition-transform ease-slow-fade
+    before:bg-slate-700 before:content-[''] before:absolute before:block before:w-5 before:h-[2px] before:top-[2.5px] before:rounded-3xl before:transition-all before:ease-slow-fade before:duration-300
+    after:bg-slate-700 after:content-[''] after:absolute after:block after:w-5 after:h-[2px] after:bottom-[2.5px] after:rounded-3xl after:transition-all after:ease-slow-fade after:duration-300;
+  }
+
+  .hamburger-active {
+    @apply before:-rotate-45 before:top-[0.2px]
+    after:bottom-[-2.2px] after:rotate-45;
+  }
 }

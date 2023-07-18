@@ -40,7 +40,7 @@ module.exports = {
         mdp: '930px',
       },
       transitionTimingFunction: {
-        'slow-fade': 'cubic-bezier(0.36, 0.14, 0, 1)',
+        'slow-fade': 'cubic-bezier(0.4, 0, 0.6, 1)',
       },
       gridTemplateColumns: {
         footer: 'minmax(350px, 1.5fr) 1fr 1fr',
@@ -51,6 +51,22 @@ module.exports = {
       },
       animation: {
         'spin-slow': 'spin 10s linear infinite',
+        'top-open': 'top-open 0.25s cubic-bezier(0.4, 0, 0.6, 1) forwards',
+        'bottom-open': 'bottom-open 0.25s cubic-bezier(0.4, 0, 0.6, 1) forwards',
+        'top-close': 'top-open 0.25s cubic-bezier(0.4, 0, 0.6, 1) backwards',
+        'bottom-close': 'bottom-open 0.25s cubic-bezier(0.4, 0, 0.6, 1) backwards',
+      },
+      keyframes: {
+        'top-open': {
+          '0%': { transform: 'translateY(0%)' },
+          '50%': { transform: 'translateY(150%)' },
+          '100%': { transform: 'translate(0, 6px) rotate(45deg)' },
+        },
+        'bottom-open': {
+          '0%': { transform: 'translateY(0%)' },
+          '50%': { transform: 'translateY(-150%)' },
+          '100%': { transform: 'translate(0, -2px) rotate(-45deg)' },
+        },
       },
       maxWidth: {
         '1/4': '25%',

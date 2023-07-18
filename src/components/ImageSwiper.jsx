@@ -95,7 +95,7 @@ const ImageSwiper = ({ banners = [] }) => {
                   {item.authorUrl ? (
                     <div className='relative'>
                       <Link
-                        className='slow-fade transition-opacity text-[0.7rem] md:text-xs duration-500 group-hover:opacity-50'
+                        className='ease-slow-fade transition-opacity text-[0.7rem] md:text-xs duration-500 group-hover:opacity-50'
                         href={item.authorUrl}
                         target='_blank'
                       >

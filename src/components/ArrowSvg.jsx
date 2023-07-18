@@ -5,7 +5,7 @@ const ArrowSvg = ({ size }) => {
   return (
     <div className='flex'>
       <svg
-        className={`slow-fade mt-2 h-${size} w-${size} transition-transform duration-500 group-hover:translate-x-150 group-hover:translate-y-m150`}
+        className={`  trans mt-2 h-${size} w-${size} transition-transform duration-500 group-hover:translate-x-150 group-hover:translate-y-m150`}
         version='1.1'
         x='0'
         y='0'

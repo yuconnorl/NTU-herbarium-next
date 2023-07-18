@@ -58,10 +58,10 @@ export default async function NewsPost({ params }) {
   }
 
   return (
-    <div className='relative w-full pt-16 md:pt-28 pb-12 px-6 md:px-12'>
+    <div className='relative w-full pt-16 md:pt-28 pb-12 md:px-12'>
       <section className='w-full max-w-7xl mx-auto relative'>
         <div className='mb-8 sm:mb-12'>
-          <div className='flex gap-2 sm:gap-3 items-center'>
+          <div className='px-6 md:px-0 flex gap-2 sm:gap-3 items-center'>
             <p className='text-m text-light-brown'>
               {dayjs(post?.date).format('MMM DD, YYYY')}
             </p>
@@ -75,7 +75,7 @@ export default async function NewsPost({ params }) {
               {category}
             </div>
           </div>
-          <h1 className='text-4xl font-bold tracking-wide lg:text-6xl font-noto-serif mt-4 mb-6 md:my-8 text-text-color/90 lg:leading-tight'>
+          <h1 className='px-6 md:px-0 text-4xl font-bold md:tracking-wide tracking-normal lg:text-6xl font-noto-serif mt-4 mb-6 md:my-8 text-text-color/90 lg:leading-tight'>
             <Balancer>{post?.title}</Balancer>
           </h1>
           <div className='relative w-full'>
@@ -84,11 +84,11 @@ export default async function NewsPost({ params }) {
               width={1550}
               height={550}
               priority={true}
-              className='rounded-lg object-cover w-full'
+              className='rounded-none md:rounded-lg object-cover w-full'
             />
           </div>
         </div>
-        <div className='prose prose-p:leading-loose prose-slate prose-a:text-light-brown prose-p:my-2 md:prose-p:my-5 prose-li:my-0 prose-h1:mb-0 mx-auto max-w-4xl prose-ul:pl-4'>
+        <div className='px-6 md:px-0 prose prose-p:leading-loose prose-slate prose-a:text-light-brown prose-p:my-2 md:prose-p:my-5 prose-li:my-0 prose-h1:mb-0 mx-auto max-w-4xl prose-ul:pl-4'>
           <RichText content={post.content} />
           <PostPeeker prev={prev} next={next} />
         </div>

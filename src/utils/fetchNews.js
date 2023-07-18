@@ -1,9 +1,6 @@
 'server only'
 
 import * as contentful from 'contentful'
-import { getPlaiceholder } from 'plaiceholder'
-
-const { Buffer } = require('buffer')
 
 const client = contentful.createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -28,13 +25,6 @@ function newsExtractor(news) {
     .sort((a, b) => new Date(b.date) - new Date(a.date))
 
   return result
-}
-
-async function fetchImage(url) {
-  const buffer = fetch(url).then(async (res) => Buffer.from(await res.arrayBuffer()))
-  const { base64 } = await getPlaiceholder(buffer)
-
-  return base64
 }
 
 export async function getNewsFromCMS() {
