@@ -60,5 +60,12 @@
   "Components": {
     "next_news": "Next",
     "prev_news": "Previous"
+  },
+  "Routes": {
+    "about": "About",
+    "collection": "Collection",
+    "exhibition": "Exhibition",
+    "news": "News",
+    "contact": "Contact"
   }
 }

@@ -2,11 +2,14 @@
 import clsx from 'clsx'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import Link from 'next/link'
+import { useTranslations } from 'next-intl'
+import Link from 'next-intl/link'
 import { useEffect, useRef, useState } from 'react'
 
 import NtuHerbarium from '@/assets/images/common/ntu-herbarium-new.png'
 import routes from '@/configs/routes'
+
+import LocaleSwitcher from './LocaleSwitcher'
 
 // hambueger
 const HamburgerButton = ({ isBurgerOpen, setHamburgerOpen, bodyRef }) => {
@@ -36,6 +39,7 @@ const HamburgerButton = ({ isBurgerOpen, setHamburgerOpen, bodyRef }) => {
 // hamburger menu
 const HamburgerMenu = ({ isBurgerOpen, setHamburgerOpen, bodyRef }) => {
   const ul = useRef(null)
+  const t = useTranslations('Routes')
 
   function onLinkClick() {
     bodyRef.current.classList.remove('overflow-hidden')
@@ -105,7 +109,7 @@ const HamburgerMenu = ({ isBurgerOpen, setHamburgerOpen, bodyRef }) => {
           >
             <Link href={path} className='w-max group-hover:opacity-50 transition-opacity'>
               <div className='relative flex w-max overflow-hidden'>
-                <div className=''>{description}</div>
+                <div>{t(description)}</div>
                 <div
                   className={clsx(
                     'slow-fade absolute bottom-0 h-px w-full -translate-x-full bg-light-brown transition-transform duration-300 group-hover:translate-x-0',
@@ -115,6 +119,13 @@ const HamburgerMenu = ({ isBurgerOpen, setHamburgerOpen, bodyRef }) => {
             </Link>
           </motion.li>
         ))}
+        <motion.li
+          className='mt-16 text-lg'
+          key='language-switcher'
+          variants={itemVariants}
+        >
+          <LocaleSwitcher />
+        </motion.li>
       </motion.ul>
     </motion.div>
   )
@@ -123,6 +134,7 @@ const HamburgerMenu = ({ isBurgerOpen, setHamburgerOpen, bodyRef }) => {
 const HeaderComponent = () => {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false)
   const body = useRef(document.querySelector('#body'))
+  const t = useTranslations('Routes')
 
   useEffect(() => {
     body.current = document.querySelector('#body')
@@ -149,20 +161,12 @@ const HeaderComponent = () => {
           <ul className='flex tracking-wider md:gap-8'>
             {routes.map(({ path, description }) => (
               <li key={path} className='slow-fade group relative overflow-hidden'>
-                <Link href={path}>{description}</Link>
+                <Link href={path}>{t(description)}</Link>
               </li>
             ))}
           </ul>
           <div className='ml-24 flex tracking-wider'>
-            {/* {currentLang === 'en' ? (
-              <Link href={router.asPath} locale='zh-TW'>
-                Zh
-              </Link>
-            ) : (
-              <Link href={router.asPath} locale='en'>
-                En
-              </Link>
-            )} */}
+            <LocaleSwitcher />
           </div>
         </nav>
         <HamburgerButton

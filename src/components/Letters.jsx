@@ -1,15 +1,20 @@
 'use client'
 import clsx from 'clsx'
+import { useLocale } from 'next-intl'
+import { twMerge } from 'tailwind-merge'
 
 export const Paragraph = ({ className, children }) => {
-  const isHan = true
+  const locale = useLocale()
+  const isHan = locale === 'zh-TW'
 
   return (
     <p
-      className={clsx(
-        isHan ? 'font-noto-sans leading-relaxed' : 'font-roboto-sans md:leading-7',
-        'text-base text-text-loght',
-        className,
+      className={twMerge(
+        clsx(
+          isHan ? 'font-noto-sans leading-relaxed' : 'font-roboto-sans md:leading-7',
+          'text-base text-text-loght',
+          className,
+        ),
       )}
     >
       {children}
@@ -18,14 +23,17 @@ export const Paragraph = ({ className, children }) => {
 }
 
 export const Heading = ({ className, children }) => {
-  const isHan = true
+  const locale = useLocale()
+  const isHan = locale === 'zh-TW'
 
   return (
     <h2
-      className={clsx(
-        isHan ? 'font-noto-serif font-medium' : 'font-roboto-serif',
-        'whitespace-pre-line opacity-80 text-text-color',
-        className,
+      className={twMerge(
+        clsx(
+          isHan ? 'font-noto-serif font-medium' : 'font-roboto-serif',
+          'whitespace-pre-line opacity-80 text-text-color',
+          className,
+        ),
       )}
     >
       {children}

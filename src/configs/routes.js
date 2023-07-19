@@ -1,23 +1,23 @@
 const routes = [
   {
-    path: 'about',
-    description: 'About',
+    path: '/about',
+    description: 'about',
   },
   {
-    path: 'collection',
-    description: 'Collection',
+    path: '/collection',
+    description: 'collection',
   },
   {
-    path: 'exhibition',
-    description: 'Exhibition',
+    path: '/exhibition',
+    description: 'exhibition',
   },
   {
-    path: 'news',
-    description: 'News',
+    path: '/news',
+    description: 'news',
   },
   {
-    path: 'contact',
-    description: 'Contact',
+    path: '/contact',
+    description: 'contact',
   },
 ]
 

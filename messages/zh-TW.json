@@ -60,5 +60,12 @@
   "Components": {
     "next_news": "下一則",
     "prev_news": "上一則"
+  },
+  "Routes": {
+    "about": "關於",
+    "collection": "館藏",
+    "exhibition": "展覽",
+    "news": "最新消息",
+    "contact": "聯繫我們"
   }
 }
