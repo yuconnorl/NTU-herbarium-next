@@ -3,31 +3,49 @@ import clsx from 'clsx'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import NtuHerbarium from '@/assets/images/common/ntu-herbarium-new.png'
 import routes from '@/configs/routes'
 
 // hambueger
-const HamburgerButton = ({ isBurgerOpen, setHamburgerOpen }) => (
-  <div
-    className='z-30 md:hidden cursor-pointer w-7 h-7 flex justify-center items-center'
-    onClick={() => setHamburgerOpen((state) => !state)}
-  >
-    <button type='button' className='hamburger'>
-      <div className='hamburger-box'>
-        <div className={clsx(isBurgerOpen && 'hamburger-active', 'hamburger-inner')} />
-      </div>
-    </button>
-  </div>
-)
+const HamburgerButton = ({ isBurgerOpen, setHamburgerOpen, bodyRef }) => {
+  function onButtonClick() {
+    setHamburgerOpen((state) => !state)
+    if (isBurgerOpen) {
+      bodyRef.current.classList.remove('overflow-hidden')
+    } else {
+      bodyRef.current.classList.add('overflow-hidden')
+    }
+  }
+
+  return (
+    <div
+      className='z-30 md:hidden cursor-pointer w-7 h-7 flex justify-center items-center'
+      onClick={onButtonClick}
+    >
+      <button type='button' className='hamburger'>
+        <div className='hamburger-box'>
+          <div className={clsx(isBurgerOpen && 'hamburger-active', 'hamburger-inner')} />
+        </div>
+      </button>
+    </div>
+  )
+}
 
 // hamburger menu
-const HamburgerMenu = ({ isBurgerOpen, setHamburgerOpen }) => {
+const HamburgerMenu = ({ isBurgerOpen, setHamburgerOpen, bodyRef }) => {
+  const ul = useRef(null)
+
+  function onLinkClick() {
+    bodyRef.current.classList.remove('overflow-hidden')
+    setHamburgerOpen(false)
+  }
+
   const variants = {
     open: {
       opacity: 1,
-      height: '100%',
+      height: '100dvh',
       transition: { ease: 'linear', duration: 0.3 },
     },
     closed: {
@@ -51,9 +69,13 @@ const HamburgerMenu = ({ isBurgerOpen, setHamburgerOpen }) => {
       initial={false}
       animate={isBurgerOpen ? 'open' : 'closed'}
       variants={variants}
-      className='fixed top-0 left-0 z-20 w-full bg-white/70 backdrop-blur-xl text-brown/80 md:hidden'
+      className={clsx(
+        !isBurgerOpen && 'pointer-events-none',
+        'fixed top-0 left-0 z-20 w-full hamburger-background text-brown/80 md:hidden',
+      )}
     >
       <motion.ul
+        ref={ul}
         variants={{
           open: {
             transition: {
@@ -72,16 +94,13 @@ const HamburgerMenu = ({ isBurgerOpen, setHamburgerOpen }) => {
             },
           },
         }}
-        className={clsx(
-          !isBurgerOpen && 'invisible',
-          'grid gap-y-5 text-2xl font-noto-serif py-16 pl-12 font-medium',
-        )}
+        className={clsx('grid gap-y-5 text-2xl font-noto-serif py-16 pl-12 font-medium')}
       >
         {routes.map(({ path, description }) => (
           <motion.li
             key={path}
-            onClick={() => setHamburgerOpen(false)}
-            className={clsx(!isBurgerOpen && 'pointer-events-none', 'group')}
+            onClick={onLinkClick}
+            className='group'
             variants={itemVariants}
           >
             <Link href={path} className='w-max group-hover:opacity-50 transition-opacity'>
@@ -103,6 +122,11 @@ const HamburgerMenu = ({ isBurgerOpen, setHamburgerOpen }) => {
 
 const HeaderComponent = () => {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false)
+  const body = useRef(document.querySelector('#body'))
+
+  useEffect(() => {
+    body.current = document.querySelector('#body')
+  }, [])
 
   return (
     <>
@@ -144,11 +168,13 @@ const HeaderComponent = () => {
         <HamburgerButton
           isBurgerOpen={isHamburgerOpen}
           setHamburgerOpen={setIsHamburgerOpen}
+          bodyRef={body}
         />
       </header>
       <HamburgerMenu
         isBurgerOpen={isHamburgerOpen}
         setHamburgerOpen={setIsHamburgerOpen}
+        bodyRef={body}
       />
     </>
   )

@@ -32,7 +32,6 @@ const ImageSwiper = ({ banners = [] }) => {
 
   useEffect(() => {
     if (banners.length > 0) setSlidePhoto(banners)
-    console.log(banners)
   }, [banners])
 
   function useInterval(callback, delay) {

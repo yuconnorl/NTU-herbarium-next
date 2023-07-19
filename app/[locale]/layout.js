@@ -4,6 +4,7 @@ import { createTranslator, NextIntlClientProvider } from 'next-intl'
 
 import Footer from '@/components/Footer'
 import Header from '@/components/HeaderComponent'
+import { useStore } from '@/store/store'
 import { notoSans, notoSerif, robotoSerif, robotoSerifIta } from '@/styles/fonts'
 
 export async function generateMetadata({ params: { locale } }) {
@@ -38,7 +39,13 @@ export default async function LocaleLayout({ children, params: { locale } }) {
       )}
       lang={locale}
     >
-      <body className='h-full font-roboto-serif flex flex-col justify-between'>
+      <body
+        className={clsx(
+          useStore.getState().isHamburgerOpen && 'overflow-hidden',
+          'h-full font-roboto-serif flex flex-col justify-between',
+        )}
+        id='body'
+      >
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header />
           {children}

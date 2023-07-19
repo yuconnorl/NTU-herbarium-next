@@ -111,4 +111,9 @@ body::-webkit-scrollbar-thumb {
     @apply before:-rotate-45 before:top-[0.2px]
     after:bottom-[-2.2px] after:rotate-45;
   }
+
+  .hamburger-background {
+    background-color: rgb(242 242 242 / 65%);
+    backdrop-filter: blur(12px);
+  }
 }
