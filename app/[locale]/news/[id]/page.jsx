@@ -7,7 +7,7 @@ import Balancer from 'react-wrap-balancer'
 
 import PostPeeker from '@/components/PostPeeker'
 import RichText from '@/components/RichText'
-import { NEWS_TYPES, NEWS_TYPES_COLOR } from '@/configs/config'
+import { NEWS_TYPES, NEWS_TYPES_COLOR } from '@/configs/news'
 import { getNewsFromCMS } from '@/utils/fetchNews'
 
 export async function generateStaticParams() {
