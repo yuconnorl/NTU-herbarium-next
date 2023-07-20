@@ -10,3 +10,5 @@ export const NEWS_TYPES_COLOR = {
   Salon: 'bg-tiffany',
   Event: 'bg-ecru',
 }
+
+export const LANDING_PAGE_NEWS_QUANTITY = 5

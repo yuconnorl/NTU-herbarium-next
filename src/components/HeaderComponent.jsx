@@ -1,4 +1,5 @@
 'use client'
+
 import clsx from 'clsx'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
@@ -6,7 +7,7 @@ import { useLocale, useTranslations } from 'next-intl'
 import Link from 'next-intl/link'
 import { useEffect, useRef, useState } from 'react'
 
-import NtuHerbarium from '@/assets/images/common/ntu-herbarium-new.png'
+import imgNtuHerbariumLetters from '@/assets/images/common/ntu-herbarium-letters.png'
 import routes from '@/configs/routes'
 
 import LocaleSwitcher from './LocaleSwitcher'
@@ -137,20 +138,22 @@ const HeaderComponent = () => {
   return (
     <>
       <header className='relative flex z-30 items-center justify-between px-6 md:px-10 pt-6 pb-4 text-brown opacity-70 md:py-8'>
-        <Link
-          className={clsx(
-            isHamburgerOpen ? 'opacity-0' : 'opacity-100',
-            'logo-width text-lg md:text-xl transition-opacity duration-500',
-          )}
-          href='/'
-        >
-          <Image
-            src={NtuHerbarium}
-            width={110}
-            height={55}
-            alt='National Taiwan University Herbarium'
-          />
-        </Link>
+        <button type='button'>
+          <Link
+            className={clsx(
+              isHamburgerOpen ? 'opacity-0' : 'opacity-100',
+              'logo-width text-lg md:text-xl transition-opacity duration-500',
+            )}
+            href='/'
+          >
+            <Image
+              src={imgNtuHerbariumLetters}
+              width={110}
+              height={55}
+              alt='National Taiwan University Herbarium'
+            />
+          </Link>
+        </button>
         <nav className='relative hidden text-[0.8rem] md:flex font-roboto-serif font-normal items-center'>
           <ul className='flex tracking-wider md:gap-8'>
             {routes.map(({ path, description }) => (

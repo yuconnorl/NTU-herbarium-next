@@ -1,4 +1,5 @@
 'use client'
+
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 
@@ -21,7 +22,11 @@ const AboutComponent = () => {
             {t('intro')}
           </Paragraph>
         </div>
-        <Image src={imgFrontDoorWebp} alt='front door of NTU herbarium' />
+        <Image
+          src={imgFrontDoorWebp}
+          alt='front door of NTU herbarium'
+          placeholder='blur'
+        />
       </div>
     </>
   )
