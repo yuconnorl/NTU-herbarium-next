@@ -7,6 +7,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 
+import { PLACEHOLDER_URL } from '@/configs/config'
+
 // progress bar
 const BannerProgress = ({ slideNumber, totalSlidesNumber }) => (
   <div className='absolute bottom-4 right-4 z-10 flex text-xs md:rotate-0'>
@@ -80,6 +82,9 @@ const ImageSwiper = ({ banners = [] }) => {
               alt={item.title}
               width={1000}
               height={500}
+              placeholder='blur'
+              blurDataURL={PLACEHOLDER_URL}
+              priority
             />
             {slideNumber === key && (
               <motion.div

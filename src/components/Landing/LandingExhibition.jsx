@@ -41,7 +41,7 @@ const LandingExhibition = () => {
             </Fragment>
           ))}
         </div>
-        <LinkButton url='exhibition' text={t('exhibition_button')} />
+        <LinkButton url='/exhibition' text={t('exhibition_button')} />
       </div>
     </section>
   )

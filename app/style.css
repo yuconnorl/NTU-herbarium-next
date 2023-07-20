@@ -22,7 +22,7 @@ body::-webkit-scrollbar-thumb {
 
 @media (min-width: 2040px) {
   html {
-    font-size: 24px;
+    font-size: 20px;
   }
 }
 
@@ -32,7 +32,7 @@ body::-webkit-scrollbar-thumb {
   }
 
   html {
-    font-size: 28px;
+    font-size: 22px;
   }
 }
 

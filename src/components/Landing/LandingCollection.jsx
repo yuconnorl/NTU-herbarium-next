@@ -20,7 +20,7 @@ const LandingCollection = () => {
           {t('collection_subtitle')}
         </Paragraph>
       </div>
-      <LinkButton url='collection' text={t('collection_button')} />
+      <LinkButton url='/collection' text={t('collection_button')} />
       <TextSpinner text='NTU Herbarium * NTU Herbarium *' />
     </section>
   )

@@ -1,7 +1,7 @@
 'use client'
 
-import Link from 'next/link'
 import { useTranslations } from 'next-intl'
+import Link from 'next-intl/link'
 
 import ArrowSvg from './ArrowSvg'
 
@@ -10,7 +10,7 @@ const LandingNewsButton = () => {
 
   return (
     <div className='relative float-right w-max py-12'>
-      <Link href='news'>
+      <Link href='/news'>
         <div className='group flex cursor-pointer'>
           <div className='relative flex w-max flex-col justify-center overflow-hidden'>
             <div className='tracking-wider'>{t('news_button')}</div>

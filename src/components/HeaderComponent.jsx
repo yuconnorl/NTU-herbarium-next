@@ -2,7 +2,7 @@
 import clsx from 'clsx'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import Link from 'next-intl/link'
 import { useEffect, useRef, useState } from 'react'
 
@@ -10,6 +10,7 @@ import NtuHerbarium from '@/assets/images/common/ntu-herbarium-new.png'
 import routes from '@/configs/routes'
 
 import LocaleSwitcher from './LocaleSwitcher'
+import UnderlinedButton from './UnderlinedButton'
 
 // hambueger
 const HamburgerButton = ({ isBurgerOpen, setHamburgerOpen, bodyRef }) => {
@@ -107,16 +108,7 @@ const HamburgerMenu = ({ isBurgerOpen, setHamburgerOpen, bodyRef }) => {
             className='group'
             variants={itemVariants}
           >
-            <Link href={path} className='w-max group-hover:opacity-50 transition-opacity'>
-              <div className='relative flex w-max overflow-hidden'>
-                <div>{t(description)}</div>
-                <div
-                  className={clsx(
-                    'slow-fade absolute bottom-0 h-px w-full -translate-x-full bg-light-brown transition-transform duration-300 group-hover:translate-x-0',
-                  )}
-                />
-              </div>
-            </Link>
+            <UnderlinedButton path={path} description={t(description)} />
           </motion.li>
         ))}
         <motion.li
@@ -133,8 +125,10 @@ const HamburgerMenu = ({ isBurgerOpen, setHamburgerOpen, bodyRef }) => {
 
 const HeaderComponent = () => {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false)
-  const body = useRef(document.querySelector('#body'))
+  const body = useRef(null)
   const t = useTranslations('Routes')
+  const locale = useLocale()
+  const isHan = locale === 'zh-TW'
 
   useEffect(() => {
     body.current = document.querySelector('#body')
@@ -157,15 +151,21 @@ const HeaderComponent = () => {
             alt='National Taiwan University Herbarium'
           />
         </Link>
-        <nav className='relative hidden text-[0.8rem] md:flex font-roboto-serif font-normal'>
+        <nav className='relative hidden text-[0.8rem] md:flex font-roboto-serif font-normal items-center'>
           <ul className='flex tracking-wider md:gap-8'>
             {routes.map(({ path, description }) => (
-              <li key={path} className='slow-fade group relative overflow-hidden'>
-                <Link href={path}>{t(description)}</Link>
+              <li
+                key={path}
+                className={clsx(
+                  isHan ? ' font-noto-serif font-medium text-lg' : 'font-roboto-serif',
+                  'slow-fade group relative overflow-hidden',
+                )}
+              >
+                <UnderlinedButton path={path} description={t(description)} />
               </li>
             ))}
           </ul>
-          <div className='ml-24 flex tracking-wider'>
+          <div className={clsx(isHan && 'text-base', 'ml-24 flex tracking-wider')}>
             <LocaleSwitcher />
           </div>
         </nav>
