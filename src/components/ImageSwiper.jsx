@@ -77,7 +77,7 @@ const ImageSwiper = ({ banners = [] }) => {
             key={item.id}
           >
             <Image
-              className='h-full w-full object-cover opacity-80'
+              className='h-full w-full object-cover opacity-90'
               src={item.image}
               alt={item.title}
               width={1000}

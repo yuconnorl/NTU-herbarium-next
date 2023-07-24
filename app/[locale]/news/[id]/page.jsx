@@ -7,6 +7,7 @@ import Balancer from 'react-wrap-balancer'
 
 import PostPeeker from '@/components/PostPeeker'
 import RichText from '@/components/RichText'
+import { PLACEHOLDER_URL } from '@/configs/config'
 import { NEWS_TYPES, NEWS_TYPES_COLOR } from '@/configs/news'
 import { getNewsFromCMS } from '@/utils/fetchNews'
 
@@ -58,7 +59,7 @@ export default async function NewsPost({ params }) {
   }
 
   return (
-    <div className='relative w-full pt-16 md:pt-28 pb-12 md:px-12'>
+    <article className='relative w-full pt-16 md:pt-28 pb-12 md:px-12'>
       <section className='w-full max-w-7xl mx-auto relative'>
         <div className='mb-8 sm:mb-12'>
           <div className='px-6 md:px-0 flex gap-2 sm:gap-3 items-center'>
@@ -83,8 +84,11 @@ export default async function NewsPost({ params }) {
               src={post.banner}
               width={1550}
               height={550}
-              priority={true}
+              priority
+              placeholder='blur'
+              blurDataURL={PLACEHOLDER_URL}
               className='rounded-none md:rounded-lg object-cover w-full'
+              alt={post.title}
             />
           </div>
         </div>
@@ -93,6 +97,6 @@ export default async function NewsPost({ params }) {
           <PostPeeker prev={prev} next={next} />
         </div>
       </section>
-    </div>
+    </article>
   )
 }

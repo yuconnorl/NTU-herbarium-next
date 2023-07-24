@@ -34,12 +34,14 @@ const CollectionComponent = () => {
           <Heading className='leading-tight text-3xl md:text-5xl md:leading-tight max-w-3/4 mb-6 md:mb-10'>
             {t('landing_title')}
           </Heading>
-          <Paragraph className='w-4/5 md:w-4/6'>{t('landing_content')}</Paragraph>
+          <Paragraph className='w-4/5 md:w-4/6 leading-relaxed tracking-wider text-onyx md:text-lg md:leading-loose md:tracking-widest'>
+            {t('landing_content')}
+          </Paragraph>
         </div>
-        <Image src={imgCollectionWebp} alt='collection' />
+        <Image src={imgCollectionWebp} alt='collection' placeholder='blur' priority />
       </section>
       <section className='mb-20 pr-8 md:flex md:pr-16'>
-        <div className='mb-8 md:flex-1'></div>
+        <div className='mb-8 md:flex-1 text-xl md:text-2xl'></div>
         <div className='md:flex-1'>
           {inspectionData.map(({ title, content, link, linkDescription, outLink }) => (
             <article className='mb-8 md:pr-10' key={title}>

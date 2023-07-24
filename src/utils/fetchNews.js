@@ -18,11 +18,13 @@ function newsExtractor(news) {
         title: fields.title,
         category: fields.category,
         date: fields.date,
-        banner: `https:${fields.banner.fields.file.url}`,
+        banner: `https:${fields?.banner?.fields?.file?.url}`,
         content: fields.contentBody,
       }
     })
     .sort((a, b) => new Date(b.date) - new Date(a.date))
+
+  console.log(result)
 
   return result
 }
