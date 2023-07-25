@@ -76,8 +76,9 @@ const HamburgerMenu = ({ isBurgerOpen, setHamburgerOpen, bodyRef }) => {
       animate={isBurgerOpen ? 'open' : 'closed'}
       variants={variants}
       className={clsx(
-        !isBurgerOpen && 'pointer-events-none',
-        'fixed top-0 left-0 z-20 w-full hamburger-background text-brown/80 md:hidden',
+        // !isBurgerOpen && 'pointer-events-none',
+        isBurgerOpen ? 'backdrop-blur' : 'pointer-events-none',
+        'fixed top-0 left-0 z-20 w-full text-brown/80 md:hidden bg-white/80',
       )}
     >
       <motion.ul
@@ -138,14 +139,14 @@ const HeaderComponent = () => {
   return (
     <>
       <header className='relative flex z-30 items-center justify-between px-6 md:px-10 pt-6 pb-4 text-brown opacity-70 md:py-8'>
-        <button type='button'>
-          <Link
-            className={clsx(
-              isHamburgerOpen ? 'opacity-0' : 'opacity-100',
-              'logo-width text-lg md:text-xl transition-opacity duration-500',
-            )}
-            href='/'
-          >
+        <button
+          type='button'
+          className={clsx(
+            isHamburgerOpen ? 'opacity-0' : 'opacity-100',
+            'transition-opacity duration-500',
+          )}
+        >
+          <Link href='/'>
             <Image
               src={imgNtuHerbariumLetters}
               width={110}

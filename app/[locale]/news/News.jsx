@@ -7,7 +7,7 @@ import NewsSkeleton from '@/components/NewsSkeleton'
 const NewsComponent = () => {
   return (
     <div className='px-6 py-16 md:px-16'>
-      <div className='mb-10 pl-6'>
+      <div className='mb-10 md:pl-6 pl-2'>
         <DecoHeading>NEWS</DecoHeading>
         <Heading className='mb-8 text-3xl md:text-4xl'>What&apos;s new</Heading>
       </div>
