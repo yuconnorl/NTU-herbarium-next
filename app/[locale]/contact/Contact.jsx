@@ -1,6 +1,8 @@
+import PageTransitionProvider from '@/provider/PageTransitionProvider'
+
 const ContactComponent = () => {
   return (
-    <>
+    <PageTransitionProvider>
       <div className='px-6 pt-16 pb-8'>
         <div>
           <div className='pb-16 pl-6'>
@@ -62,7 +64,7 @@ const ContactComponent = () => {
           </div>
         </div>
       </div>
-    </>
+    </PageTransitionProvider>
   )
 }
 export default ContactComponent

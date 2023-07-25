@@ -68,10 +68,6 @@ body::-webkit-scrollbar-thumb {
     animation: swipe-progress 6s linear forwards;
   }
 
-  .logo-width {
-    font-variation-settings: 'wdth' 80;
-  }
-
   .link-arrow a {
     @apply relative mr-1 text-light-brown underline decoration-light-brown underline-offset-4 hover:opacity-50 transition-opacity;
   }

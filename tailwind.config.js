@@ -29,7 +29,15 @@ module.exports = {
       },
       fontFamily: {
         'roboto-sans': ['Roboto-flex', 'Arial', 'sans-serif'],
-        'roboto-serif': ['var(--font-roboto-serif)', 'Arial', 'sans-serif'],
+        'roboto-serif': [
+          'var(--font-roboto-serif)',
+          'Microsoft YaHei UI',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'Roboto',
+          'Helvetica Neue',
+          'sans-serif',
+        ],
         'roboto-serif-ita': ['var(--font-roboto-serif-ita)', 'Arial', 'sans-serif'],
         'noto-serif': ['var(--font-noto-serif)'],
         'noto-sans': ['var(--font-noto-sans)', 'Arial', 'sans-serif'],

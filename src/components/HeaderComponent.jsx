@@ -4,6 +4,7 @@ import clsx from 'clsx'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { useLocale, useTranslations } from 'next-intl'
+import { usePathname } from 'next-intl/client'
 import Link from 'next-intl/link'
 import { useEffect, useRef, useState } from 'react'
 
@@ -42,6 +43,7 @@ const HamburgerButton = ({ isBurgerOpen, setHamburgerOpen, bodyRef }) => {
 const HamburgerMenu = ({ isBurgerOpen, setHamburgerOpen, bodyRef }) => {
   const ul = useRef(null)
   const t = useTranslations('Routes')
+  const pathname = usePathname()
 
   function onLinkClick() {
     bodyRef.current.classList.remove('overflow-hidden')
@@ -76,7 +78,6 @@ const HamburgerMenu = ({ isBurgerOpen, setHamburgerOpen, bodyRef }) => {
       animate={isBurgerOpen ? 'open' : 'closed'}
       variants={variants}
       className={clsx(
-        // !isBurgerOpen && 'pointer-events-none',
         isBurgerOpen ? 'backdrop-blur' : 'pointer-events-none',
         'fixed top-0 left-0 z-20 w-full text-brown/80 md:hidden bg-white/80',
       )}
@@ -110,7 +111,11 @@ const HamburgerMenu = ({ isBurgerOpen, setHamburgerOpen, bodyRef }) => {
             className='group'
             variants={itemVariants}
           >
-            <UnderlinedButton path={path} description={t(description)} />
+            <UnderlinedButton
+              isRouteMatch={pathname === path}
+              path={path}
+              description={t(description)}
+            />
           </motion.li>
         ))}
         <motion.li
@@ -131,6 +136,7 @@ const HeaderComponent = () => {
   const t = useTranslations('Routes')
   const locale = useLocale()
   const isHan = locale === 'zh-TW'
+  const pathname = usePathname()
 
   useEffect(() => {
     body.current = document.querySelector('#body')
@@ -152,22 +158,30 @@ const HeaderComponent = () => {
               width={110}
               height={55}
               alt='National Taiwan University Herbarium'
+              className='w-28'
             />
           </Link>
         </button>
         <nav className='relative hidden text-[0.8rem] md:flex font-roboto-serif font-normal items-center'>
           <ul className='flex tracking-wider md:gap-8'>
-            {routes.map(({ path, description }) => (
-              <li
-                key={path}
-                className={clsx(
-                  isHan ? ' font-noto-serif font-medium text-lg' : 'font-roboto-serif',
-                  'slow-fade group relative overflow-hidden',
-                )}
-              >
-                <UnderlinedButton path={path} description={t(description)} />
-              </li>
-            ))}
+            {routes.map(({ path, description }) => {
+              console.log(path)
+              return (
+                <li
+                  key={path}
+                  className={clsx(
+                    isHan ? ' font-noto-serif font-medium text-lg' : 'font-roboto-serif',
+                    'slow-fade group relative overflow-hidden',
+                  )}
+                >
+                  <UnderlinedButton
+                    isRouteMatch={pathname === path}
+                    path={path}
+                    description={t(description)}
+                  />
+                </li>
+              )
+            })}
           </ul>
           <div className={clsx(isHan && 'text-base', 'ml-24 flex tracking-wider')}>
             <LocaleSwitcher />

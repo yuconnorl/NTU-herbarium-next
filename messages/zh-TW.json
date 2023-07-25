@@ -50,7 +50,9 @@
   },
   "Exhibition": {
     "metadata_title": "展覽",
-    "metadata_description": "展覽"
+    "metadata_description": "展覽",
+    "landing_title": "千奇古怪的展覽",
+    "landing_miniTitle": "Exhibitions"
   },
   "Contact": {
     "metadata_title": "聯繫我們",

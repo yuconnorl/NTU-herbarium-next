@@ -50,7 +50,9 @@
   },
   "Exhibition": {
     "metadata_title": "Exhibition",
-    "metadata_description": "Check out our exhibition"
+    "metadata_description": "Check out our exhibition",
+    "landing_title": "Checkout our Exhibitions",
+    "landing_miniTitle": "Exhibitions"
   },
   "Contact": {
     "metadata_title": "Contact",
