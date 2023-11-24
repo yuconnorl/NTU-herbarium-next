@@ -8,7 +8,7 @@ import { DecoHeading, Heading, Paragraph } from '@/components/Letters'
 import LinkButton from '@/components/LinkButton'
 import PageTransitionProvider from '@/provider/PageTransitionProvider'
 
-const CollectionComponent = () => {
+const CollectionsComponent = () => {
   const t = useTranslations('Collection')
 
   const inspectionData = [
@@ -68,4 +68,4 @@ const CollectionComponent = () => {
     </PageTransitionProvider>
   )
 }
-export default CollectionComponent
+export default CollectionsComponent

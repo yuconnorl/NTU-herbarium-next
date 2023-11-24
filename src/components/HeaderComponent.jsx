@@ -164,24 +164,21 @@ const HeaderComponent = () => {
         </button>
         <nav className='relative hidden text-[0.8rem] md:flex font-roboto-serif font-normal items-center'>
           <ul className='flex tracking-wider md:gap-8'>
-            {routes.map(({ path, description }) => {
-              console.log(path)
-              return (
-                <li
-                  key={path}
-                  className={clsx(
-                    isHan ? ' font-noto-serif font-medium text-lg' : 'font-roboto-serif',
-                    'slow-fade group relative overflow-hidden',
-                  )}
-                >
-                  <UnderlinedButton
-                    isRouteMatch={pathname === path}
-                    path={path}
-                    description={t(description)}
-                  />
-                </li>
-              )
-            })}
+            {routes.map(({ path, description }) => (
+              <li
+                key={path}
+                className={clsx(
+                  isHan ? ' font-noto-serif font-medium text-lg' : 'font-roboto-serif',
+                  'slow-fade group relative overflow-hidden',
+                )}
+              >
+                <UnderlinedButton
+                  isRouteMatch={pathname === path}
+                  path={path}
+                  description={t(description)}
+                />
+              </li>
+            ))}
           </ul>
           <div className={clsx(isHan && 'text-base', 'ml-24 flex tracking-wider')}>
             <LocaleSwitcher />

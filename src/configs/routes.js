@@ -4,8 +4,8 @@ const routes = [
     description: 'about',
   },
   {
-    path: '/collection',
-    description: 'collection',
+    path: '/collections',
+    description: 'collections',
   },
   {
     path: '/exhibition',
@@ -14,6 +14,10 @@ const routes = [
   {
     path: '/news',
     description: 'news',
+  },
+  {
+    path: '/publications',
+    description: 'publications',
   },
   {
     path: '/contact',

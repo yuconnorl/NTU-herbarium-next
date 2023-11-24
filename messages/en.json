@@ -30,7 +30,7 @@
     "intro": "Founded in 1929, National Taiwan University Herbarium(TAI) has been a frontier for continuously investigating and collecting materials from Taiwan and adjacent region.",
     "miniTitle": "About NTU Herbarium"
   },
-  "Collection": {
+  "Collections": {
     "metadata_title": "Collection",
     "metadata_description": "Our pleasure Colections",
     "landing_title": "Access the Herbarium",
@@ -65,9 +65,10 @@
   },
   "Routes": {
     "about": "About",
-    "collection": "Collection",
+    "collections": "Collections",
     "exhibition": "Exhibition",
     "news": "News",
+    "publications": "Publications",
     "contact": "Contact"
   }
 }

@@ -65,9 +65,10 @@
   },
   "Routes": {
     "about": "關於",
-    "collection": "館藏",
+    "collections": "館藏",
     "exhibition": "展覽",
     "news": "最新消息",
+    "publications": "著作",
     "contact": "聯繫我們"
   }
 }
